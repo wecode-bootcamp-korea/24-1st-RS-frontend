@@ -29,8 +29,12 @@ export default class Signup extends Component {
         <main>
           <div className="signup-box">
             <span className="signup-pagetitle">회원가입</span>
-            <img src="/images/Signup/signup-idcard.png" width="200px" />
-            <span className="joinbyemail">이메일로 가입하기</span>
+            <img
+              src="/images/Signup/signup-idcard.png"
+              alt="id-card"
+              width="200px"
+            />
+            <span className="join-by-email">이메일로 가입하기</span>
 
             <form className="signup-form">
               <div className="inputbox">
@@ -86,7 +90,6 @@ export default class Signup extends Component {
                 name="emailcheck"
                 onChange={this.handleInput}
               />
-              <lable for="emailcheck" />
             </div>
             <div className="signup-check">
               <span className="signup-check-agree">
