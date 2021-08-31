@@ -1,6 +1,6 @@
 .signin {
   .signin-navbar {
-    height: 100px;
+    height: 50px;
     background-color: goldenrod;
   }
 
@@ -28,7 +28,6 @@
       .inputbox {
         display: flex;
         flex-direction: column;
-        // margin-bottom: 20px;
         padding: 20px 50px;
 
         .inputname {

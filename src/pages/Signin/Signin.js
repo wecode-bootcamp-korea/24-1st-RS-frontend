@@ -10,6 +10,11 @@ export default class Signin extends Component {
     };
   }
 
+  handleInput = e => {
+    const { name, value } = e.target;
+    this.setState({ [name]: value });
+  };
+
   render() {
     return (
       <div className="signin">
@@ -23,7 +28,9 @@ export default class Signin extends Component {
                 <span className="inputname">이메일</span>
                 <input
                   className="signin-input"
+                  name="email"
                   placeholder="이메일을 입력해주세요"
+                  onChange={this.handleInput}
                 />
               </div>
 
@@ -32,6 +39,8 @@ export default class Signin extends Component {
                 <input
                   className="signin-input"
                   placeholder="비밀번호를 입력해주세요"
+                  name="password"
+                  onChange={this.handleInput}
                 ></input>
               </div>
             </form>
