@@ -23,7 +23,6 @@ export default class Signup extends Component {
   };
 
   render() {
-    console.log(this.state);
     return (
       <div className="signup">
         <div className="signup-navbar"></div>
