@@ -1,1 +1,142 @@
-//style
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+}
+
+@mixin flex-middle {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin text-style {
+  display: block;
+  margin: 8px 0;
+  font-size: 15px;
+}
+
+.details-cover {
+  @include flex-center;
+
+  .product-info {
+    padding: 40px 25px;
+
+    .info-header {
+      @include flex-center;
+
+      img {
+        width: 100%;
+        max-width: 400px;
+        padding: 0 5px;
+        object-fit: cover;
+      }
+
+      .product-summary {
+        @include flex-middle;
+        justify-content: space-between;
+        padding: 20px 10px;
+
+        .product-name {
+          .product {
+            display: block;
+            margin: 10px 0;
+            font-size: 30px;
+            color: rgb(112, 112, 112);
+          }
+
+          .company {
+            display: block;
+            margin: 10px 0;
+            font-size: 20px;
+            color: rgb(189, 189, 189);
+          }
+        }
+
+        .about-product {
+          span {
+            @include text-style;
+          }
+        }
+
+        .editor-suggestion {
+          span {
+            @include text-style;
+          }
+        }
+
+        .editor-pick {
+          span {
+            @include text-style;
+          }
+
+          .hashtag {
+            font-size: 18px;
+            color: rgb(243, 188, 96);
+          }
+        }
+
+        .product-price {
+          .price {
+            color: rgb(129, 129, 129);
+            font-size: 35px;
+            font-weight: 600;
+          }
+          span {
+            @include text-style;
+          }
+        }
+      }
+    }
+
+    .info-detail-wrapper {
+      .description-card {
+        .detail-cut {
+        }
+
+        span {
+          display: block;
+        }
+      }
+    }
+
+    .recommend-wrapper {
+    }
+  }
+
+  .add-to-cart {
+    width: 30%;
+    padding: 20px 15px;
+
+    .options {
+      .opt-header {
+        display: flex;
+
+        @include text-style;
+      }
+
+      .opt-wrapper {
+      }
+    }
+
+    .amount {
+      .opt-header {
+      }
+
+      .select-amount {
+      }
+    }
+
+    .total-price-wrapper {
+    }
+
+    .shipping-cost {
+    }
+
+    .add-to-btn {
+      @include flex-center;
+
+      button {
+        display: block;
+      }
+    }
+  }
+}
