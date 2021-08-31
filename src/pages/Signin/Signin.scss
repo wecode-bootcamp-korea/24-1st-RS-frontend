@@ -70,6 +70,12 @@
         margin-bottom: 40px;
       }
 
+      .signin-btn:hover {
+        background-color: rgb(244, 187, 95);
+        color: white;
+        border: 0;
+      }
+
       .socialbtn {
         display: flex;
         flex-direction: row;
