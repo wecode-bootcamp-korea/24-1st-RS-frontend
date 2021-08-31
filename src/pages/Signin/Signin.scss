@@ -19,33 +19,33 @@
       text-align: center;
 
       .signin-pagetitle {
+        margin-bottom: 80px;
         color: rgb(244, 187, 95);
         font-size: 18px;
         font-weight: bold;
-        margin-bottom: 80px;
       }
 
-      .inputbox {
+      .input-box {
         display: flex;
         flex-direction: column;
         padding: 20px 50px;
 
-        .inputname {
-          font-weight: bold;
-          color: rgb(112, 112, 112);
-          font-size: 14px;
+        .input-name {
           margin-bottom: 25px;
+          color: rgb(112, 112, 112);
+          font-weight: bold;
+          font-size: 14px;
         }
 
         .signin-input {
           width: 250px;
+          margin-bottom: 30px;
+          padding-bottom: 5px;
+          border: 0;
+          border-bottom: 2px solid rgb(133, 133, 133);
           font-size: 16px;
           font-weight: lighter;
-          margin-bottom: 30px;
-          border: 0;
-          padding-bottom: 5px;
           text-align: center;
-          border-bottom: 2px solid rgb(133, 133, 133);
         }
 
         .signin-input:focus {
@@ -60,14 +60,14 @@
       .signin-btn {
         width: 150px;
         height: 45px;
-        border-radius: 10px;
-        cursor: pointer;
+        margin-bottom: 40px;
         color: rgb(178, 178, 178);
         background-color: white;
         border: 1px solid rgb(178, 178, 178);
+        border-radius: 10px;
         font-weight: bold;
         font-size: 18px;
-        margin-bottom: 40px;
+        cursor: pointer;
       }
 
       .signin-btn:hover {
@@ -76,16 +76,16 @@
         border: 0;
       }
 
-      .socialbtn {
+      .social-btn {
         display: flex;
         flex-direction: row;
         justify-content: center;
         align-items: center;
+        padding: 1px 6px;
+        margin-bottom: 15px;
         width: 190px;
         height: 40px;
         border-radius: 10px;
-        padding: 1px 6px;
-        margin-bottom: 15px;
         font-size: 14px;
         cursor: pointer;
 
@@ -97,24 +97,24 @@
         }
       }
 
-      .kakaoBtn {
+      .kakao-btn {
         background-color: rgb(255, 232, 18);
         border: 0;
       }
 
-      .naverBtn {
-        background-color: rgb(54, 199, 54);
+      .naver-btn {
         color: white;
+        background-color: rgb(54, 199, 54);
         border: 0;
         font-weight: bold;
       }
 
-      .googleBtn {
+      .google-btn {
+        margin-bottom: 50px;
         background-color: white;
+        color: rgb(112, 112, 112);
         border: 0.5px solid rgb(178, 178, 178);
         font-size: 16px;
-        color: rgb(112, 112, 112);
-        margin-bottom: 50px;
 
         svg {
           width: 18px;
@@ -123,21 +123,21 @@
         }
       }
 
-      .findaccount {
+      .find-account {
         margin-bottom: 30px;
+        color: rgb(112, 112, 112);
         font-weight: bold;
         font-size: 15px;
-        color: rgb(112, 112, 112);
         text-decoration: underline;
         text-underline-position: under;
         cursor: pointer;
       }
 
-      .join {
+      .join-account {
         margin-bottom: 100px;
+        color: rgb(81, 151, 242);
         font-weight: bold;
         font-size: 15px;
-        color: rgb(81, 151, 242);
         text-decoration: underline;
         text-underline-position: under;
         cursor: pointer;
