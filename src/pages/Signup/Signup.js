@@ -17,7 +17,7 @@ export default class Signup extends Component {
         <main>
           <div className="signup-box">
             <span className="signup-pagetitle">회원가입</span>
-            <img src="/images/signup-idcard.png" width="200px"></img>
+            <img src="/images/Signup/signup-idcard.png" width="200px" />
             <span className="joinbyemail">이메일로 가입하기</span>
 
             <form className="signup-form">
