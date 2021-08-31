@@ -9,6 +9,8 @@ export default class Signup extends Component {
       password: '',
       repassword: '',
       name: '',
+      smscheck: 'off',
+      emailcheck: 'off',
     };
   }
 
@@ -61,13 +63,12 @@ export default class Signup extends Component {
                 />
               </div>
               <div className="inputbox">
-                <span name="name" className="inputname">
-                  이름
-                </span>
+                <span className="inputname">이름</span>
                 <input
                   className="signup-input"
                   placeholder="이름을 입력해주세요"
                   onChange={this.handleInput}
+                  name="name"
                 />
               </div>
             </form>
@@ -80,7 +81,12 @@ export default class Signup extends Component {
                 이메일 이벤트, 혜택수신 동의
               </span>
               <span className="signup-check-choice">[선택]</span>
-              <input type="checkbox" id="emailcheck" name="이메일동의" />
+              <input
+                type="checkbox"
+                id="emailcheck"
+                name="emailcheck"
+                onChange={this.handleInput}
+              />
               <lable for="emailcheck" />
             </div>
             <div className="signup-check">
@@ -88,7 +94,12 @@ export default class Signup extends Component {
                 SMS 이벤트, 혜택수신 동의
               </span>
               <span className="signup-check-choice">[선택]</span>
-              <input type="checkbox" id="smscheck" name="SMS동의" />
+              <input
+                type="checkbox"
+                id="smscheck"
+                name="smscheck"
+                onChange={this.handleInput}
+              />
             </div>
             <button className="signup-btn">가입완료</button>
           </div>
