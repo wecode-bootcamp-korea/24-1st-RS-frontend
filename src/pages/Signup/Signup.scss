@@ -1,1 +1,85 @@
-//style
+.signup {
+  .signup-navbar {
+    height: 100px;
+    background-color: goldenrod;
+  }
+
+  main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin-top: 150px;
+
+    .signup-box {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 40px 50px 30px;
+
+      img {
+        margin-bottom: 30px;
+      }
+
+      .signup-pagetitle {
+        color: rgb(244, 187, 95);
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 30px;
+      }
+
+      .joinbyemail {
+        margin-bottom: 50px;
+        color: rgb(81, 151, 242);
+        font-weight: bold;
+        font-size: 18px;
+      }
+
+      .inputbox {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 20px;
+
+        .inputname {
+          color: rgb(244, 187, 95);
+          font-size: 18px;
+          font-weight: bold;
+          margin-bottom: 25px;
+        }
+
+        .signup-input {
+          width: 250px;
+          font-size: 16px;
+          font-weight: lighter;
+          margin-bottom: 30px;
+          border: 0;
+          padding-bottom: 5px;
+          text-align: center;
+          border-bottom: 2px solid rgb(133, 133, 133);
+        }
+
+        .signup-input:focus {
+          outline: none;
+        }
+
+        .signup-input:hover {
+          border-bottom: 2px solid black;
+        }
+      }
+
+      .signup-btn {
+        width: 150px;
+        height: 45px;
+        border-radius: 10px;
+        cursor: pointer;
+        color: rgb(178, 178, 178);
+        background-color: white;
+        border: 1px solid rgb(178, 178, 178);
+        font-weight: bold;
+        font-size: 18px;
+        margin-bottom: 40px;
+      }
+    }
+  }
+}
