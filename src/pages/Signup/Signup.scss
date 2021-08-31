@@ -9,7 +9,7 @@
     justify-content: center;
     align-items: center;
     height: 100vh;
-    margin-top: 150px;
+    margin-top: 250px;
 
     .signup-box {
       display: flex;
@@ -68,6 +68,34 @@
         }
       }
 
+      .signup-rule {
+        color: rgb(178, 178, 178);
+        font-size: 15px;
+        font-weight: bold;
+        margin-bottom: 20px;
+        line-height: 2;
+
+        span {
+          color: #1890ff;
+        }
+      }
+
+      .signup-check {
+        line-height: 2.5;
+
+        .signup-check-agree {
+          color: rgb(112, 112, 112);
+          font-size: 15px;
+        }
+
+        .signup-check-choice {
+          color: rgb(178, 178, 178);
+          font-size: 13px;
+          margin-left: 10px;
+          margin-right: 5px;
+        }
+      }
+
       .signup-btn {
         width: 150px;
         height: 45px;
@@ -79,6 +107,13 @@
         font-weight: bold;
         font-size: 18px;
         margin-bottom: 40px;
+        margin-top: 30px;
+      }
+
+      .signup-btn:hover {
+        background-color: rgb(244, 187, 95);
+        color: white;
+        border: 0;
       }
     }
   }

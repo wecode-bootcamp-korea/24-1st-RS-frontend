@@ -12,7 +12,16 @@ export default class Signup extends Component {
     };
   }
 
+  handleInput = e => {
+    const { name, value } = e.target;
+
+    this.setState({
+      [name]: value,
+    });
+  };
+
   render() {
+    console.log(this.state);
     return (
       <div className="signup">
         <div className="signup-navbar"></div>
@@ -30,6 +39,7 @@ export default class Signup extends Component {
                   className="signup-input"
                   placeholder="이메일을 입력해
                   주세요"
+                  onChange={this.handleInput}
                 />
               </div>
               <div className="inputbox">
@@ -38,6 +48,7 @@ export default class Signup extends Component {
                   name="password"
                   className="signup-input"
                   placeholder="8자 이상 / 영문 / 숫자를 조합해주세요"
+                  onChange={this.handleInput}
                 />
               </div>
               <div className="inputbox">
@@ -46,6 +57,7 @@ export default class Signup extends Component {
                   name="repassword"
                   className="signup-input"
                   placeholder="비밀번호를 한번 더 입력해주세요"
+                  onChange={this.handleInput}
                 />
               </div>
               <div className="inputbox">
@@ -55,9 +67,29 @@ export default class Signup extends Component {
                 <input
                   className="signup-input"
                   placeholder="이름을 입력해주세요"
+                  onChange={this.handleInput}
                 />
               </div>
             </form>
+            <p className="signup-rule">
+              <span>이용약관</span> 및 <span>개인정보처리방침</span> 내용을
+              <br /> 확인 하였으며, 이에 동의합니다.
+            </p>
+            <div className="signup-check">
+              <span className="signup-check-agree">
+                이메일 이벤트, 혜택수신 동의
+              </span>
+              <span className="signup-check-choice">[선택]</span>
+              <input type="checkbox" id="emailcheck" name="이메일동의" />
+              <lable for="emailcheck" />
+            </div>
+            <div className="signup-check">
+              <span className="signup-check-agree">
+                SMS 이벤트, 혜택수신 동의
+              </span>
+              <span className="signup-check-choice">[선택]</span>
+              <input type="checkbox" id="smscheck" name="SMS동의" />
+            </div>
             <button className="signup-btn">가입완료</button>
           </div>
         </main>
