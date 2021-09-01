@@ -41,7 +41,7 @@ export default class Signin extends Component {
                   placeholder="비밀번호를 입력해주세요"
                   name="password"
                   onChange={this.handleInput}
-                ></input>
+                />
               </div>
             </form>
 
