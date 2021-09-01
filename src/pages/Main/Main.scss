@@ -9,12 +9,12 @@
   .search {
     vertical-align: middle;
     padding: 0px 20px;
+    color: rgb(178, 178, 178);
     background-color: rgb(255, 255, 255);
-    border-radius: 4px;
     border: none;
+    border-radius: 4px;
     outline: none;
     font-size: 14px;
-    color: rgb(178, 178, 178);
   }
 }
 
@@ -30,8 +30,8 @@
 
 .menu-bar {
   display: flex;
-  position: relative;
   justify-content: center;
+  position: relative;
   margin: 0px;
   padding: 50px;
 
@@ -62,36 +62,7 @@
   }
 }
 
-/*.img-overlay-tak {
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  top: 45%;
-  left: 40.7%;
-}
-
-.img-overlay-yak {
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  top: 45%;
-  left: 46%;
-}
-
-.img-overlay-gwa {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}*/
-
 .card-list {
-  /*display: flex;
-  justify-content: space-evenly;
-  padding: 50px;*/
-
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-gap: 20px;
@@ -125,8 +96,8 @@
 
     .time {
       display: flex;
-      align-items: center;
       justify-content: center;
+      align-items: center;
       width: 150px;
       height: 35px;
       padding-bottom: 5px;

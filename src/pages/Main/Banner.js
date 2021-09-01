@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+//import { SliderData } from './BannerSliderData';
 
 export default class Banner extends Component {
   render() {
