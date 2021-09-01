@@ -38,7 +38,7 @@ export default class Details extends Component {
           </div>
           <div className="info-detail-wrapper">
             <div className="description-card">
-              <img className="detail-cut" alt="상세이미지 1" src="#" />
+              <progress className="ga" value="20" max="100"></progress>
               <span> 제목</span>
               <span> 디테일</span>
             </div>
