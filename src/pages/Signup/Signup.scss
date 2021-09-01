@@ -49,22 +49,19 @@
         }
 
         .signup-input {
-          width: 250px;
-          margin-bottom: 30px;
+          width: 300px;
+          margin-bottom: 40px;
           padding-bottom: 5px;
           border: 0;
           border-bottom: 2px solid rgb(133, 133, 133);
-          font-size: 16px;
+          font-size: 15px;
           font-weight: lighter;
           text-align: center;
-        }
 
-        .signup-input:focus {
-          outline: none;
-        }
-
-        .signup-input:hover {
-          border-bottom: 2px solid black;
+          &:hover {
+            outline: none;
+            border-bottom: 2px solid black;
+          }
         }
       }
 
