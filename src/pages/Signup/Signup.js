@@ -14,59 +14,47 @@ export default class Signup extends Component {
     };
   }
 
-  //이메일 : '@', '.' 포함
-  //비밀번호 : 8자 이상, 숫자, 문자, 특수문자 포함
+  handleJoin = () => {
+    fetch('http://10.58.3.176:8000/users/signup', {
+      method: 'POST',
+      body: JSON.stringify({
+        email: this.state.email,
+        password: this.state.password,
+        repassword: this.state.repassword,
+        name: this.state.name,
+        smscheck: this.state.smscheck,
+        emailcheck: this.state.emailcheck,
+      }),
+    })
+      .then(response => response.json())
+      .then(response => {
+        if (response.MESSAGE === 'SUCCESS') {
+          alert('회원가입이 완료되었습니다!');
+        }
 
-  /*** RESPONSE MESSAGE ***/
-  //input 빈칸일 때 res msg : EMPTY_VALUE_ERROR
-  //이메일 유효성 안맞을 때 res msg : EMAIL_VALIDATION_ERROR
-  //이메일 중복 res msg : DUPLICATION_ERROR
-  //password 유효성 안맞을 때 : PASSWORD_VALIDATION_ERROR
-  //pw!=repw : PASSWORD_DO_NOT_MATCH_ERROR
-  //회원가입성공 : SUCCESS
-  //key값 에러 : KEY_ERROR
+        if (response.MESSAGE === 'EMPTY_VALUE_ERROR') {
+          alert('회원가입을 위해 모든 값을 입력해주세요.');
+        }
 
-  // handleJoin = () => {
-  //   fetch('API주소', {
-  //     method: 'POST',
-  //     body: JSON.stringify({
-  //       email: this.state.email,
-  //       password: this.state.password,
-  //       repassword: this.state.repassword,
-  //       name: this.state.name,
-  //       smscheck: this.state.smscheck,
-  //       emailcheck: this.state.emailcheck,
-  //     }),
-  //   })
-  //     .then(response => response.json())
-  //     .then(response => {
-  //       if (response.MESSAGE === 'SUCCESS') {
-  //         alert('회원가입이 완료되었습니다!');
-  //       }
+        if (response.MESSAGE === 'EMAIL_VALIDATION_ERROR') {
+          alert('이메일을 형식에 맞춰 입력해주세요.');
+        }
 
-  //       if (response.MESSAGE === 'EMPTY_VALUE_ERROR') {
-  //         alert('회원가입을 위해 모든 값을 입력해주세요.');
-  //       }
+        if (response.MESSAGE === 'DUPLICATION_ERROR') {
+          alert('이미 존재하는 회원정보입니다.');
+        }
 
-  //       if (response.MESSAGE === 'EMAIL_VALIDATION_ERROR') {
-  //         alert('이메일을 형식에 맞춰 입력해주세요.');
-  //       }
+        if (response.MESSAGE === 'PASSWORD_VALIDATION_ERROR') {
+          alert(
+            '비밀번호를 확인해주세요. 비밀번호는 8자 이상, 문자/숫자/특수문자를 포함해야 합니다.'
+          );
+        }
 
-  //       if (response.MESSAGE === 'DUPLICATION_ERROR') {
-  //         alert('이미 존재하는 회원정보입니다.');
-  //       }
-
-  //       if (response.MESSAGE === 'PASSWORD_VALIDATION_ERROR') {
-  //         alert(
-  //           '비밀번호를 확인해주세요. 비밀번호는 8자 이상, 문자/숫자/특수문자를 포함해야 합니다.'
-  //         );
-  //       }
-
-  //       if (response.MESSAGE === 'PASSWORD_DO_NOT_MATCH_ERROR') {
-  //         alert('입력하신 비밀번호가 불일치합니다.');
-  //       }
-  //     });
-  // };
+        if (response.MESSAGE === 'PASSWORD_DO_NOT_MATCH_ERROR') {
+          alert('입력하신 비밀번호가 불일치합니다.');
+        }
+      });
+  };
 
   handleInput = e => {
     const { name, value } = e.target;
@@ -105,6 +93,7 @@ export default class Signup extends Component {
                 <span className="inputname">비밀번호</span>
                 <input
                   name="password"
+                  type="password"
                   className="signup-input"
                   placeholder="문자/숫자/특수문자 포함 8자 이상 입력해주세요"
                   onChange={this.handleInput}
@@ -114,6 +103,7 @@ export default class Signup extends Component {
                 <span className="inputname">비밀번호 확인</span>
                 <input
                   name="repassword"
+                  type="password"
                   className="signup-input"
                   placeholder="비밀번호를 한번 더 입력해주세요"
                   onChange={this.handleInput}
@@ -157,7 +147,9 @@ export default class Signup extends Component {
                 onChange={this.handleInput}
               />
             </div>
-            <button className="signup-btn">가입완료</button>
+            <button className="signup-btn" onClick={this.handleJoin}>
+              가입완료
+            </button>
           </div>
         </main>
       </div>
