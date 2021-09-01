@@ -29,7 +29,7 @@ export default class Menu extends Component {
               alt="menu3"
               src="/images/Main/wineImg.59c55ac6.png"
               title="과실주"
-            />{' '}
+            />
             <label className="category-name">과실주</label>
           </div>
           <div className="menu">

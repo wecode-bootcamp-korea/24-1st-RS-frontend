@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import { CardList } from './Card-list';
-import { Clock } from './Clock.js';
+import Clock from './Clock';
 import Nav from '../../components/Nav/Nav';
 import Menu from './Menu';
 import Banner from './Banner';
@@ -55,7 +55,9 @@ export default class Main extends Component {
               src="/images/Main/clock.png"
             />
             <p className="time-now">술 마시기 좋은 현재 시간</p>
-            <div className="time">19:23:01</div>
+            <div className="time">
+              <Clock />
+            </div>
           </div>
         </div>
 
