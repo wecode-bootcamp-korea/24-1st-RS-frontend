@@ -1,10 +1,48 @@
 .category {
   .nav-bar {
     height: 85px;
+    width: 100%;
     background-color: goldenrod;
   }
 
   .main-image {
-    background-image: url();
+    background-image: url('./chungju.png');
+    width: 70%;
+    height: 250px;
+    background-size: cover;
+    background-position: center center;
+    margin: 20px auto;
+  }
+
+  .main-text {
+    width: 70%;
+    margin: 30px auto 50px;
+    text-align: center;
+    line-height: 2;
+
+    .category-main-text {
+      display: block;
+      color: #707070;
+      font-size: 25px;
+      font-weight: bold;
+    }
+
+    .category-main-desc {
+      font-size: 16px;
+      font-weight: bold;
+      color: #707070;
+    }
+  }
+
+  .category-main-contents {
+    width: 70%;
+    margin: 0 auto;
+    line-height: 2;
+
+    .Filter {
+      display: flex;
+      justify-content: space-evenly;
+      margin-bottom: 50px;
+    }
   }
 }
