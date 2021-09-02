@@ -1,6 +1,7 @@
 @import '../../styles/common.scss';
 
 .category {
+  min-width: 1200px;
   .nav-bar {
     height: 85px;
     width: 100%;
@@ -9,16 +10,16 @@
 
   .main-image {
     background-image: url('./takju.png');
-    width: 70%;
-    height: 250px;
+    width: 60%;
+    height: 200px;
     background-size: cover;
     background-position: center center;
-    margin: 20px auto;
+    margin: 10px auto;
   }
 
   .main-text {
-    width: 70%;
-    margin: 30px auto 50px;
+    width: 60%;
+    margin: 30px auto 30px;
     text-align: center;
     line-height: 2;
 
@@ -36,26 +37,42 @@
     }
   }
 
-  .category-main-contents {
-    width: 70%;
+  .category-product-contents {
+    width: 60%;
     margin: 0 auto;
     line-height: 2;
 
-    .Filter {
+    .filter {
       display: flex;
-      justify-content: space-evenly;
+      justify-content: flex-start;
       margin-bottom: 50px;
+
+      button {
+        padding: 5px 15px 5px;
+        border-radius: 10px;
+        margin-right: 10px;
+        border: none;
+        color: var(--main-gray);
+        text-align: center;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+
+        &:hover {
+          background: var(--main-yellow);
+          color: white;
+        }
+      }
     }
 
     .product-list {
+      width: 100%;
       display: grid;
       grid-template-columns: 1fr 1fr 1fr 1fr;
       grid-gap: 20px;
 
       .product {
-        width: 250px;
-        margin: 0 20px;
-        border: lightgray 0.5px solid;
+        border: lightgray 0.2px solid;
         box-shadow: rgba(0, 0, 0, 0.16) 0px 0px 5px 0px;
         cursor: pointer;
 
@@ -66,7 +83,7 @@
         }
 
         .product-text {
-          padding: 10px 12px 5px;
+          padding: 5px 12px 5px;
 
           .product-description {
             margin-bottom: 30px;

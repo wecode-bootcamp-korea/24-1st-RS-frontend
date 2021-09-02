@@ -13,7 +13,7 @@ export default class Category extends Component {
         <div className="nav-bar" />
         <Mainimage />
         <Maintext />
-        <div className="category-main-contents">
+        <div className="category-product-contents">
           <Filter />
           <Productlist />
         </div>

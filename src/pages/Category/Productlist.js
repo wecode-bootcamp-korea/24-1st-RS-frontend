@@ -11,12 +11,6 @@ class Productlist extends Component {
         <Product />
         <Product />
         <Product />
-        <Product />
-        <Product />
-        <Product />
-        <Product />
-        <Product />
-        <Product />
       </div>
     );
   }
