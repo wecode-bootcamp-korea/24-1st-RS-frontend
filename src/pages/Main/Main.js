@@ -7,6 +7,7 @@ import Menu from './Menu';
 import Banner from './Banner';
 import './Main.scss';
 import BestItem from './BestItem';
+import NewItem from './NewItem';
 
 export default class Main extends Component {
   constructor() {
@@ -58,6 +59,7 @@ export default class Main extends Component {
         </div>
 
         <BestItem />
+        <NewItem />
       </>
     );
   }
