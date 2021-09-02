@@ -14,18 +14,46 @@
   font-size: 15px;
 }
 
-.details-cover {
+@mixin aside-label-style {
+  display: block;
+  margin: 8px 0;
+  color: rgb(112, 112, 112);
+  font-size: 17px;
+}
+
+@mixin aside-border-style {
+  width: 240px;
+  height: 45px;
+  padding: 13px 10px;
+  border-radius: 5px;
+  border-color: rgb(224, 224, 224);
+}
+
+@mixin add-btn {
+  display: block;
+  width: 60%;
+  height: 3rem;
+  margin: 10px auto;
+  border-radius: 10px;
+  border: none;
+  color: white;
+  font-size: 16px;
+}
+
+.details-wrapper {
   @include flex-center;
 
   .product-info {
+    display: inline-block;
+    width: 680px;
+    top: 0;
     padding: 40px 25px;
 
     .info-header {
       @include flex-center;
 
       img {
-        width: 100%;
-        max-width: 400px;
+        max-width: 350px;
         padding: 0 5px;
         object-fit: cover;
       }
@@ -39,6 +67,7 @@
           .product {
             display: block;
             margin: 10px 0;
+            font-weight: 700;
             font-size: 30px;
             color: rgb(112, 112, 112);
           }
@@ -46,7 +75,7 @@
           .company {
             display: block;
             margin: 10px 0;
-            font-size: 20px;
+            font-size: 17px;
             color: rgb(189, 189, 189);
           }
         }
@@ -69,7 +98,7 @@
           }
 
           .hashtag {
-            font-size: 18px;
+            font-size: 16px;
             color: rgb(243, 188, 96);
           }
         }
@@ -80,20 +109,25 @@
             font-size: 35px;
             font-weight: 600;
           }
+
           span {
-            @include text-style;
+            margin: 8px 0;
+            font-size: 15px;
           }
         }
       }
     }
 
     .info-detail-wrapper {
-      .description-card {
-        .detail-cut {
-        }
+      text-align: center;
+      margin-top: 30px;
+      padding: 20px 10px;
+      border-top: 5px solid rgb(242, 242, 242);
 
-        span {
-          display: block;
+      .flavor-card {
+        .flavor {
+          padding: 0 10px;
+          color: gray;
         }
       }
     }
@@ -102,40 +136,97 @@
     }
   }
 
-  .add-to-cart {
-    width: 30%;
-    padding: 20px 15px;
+  .aside {
+    .add-to-cart {
+      display: inline-block;
+      position: sticky;
+      top: 10px;
+      width: 280px;
+      margin: 40px 20px;
+      padding: 20px 15px;
+      box-shadow: 1px 1px 1px 1px rgb(224, 224, 224);
+      border-radius: 10px;
+      border: 1px solid rgb(243, 243, 243);
 
-    .options {
       .opt-header {
-        display: flex;
-
-        @include text-style;
+        @include aside-label-style;
+        padding: 5px 5px;
+        text-align: end;
       }
 
-      .opt-wrapper {
+      .options {
+        padding: 0 5px;
+
+        .opt-wrapper {
+          @include aside-border-style;
+        }
       }
-    }
 
-    .amount {
-      .opt-header {
+      .amount {
+        padding: 0 5px;
+
+        .select-amount {
+          @include aside-border-style;
+          display: flex;
+          align-items: center;
+          justify-content: space-evenly;
+
+          .amount-count {
+            @include text-style;
+          }
+
+          button {
+            border: none;
+            background-color: transparent;
+            font-size: 25px;
+          }
+        }
       }
 
-      .select-amount {
+      .total-price-wrapper {
+        padding: 0 5px;
+
+        .total-price {
+          @include aside-border-style;
+          text-align: center;
+        }
       }
-    }
 
-    .total-price-wrapper {
-    }
+      .shipping-info {
+        font-size: 10px;
+        text-align: end;
 
-    .shipping-cost {
-    }
+        .shipping-info-wrapper {
+          margin: 7px 5px;
 
-    .add-to-btn {
-      @include flex-center;
+          .shipping-to {
+            margin-right: 5px;
+          }
 
-      button {
-        display: block;
+          .shipping-cost {
+            font-weight: 800;
+          }
+        }
+
+        .shipping-info-alert {
+          margin: 30px 5px 5px 5px;
+          text-align: center;
+          font-size: 11px;
+        }
+      }
+
+      .add-to-btn {
+        @include flex-middle;
+
+        .add-cart {
+          @include add-btn;
+          background-color: rgb(243, 188, 96);
+        }
+
+        .buy-now {
+          @include add-btn;
+          background-color: rgb(82, 141, 192);
+        }
       }
     }
   }
