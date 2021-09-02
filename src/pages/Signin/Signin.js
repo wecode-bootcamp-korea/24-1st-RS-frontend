@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
+import { withRouter } from 'react-router-dom';
 import GoogleButton from './GoogleButton';
 import KakaoButton from './KakaoButton';
 import NaverButton from './NaverButton';
 import './Signin.scss';
 
-export default class Signin extends Component {
+class Signin extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -96,3 +97,4 @@ export default class Signin extends Component {
     );
   }
 }
+export default withRouter(Signin);
