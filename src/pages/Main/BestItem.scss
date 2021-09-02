@@ -1,6 +1,14 @@
+.desc-word {
+  color: rgb(244, 187, 95);
+  font-size: 17px;
+  font-weight: bold;
+  padding: 0px 35px;
+  margin-bottom: 30px;
+}
+
 .best-seller-wrapper {
   width: 1100px;
-  height: 545.8px;
+  // height: 545.8px;
   margin: 150px auto 0px;
 }
 
@@ -15,7 +23,7 @@
   flex-direction: column;
   align-items: center;
   width: 290px;
-  height: 489.8px;
+  //height: 489.8px;
   margin-right: 15px;
   padding: 20px 0px;
   border-radius: 10px;
@@ -27,14 +35,15 @@
 }
 
 .best-seller-card {
-  width: 240px;
-  height: 304px;
+  //width: 240px;
+  // height: 304px;
   margin-right: 15px;
+  box-shadow: rgb(0, 0, 0 / 16%) 0px 0px 5px 0px;
 }
 
 .best-seller-card-wrapper {
   width: 765px;
-  height: 489.8px;
+  // height: 489.8px;
 }
 
 .rocket-img {
@@ -44,9 +53,49 @@
 
 .best-seller-img {
   width: 240px;
-  height: 304px;
+  // height: 304px;
 }
 
 .best-seller-desc {
   padding: 20px 8px 10px;
+}
+
+.word-below-rocket {
+  margin-top: 20px;
+  color: white;
+  font-weight: bold;
+  text-decoration: underline;
+  text-underline-position: under;
+}
+
+.rating-section {
+  display: flex;
+}
+
+.desc-wrapper {
+  height: 140px;
+}
+
+.product-name {
+  margin-bottom: 10px;
+  color: #707070;
+  font-size: 14px;
+}
+
+.product-price {
+  margin-bottom: 10px;
+  color: #707070;
+  font-size: 14px;
+}
+
+.hash {
+  margin-bottom: 10px;
+  color: #f4bb5f;
+  font-size: 13px;
+}
+
+.rating-score {
+  color: #f4bb5f;
+  margin: 3px 10px 0 5px;
+  font-size: 14px;
 }

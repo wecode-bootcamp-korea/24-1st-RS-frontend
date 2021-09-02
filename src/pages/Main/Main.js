@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 import { CardList } from './Card-list';
 import Clock from './Clock';
+import CountDown from './CountDown';
 import Nav from '../../components/Nav/Nav';
 import Menu from './Menu';
 import Banner from './Banner';
@@ -53,7 +54,7 @@ export default class Main extends Component {
             />
             <p className="time-now">술 마시기 좋은 현재 시간</p>
             <div className="time">
-              <Clock />
+              <CountDown />
             </div>
           </div>
         </div>
