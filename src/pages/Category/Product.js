@@ -6,17 +6,24 @@ class Product extends Component {
   render() {
     return (
       <div className="product">
-        <div className="product-image"></div>
-        <div className="product-name">복단지</div>
-        <div className="product-price">18,000원</div>
-        <div className="product-description">
-          <p>#많이~달진_않아요</p>
-          <p>#쌀_넣어만든_약주</p>
+        <div className="product-image">
+          <img
+            alt="product-image"
+            src="https://sooldamhwa-static-files.s3.ap-northeast-2.amazonaws.com/admin_contents/origin/sd4u-1621826638915-%EB%B3%84%EC%82%B0.jpg"
+          ></img>
         </div>
-        <div className="product-review">
-          <Reviewstar />
-          <span>4.7평점</span>
-          <span>12리뷰</span>
+        <div className="product-text">
+          <p className="product-name">별산 막걸리</p>
+          <p className="product-price">27,000원</p>
+          <div className="product-description">
+            <p>#새콤달콤</p>
+            <p>#요구르트_같은맛</p>
+          </div>
+          <div className="product-review">
+            <Reviewstar />
+            <p className="review-rate">4.4평점</p>
+            {/* <p className="review-number">5리뷰</p> */}
+          </div>
         </div>
       </div>
     );

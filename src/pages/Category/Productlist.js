@@ -4,7 +4,21 @@ import './Category.scss';
 
 class Productlist extends Component {
   render() {
-    return <Product />;
+    return (
+      <div className="product-list">
+        <Product />
+        <Product />
+        <Product />
+        <Product />
+        <Product />
+        <Product />
+        <Product />
+        <Product />
+        <Product />
+        <Product />
+        <Product />
+      </div>
+    );
   }
 }
 

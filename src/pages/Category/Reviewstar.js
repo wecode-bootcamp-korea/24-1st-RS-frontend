@@ -11,5 +11,4 @@ class Reviewstar extends Component {
     );
   }
 }
-
 export default Reviewstar;

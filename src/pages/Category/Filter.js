@@ -5,9 +5,9 @@ class Filter extends Component {
   render() {
     return (
       <div className="Filter">
-        <button>기본순</button>
-        <button>인기순</button>
-        <button>최신순</button>
+        <a>이름순</a>
+        <a>최신순</a>
+        <a>인기순</a>
       </div>
     );
   }
