@@ -1,10 +1,15 @@
 import React, { Component } from 'react';
+import { Router, Route, Link } from 'react-router-dom';
 import './Nav.scss';
 import { withRouter } from 'react-router-dom';
 
 export default class Nav extends Component {
-  goToLogin = () => {
-    this.props.history.push('/login');
+  goToSignIn = () => {
+    this.props.history.push('/signin');
+  };
+
+  goToSignUp = () => {
+    this.props.history.push('/signup');
   };
 
   render() {
@@ -18,16 +23,11 @@ export default class Nav extends Component {
           />
 
           <div className="sign-group">
-            <p className="login-btn" onClick={this.goToLogin}>
+            <p className="login-btn" onClick={this.goToSignIn}>
               로그인
             </p>
-            <p
-              className="signup-btn"
-              onClick={() => {
-                console.log('회원가입');
-              }}
-            >
-              회원가입
+            <p className="signup-btn">
+              <Link to="/signup">회원가입</Link>
             </p>
           </div>
         </header>

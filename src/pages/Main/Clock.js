@@ -9,8 +9,9 @@ class Clock extends React.Component {
     };
   }
 
-  componentWillMount() {
+  componentDidMount() {
     setInterval(() => this.currentTime(), 1000);
+    clearInterval();
   }
 
   currentTime() {

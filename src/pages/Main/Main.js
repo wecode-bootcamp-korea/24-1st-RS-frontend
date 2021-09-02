@@ -6,6 +6,7 @@ import Nav from '../../components/Nav/Nav';
 import Menu from './Menu';
 import Banner from './Banner';
 import './Main.scss';
+import BestItem from './BestItem';
 
 export default class Main extends Component {
   constructor() {
@@ -25,7 +26,6 @@ export default class Main extends Component {
     return (
       <>
         <Nav />
-
         <div className="search-bar">
           <input
             className="search"
@@ -33,13 +33,9 @@ export default class Main extends Component {
             placeholder="검색어를 입력해주세요."
           />
         </div>
-
         <Banner />
-
         <Menu />
-
         <CardList monsters={this.state.monsters} />
-
         <div className="time-section">
           <div className="product-img-wrapper">
             <img
@@ -61,9 +57,7 @@ export default class Main extends Component {
           </div>
         </div>
 
-        <footer className="footer">
-          <div>큰박스</div>
-        </footer>
+        <BestItem />
       </>
     );
   }
