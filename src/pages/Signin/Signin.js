@@ -24,18 +24,31 @@ class Signin extends Component {
     })
       .then(response => response.json())
       .then(response => {
-        if (response.ACCESS_TOKEN) {
+        // if (response.ACCESS_TOKEN) {
+        //   localStorage.setItem('login-token', response.token);
+        //   alert('로그인이 완료되었습니다!');
+        //   this.props.history.push('/');
+        // }
+
+        // if (response.MESSAGE === 'INVALID_USER') {
+        //   alert('회원 정보와 맞지않습니다. 다시 입력해주세요');
+        // }
+
+        // if (response.MESSAGE === 'EMPTY_VALUE_ERROR') {
+        //   alert('이메일과 비밀번호 모두 입력해주세요');
+        // }
+
+        const alertMessages = {
+          SUCCESS: '로그인이 완료되었습니다!',
+          INVALID_USER: '회원 정보와 맞지않습니다. 다시 입력해주세요',
+          EMPTY_VALUE_ERROR: '이메일과 비밀번호 모두 입력해주세요',
+        };
+
+        alert(alertMessages[response.MESSAGE]);
+
+        if (alertMessages === 'SUCCESS') {
           localStorage.setItem('login-token', response.token);
-          alert('로그인이 완료되었습니다!');
           this.props.history.push('/');
-        }
-
-        if (response.MESSAGE === 'INVALID_USER') {
-          alert('회원 정보와 맞지않습니다. 다시 입력해주세요');
-        }
-
-        if (response.MESSAGE === 'EMPTY_VALUE_ERROR') {
-          alert('이메일과 비밀번호 모두 입력해주세요');
         }
       });
   };
