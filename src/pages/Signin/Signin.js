@@ -3,6 +3,7 @@ import { withRouter } from 'react-router-dom';
 import GoogleButton from './GoogleButton';
 import KakaoButton from './KakaoButton';
 import NaverButton from './NaverButton';
+import signinAPI from '../../config';
 import './Signin.scss';
 
 class Signin extends Component {
@@ -15,7 +16,7 @@ class Signin extends Component {
   }
 
   handleLogin = () => {
-    fetch('http://10.58.3.176:8000/users/login', {
+    fetch(`${signinAPI}/login`, {
       method: 'POST',
       body: JSON.stringify({
         email: this.state.email,
@@ -24,20 +25,6 @@ class Signin extends Component {
     })
       .then(response => response.json())
       .then(response => {
-        // if (response.ACCESS_TOKEN) {
-        //   localStorage.setItem('login-token', response.token);
-        //   alert('로그인이 완료되었습니다!');
-        //   this.props.history.push('/');
-        // }
-
-        // if (response.MESSAGE === 'INVALID_USER') {
-        //   alert('회원 정보와 맞지않습니다. 다시 입력해주세요');
-        // }
-
-        // if (response.MESSAGE === 'EMPTY_VALUE_ERROR') {
-        //   alert('이메일과 비밀번호 모두 입력해주세요');
-        // }
-
         const alertMessages = {
           SUCCESS: '로그인이 완료되었습니다!',
           INVALID_USER: '회원 정보와 맞지않습니다. 다시 입력해주세요',
@@ -46,8 +33,8 @@ class Signin extends Component {
 
         alert(alertMessages[response.MESSAGE]);
 
-        if (alertMessages === 'SUCCESS') {
-          localStorage.setItem('login-token', response.token);
+        if (response.ACCESS_TOKEN) {
+          localStorage.setItem('login-token', response.ACCESS_TOKEN);
           this.props.history.push('/');
         }
       });
@@ -102,7 +89,7 @@ class Signin extends Component {
             <span className="find-account">아이디 찾기</span>
             <span className="find-account">비밀번호 찾기</span>
             <span className="join-account" onClick={this.handleMoveToSignup}>
-              회원가입(+3000p) 찾기
+              회원가입(+3000p) 하기
             </span>
           </div>
         </main>
