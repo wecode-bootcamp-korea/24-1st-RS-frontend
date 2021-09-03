@@ -133,6 +133,7 @@
         background-attachment: fixed;
         background-size: auto 70%;
         background-position-y: bottom;
+        background-image: './back_img.jpeg';
         @include flex-center;
 
         article {

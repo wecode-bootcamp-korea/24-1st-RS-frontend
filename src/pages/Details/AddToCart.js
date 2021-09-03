@@ -9,7 +9,7 @@ export default class AddToCart extends Component {
             <div className="options">
               <label className="opt-header">옵션</label>
               <select className="opt-wrapper">
-                <option className="opt-title" value="" selected>
+                <option className="opt-title" value="" defaultValue>
                   어떤 옵션을 원하시나요?
                 </option>
                 <option value="opt1">opt1</option>

@@ -59,8 +59,9 @@ export default class BriefInfo extends Component {
               </div>
             </div>
             <div className="editor-pick">
-              <span className="hashtag">{hashtag.caption}</span>
-              <span className="hashtag">{hashtag.caption}</span>
+              {hashtag.map(idx => {
+                return <span className="hashtag">{idx.caption}</span>;
+              })}
               <span>{dscr}</span>
             </div>
             <div className="product-price">

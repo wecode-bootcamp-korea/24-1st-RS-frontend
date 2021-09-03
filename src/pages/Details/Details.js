@@ -10,7 +10,7 @@ export default class Details extends Component {
 
     this.state = {
       infoList: [],
-      companyInfo: [],
+      hashtag: [],
     };
   }
 
