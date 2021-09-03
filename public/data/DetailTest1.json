@@ -1,0 +1,24 @@
+[
+  {
+    "id": 30,
+    "name": "나루 생 막걸리 6%",
+    "price": 21000,
+    "dgree": "6.0",
+    "ml": 935,
+    "awards": "",
+    "tiny_description": "서울의 첫 번째 지역 특산주",
+    "hash": [
+      {
+        "caption": "#참외향"
+      },
+      {
+        "caption": "#깔끔한_단맛"
+      }
+    ],
+    "grade": "5.0",
+    "image": "https://sooldamhwa-static-files.s3.ap-northeast-2.amazonaws.com/content_images/contents_images-1626677251971-%EB%82%98%EB%A3%A8%EC%83%9D%EB%A7%89%EA%B1%B8%EB%A6%AC6-3.jpg",
+    "expire_date": "제조일로부터 30일",
+    "keep": "세워서 냉장 보관",
+    "category_name": "탁주"
+  }
+]

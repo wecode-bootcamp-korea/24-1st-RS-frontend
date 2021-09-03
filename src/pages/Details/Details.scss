@@ -1,4 +1,6 @@
-@mixin flex-center {
+@import '../../styles/common.scss';
+
+@mixin flex-top {
   display: flex;
   justify-content: center;
 }
@@ -9,15 +11,14 @@
 }
 
 @mixin text-style {
-  display: block;
   margin: 8px 0;
-  font-size: 15px;
+  font-size: 13px;
 }
 
 @mixin aside-label-style {
   display: block;
   margin: 8px 0;
-  color: rgb(112, 112, 112);
+  color: var(--main-gray);
   font-size: 17px;
 }
 
@@ -41,7 +42,7 @@
 }
 
 .details-wrapper {
-  @include flex-center;
+  @include flex-top;
 
   .product-info {
     display: inline-block;
@@ -49,7 +50,7 @@
     top: 0;
     padding: 40px 25px;
 
-    .info-header {
+    .brief {
       @include flex-center;
 
       img {
@@ -69,7 +70,7 @@
             margin: 10px 0;
             font-weight: 700;
             font-size: 30px;
-            color: rgb(112, 112, 112);
+            color: var(--main-gray);
           }
 
           .company {
@@ -80,39 +81,34 @@
           }
         }
 
-        .about-product {
-          span {
-            @include text-style;
-          }
-        }
-
-        .editor-suggestion {
-          span {
-            @include text-style;
-          }
+        .text-info {
+          @include text-style;
         }
 
         .editor-pick {
-          span {
-            @include text-style;
-          }
-
           .hashtag {
             font-size: 16px;
             color: rgb(243, 188, 96);
           }
+
+          span {
+            display: block;
+            margin: 8px 0;
+            font-size: 18px;
+          }
         }
 
         .product-price {
-          .price {
-            color: rgb(129, 129, 129);
-            font-size: 35px;
-            font-weight: 600;
+          span {
+            display: block;
+            margin: 8px 0;
+            color: var(--main-gray);
+            font-size: 15px;
           }
 
-          span {
-            margin: 8px 0;
-            font-size: 15px;
+          .price {
+            font-size: 35px;
+            font-weight: 600;
           }
         }
       }
@@ -122,12 +118,27 @@
       text-align: center;
       margin-top: 30px;
       padding: 20px 10px;
-      border-top: 5px solid rgb(242, 242, 242);
 
       .flavor-card {
         .flavor {
           padding: 0 10px;
-          color: gray;
+          color: var(--main-gray);
+        }
+      }
+
+      .parallax-section {
+        height: 300px;
+        padding: 10px 10px;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: auto 70%;
+        background-position-y: bottom;
+        @include flex-center;
+
+        article {
+          color: white;
+          font-size: 40px;
+          font-weight: 700;
         }
       }
     }
@@ -140,13 +151,12 @@
     .add-to-cart {
       display: inline-block;
       position: sticky;
-      top: 10px;
+      top: 20px;
       width: 280px;
       margin: 40px 20px;
       padding: 20px 15px;
-      box-shadow: 1px 1px 1px 1px rgb(224, 224, 224);
-      border-radius: 10px;
-      border: 1px solid rgb(243, 243, 243);
+      border-radius: 7px;
+      border: 1px solid #dbd9d6;
 
       .opt-header {
         @include aside-label-style;
@@ -220,12 +230,12 @@
 
         .add-cart {
           @include add-btn;
-          background-color: rgb(243, 188, 96);
+          background-color: var(--main-yellow);
         }
 
         .buy-now {
           @include add-btn;
-          background-color: rgb(82, 141, 192);
+          background-color: var(--main-blue);
         }
       }
     }
