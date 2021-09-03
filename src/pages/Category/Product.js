@@ -7,21 +7,18 @@ class Product extends Component {
     return (
       <div className="product">
         <div className="product-image">
-          <img
-            alt="product-image"
-            src="https://sooldamhwa-static-files.s3.ap-northeast-2.amazonaws.com/admin_contents/origin/sd4u-1621826638915-%EB%B3%84%EC%82%B0.jpg"
-          ></img>
+          <img alt="product-image" src={this.props.image}></img>
         </div>
         <div className="product-text">
-          <p className="product-name">별산 막걸리</p>
-          <p className="product-price">27,000원</p>
+          <p className="product-name">{this.props.name}</p>
+          <p className="product-price">{this.props.price}원</p>
           <ul className="product-description">
             <li>#새콤달콤</li>
             <li>#요구르트_같은맛</li>
           </ul>
           <div className="product-review">
             <Reviewstar />
-            <p className="review-rate">4.4평점</p>
+            <p className="review-rate">{this.props.grade}평점</p>
             {/* <p className="review-number">5리뷰</p> */}
           </div>
         </div>

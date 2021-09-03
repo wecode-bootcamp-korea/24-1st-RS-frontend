@@ -7,9 +7,23 @@ import Product from './Product.js';
 import Productlist from './Productlist.js';
 
 export default class Category extends Component {
-  state = {
-    filter: 'name',
-  };
+  constructor() {
+    super();
+    this.state = {
+      filter: 'name',
+      products: [],
+    };
+  }
+
+  componentDidMount() {
+    fetch('http://10.58.1.111:8000/products/list?limit=20&order_by=name')
+      .then(res => res.json())
+      .then(data => {
+        this.setState({
+          products: data.Result,
+        });
+      });
+  }
 
   changeColor = e => {
     this.setState({
@@ -25,7 +39,7 @@ export default class Category extends Component {
         <Maintext />
         <div className="category-product-contents">
           <Filter filter={this.state.filter} changeColor={this.changeColor} />
-          <Productlist />
+          <Productlist products={this.state.products} />
         </div>
       </div>
     );
