@@ -47,7 +47,7 @@
       justify-content: flex-start;
       margin-bottom: 50px;
 
-      button {
+      .gray-btn {
         padding: 5px 15px 5px;
         border-radius: 10px;
         margin-right: 10px;
@@ -62,6 +62,19 @@
           background: var(--main-yellow);
           color: white;
         }
+      }
+
+      .yellow-btn {
+        padding: 5px 15px 5px;
+        border-radius: 10px;
+        margin-right: 10px;
+        border: none;
+        background-color: var(--main-yellow);
+        color: white;
+        text-align: center;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
       }
     }
 

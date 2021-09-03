@@ -15,10 +15,10 @@ class Product extends Component {
         <div className="product-text">
           <p className="product-name">별산 막걸리</p>
           <p className="product-price">27,000원</p>
-          <div className="product-description">
-            <p>#새콤달콤</p>
-            <p>#요구르트_같은맛</p>
-          </div>
+          <ul className="product-description">
+            <li>#새콤달콤</li>
+            <li>#요구르트_같은맛</li>
+          </ul>
           <div className="product-review">
             <Reviewstar />
             <p className="review-rate">4.4평점</p>
