@@ -18,6 +18,10 @@ class Signin extends Component {
   handleLogin = () => {
     fetch(`${signinAPI}/login`, {
       method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: localStorage.getItem('login-token'),
+      },
       body: JSON.stringify({
         email: this.state.email,
         password: this.state.password,
