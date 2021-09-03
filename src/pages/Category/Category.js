@@ -7,6 +7,16 @@ import Product from './Product.js';
 import Productlist from './Productlist.js';
 
 export default class Category extends Component {
+  state = {
+    filter: 'name',
+  };
+
+  changeColor = e => {
+    this.setState({
+      filter: e.target.name,
+    });
+  };
+
   render() {
     return (
       <div className="category">
@@ -14,7 +24,7 @@ export default class Category extends Component {
         <Mainimage />
         <Maintext />
         <div className="category-product-contents">
-          <Filter />
+          <Filter filter={this.state.filter} changeColor={this.changeColor} />
           <Productlist />
         </div>
       </div>
