@@ -1,20 +1,4 @@
-@mixin flex-center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-@mixin link-text {
-  font-weight: bold;
-  font-size: 15px;
-  text-decoration: underline;
-  text-underline-position: under;
-  cursor: pointer;
-}
-
-:root {
-  --main-yellow: rgb(244, 187, 95);
-}
+@import '../../styles/common.scss';
 
 .signin {
   .signin-navbar {
