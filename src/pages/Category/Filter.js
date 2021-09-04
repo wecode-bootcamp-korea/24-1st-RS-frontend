@@ -1,33 +1,21 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import FILTER_BTN_DATA from './filterBtnData.js';
+import FilterBtn from './FilterBtn.js';
 
 class Filter extends Component {
   render() {
     return (
       <div className="filter">
-        <button
-          className={this.props.filter === 'name' ? 'yellow-btn' : 'gray-btn'}
-          onClick={this.props.changeColor}
-          name="name"
-        >
-          이름순
-        </button>
-        <button
-          className={this.props.filter === 'recent' ? 'yellow-btn' : 'gray-btn'}
-          onClick={this.props.changeColor}
-          name="recent"
-        >
-          최신순
-        </button>
-        <button
-          className={
-            this.props.filter === 'popular' ? 'yellow-btn' : 'gray-btn'
-          }
-          onClick={this.props.changeColor}
-          name="popular"
-        >
-          인기순
-        </button>
+        {FILTER_BTN_DATA.map(btn => (
+          <FilterBtn
+            key={btn.id}
+            currentFilter={this.props.filter}
+            filter={btn.filter}
+            text={btn.text}
+            changeFilter={this.props.changeFilter}
+          />
+        ))}
       </div>
     );
   }

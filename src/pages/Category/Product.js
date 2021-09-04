@@ -13,13 +13,17 @@ class Product extends Component {
           <p className="product-name">{this.props.name}</p>
           <p className="product-price">{this.props.price}원</p>
           <ul className="product-description">
-            <li>#새콤달콤</li>
-            <li>#요구르트_같은맛</li>
+            {this.props.hash.map(idx => {
+              return (
+                <li className="product-hash" key={idx}>
+                  {idx.caption}
+                </li>
+              );
+            })}
           </ul>
           <div className="product-review">
             <Reviewstar />
-            <p className="review-rate">{this.props.grade}평점</p>
-            {/* <p className="review-number">5리뷰</p> */}
+            <p className="product-rate">{this.props.grade}평점</p>
           </div>
         </div>
       </div>
