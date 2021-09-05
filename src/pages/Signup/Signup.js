@@ -32,32 +32,6 @@ export default class Signup extends Component {
     })
       .then(response => response.json())
       .then(response => {
-        // if (response.MESSAGE === 'SUCCESS') {
-        //   alert('회원가입이 완료되었습니다!');
-        // }
-
-        // if (response.MESSAGE === 'EMPTY_VALUE_ERROR') {
-        //   alert('회원가입을 위해 모든 값을 입력해주세요.');
-        // }
-
-        // if (response.MESSAGE === 'EMAIL_VALIDATION_ERROR') {
-        //   alert('이메일을 형식에 맞춰 입력해주세요.');
-        // }
-
-        // if (response.MESSAGE === 'DUPLICATION_ERROR') {
-        //   alert('이미 존재하는 회원정보입니다.');
-        // }
-
-        // if (response.MESSAGE === 'PASSWORD_VALIDATION_ERROR') {
-        //   alert(
-        //     '비밀번호를 확인해주세요. 비밀번호는 8자 이상, 문자/숫자/특수문자를 포함해야 합니다.'
-        //   );
-        // }
-
-        // if (response.MESSAGE === 'PASSWORD_DO_NOT_MATCH_ERROR') {
-        //   alert('입력하신 비밀번호가 불일치합니다.');
-        // }
-
         const alertMessages = {
           SUCCESS: '회원가입이 완료되었습니다!',
           EMPTY_VALUE_ERROR: '회원가입을 위해 모든 값을 입력해주세요.',
@@ -82,7 +56,6 @@ export default class Signup extends Component {
   };
 
   render() {
-    console.log(this.state);
     return (
       <div className="signup">
         <div className="signup-navbar"></div>
