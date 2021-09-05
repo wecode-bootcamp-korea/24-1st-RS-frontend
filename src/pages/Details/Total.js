@@ -21,7 +21,7 @@ export default class Total extends Component {
         <div className="total-price-wrapper">
           <label className="opt-header">총 상품가격</label>
           <div className="total-price">
-            <span>{total}</span>
+            <span>{total}&nbsp;원</span>
           </div>
         </div>
       </>

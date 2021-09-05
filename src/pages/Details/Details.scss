@@ -1,244 +1,59 @@
 @import '../../styles/common.scss';
 
-@mixin flex-top {
+@mixin align-center {
   display: flex;
   justify-content: center;
 }
 
-@mixin flex-middle {
+@mixin align-middle {
   display: flex;
   flex-direction: column;
 }
 
-@mixin text-style {
-  margin: 8px 0;
-  font-size: 13px;
-}
-
-@mixin aside-label-style {
-  display: block;
-  margin: 8px 0;
-  color: var(--main-gray);
-  font-size: 17px;
-}
-
-@mixin aside-border-style {
-  width: 240px;
-  height: 45px;
-  padding: 13px 10px;
-  border-radius: 5px;
-  border-color: rgb(224, 224, 224);
-}
-
-@mixin add-btn {
-  display: block;
-  width: 60%;
-  height: 3rem;
-  margin: 10px auto;
-  border-radius: 10px;
-  border: none;
-  color: white;
-  font-size: 16px;
-}
-
 .details-wrapper {
-  @include flex-top;
-
   .product-info {
-    display: inline-block;
-    width: 680px;
-    top: 0;
-    padding: 40px 25px;
-
-    .brief {
+    .product-name {
+      padding: 25px 0;
+      font-size: 2rem;
+      text-align: center;
+    }
+    .rates {
+      padding-bottom: 20px;
+      font-size: 1rem;
+      text-align: center;
+    }
+    .marketing-point {
       @include flex-center;
 
-      img {
-        max-width: 350px;
-        padding: 0 5px;
-        object-fit: cover;
+      .main-img {
+        img {
+          width: 30rem;
+          height: 25rem;
+        }
       }
 
-      .product-summary {
-        @include flex-middle;
+      .quick-info {
+        @include align-middle;
         justify-content: space-between;
-        padding: 20px 10px;
+        width: 30rem;
+        height: 25rem;
+        padding: 10px 40px;
+        font-size: larger;
 
-        .product-name {
-          .product {
-            display: block;
-            margin: 10px 0;
-            font-weight: 700;
-            font-size: 30px;
-            color: var(--main-gray);
-          }
-
-          .company {
-            display: block;
-            margin: 10px 0;
-            font-size: 17px;
-            color: rgb(189, 189, 189);
-          }
-        }
-
-        .text-info {
-          @include text-style;
-        }
-
-        .editor-pick {
-          .hashtag {
-            font-size: 16px;
-            color: rgb(243, 188, 96);
-          }
-
-          span {
-            display: block;
-            margin: 8px 0;
-            font-size: 18px;
-          }
-        }
-
-        .product-price {
-          span {
-            display: block;
-            margin: 8px 0;
-            color: var(--main-gray);
-            font-size: 15px;
-          }
-
-          .price {
-            font-size: 35px;
-            font-weight: 600;
-          }
+        span {
+          display: block;
         }
       }
     }
+  }
 
-    .info-detail-wrapper {
-      text-align: center;
-      margin-top: 30px;
-      padding: 20px 10px;
-
-      .flavor-card {
-        .flavor {
-          padding: 0 10px;
-          color: var(--main-gray);
-        }
-      }
-
-      .parallax-section {
-        height: 300px;
-        padding: 10px 10px;
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-        background-size: auto 70%;
-        background-position-y: bottom;
-        background-image: './back_img.jpeg';
-        @include flex-center;
-
-        article {
-          color: white;
-          font-size: 40px;
-          font-weight: 700;
-        }
-      }
+  .product-description {
+    .facts {
     }
-
-    .recommend-wrapper {
+    .tasting-info {
     }
   }
 
   .aside {
-    .add-to-cart {
-      display: inline-block;
-      position: sticky;
-      top: 20px;
-      width: 280px;
-      margin: 40px 20px;
-      padding: 20px 15px;
-      border-radius: 7px;
-      border: 1px solid #dbd9d6;
-
-      .opt-header {
-        @include aside-label-style;
-        padding: 5px 5px;
-        text-align: end;
-      }
-
-      .options {
-        padding: 0 5px;
-
-        .opt-wrapper {
-          @include aside-border-style;
-        }
-      }
-
-      .amount {
-        padding: 0 5px;
-
-        .select-amount {
-          @include aside-border-style;
-          display: flex;
-          align-items: center;
-          justify-content: space-evenly;
-
-          .amount-count {
-            @include text-style;
-          }
-
-          button {
-            border: none;
-            background-color: transparent;
-            font-size: 25px;
-          }
-        }
-      }
-
-      .total-price-wrapper {
-        padding: 0 5px;
-
-        .total-price {
-          @include aside-border-style;
-          text-align: center;
-        }
-      }
-
-      .shipping-info {
-        font-size: 10px;
-        text-align: end;
-
-        .shipping-info-wrapper {
-          margin: 7px 5px;
-
-          .shipping-to {
-            margin-right: 5px;
-          }
-
-          .shipping-cost {
-            font-weight: 800;
-          }
-        }
-
-        .shipping-info-alert {
-          margin: 30px 5px 5px 5px;
-          text-align: center;
-          font-size: 11px;
-        }
-      }
-
-      .add-to-btn {
-        @include flex-middle;
-
-        .add-cart {
-          @include add-btn;
-          background-color: var(--main-yellow);
-        }
-
-        .buy-now {
-          @include add-btn;
-          background-color: var(--main-blue);
-        }
-      }
-    }
   }
 }

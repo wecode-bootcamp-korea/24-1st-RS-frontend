@@ -33,18 +33,16 @@ export default class AddToCart extends Component {
     const { qty, total } = this.state;
 
     return (
-      <div>
-        <div className="aside">
-          <div className="add-to-cart">
-            <Total
-              quantity={qty}
-              handlePlus={this.handlePlusBtn}
-              handleMinus={this.handleMinusBtn}
-              total={total}
-            />
-            <Shipping />
-            <AddTo />
-          </div>
+      <div className="aside">
+        <div className="add-to-cart">
+          <Total
+            quantity={qty}
+            handlePlus={this.handlePlusBtn}
+            handleMinus={this.handleMinusBtn}
+            total={total}
+          />
+          <Shipping />
+          <AddTo />
         </div>
       </div>
     );
