@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 
-export default class BriefInfo extends Component {
+export default class Brief extends Component {
   render() {
     const {
-      id,
       price,
       size,
       dscr,
@@ -19,7 +18,7 @@ export default class BriefInfo extends Component {
 
     return (
       <div>
-        <div className="brief" key={id}>
+        <div className="brief">
           <img alt="상품 이미지" src={mainImage} />
           <div className="product-summary">
             <div className="product-name">
@@ -59,8 +58,12 @@ export default class BriefInfo extends Component {
               </div>
             </div>
             <div className="editor-pick">
-              {hashtag.map(idx => {
-                return <span className="hashtag">{idx.caption}</span>;
+              {hashtag.map((tag, idx) => {
+                return (
+                  <span className="hashtag" key={idx}>
+                    {tag.caption}
+                  </span>
+                );
               })}
               <span>{dscr}</span>
             </div>
