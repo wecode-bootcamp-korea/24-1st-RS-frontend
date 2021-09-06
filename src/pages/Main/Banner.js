@@ -22,31 +22,29 @@ export default class Banner extends Component {
 
   render() {
     return (
-      <>
-        <div className="banner-section">
+      <div className="banner-section">
+        <div
+          className="banner-img"
+          style={{
+            backgroundImage: `url(${
+              BannerSliderData[this.state.currImg].image
+            })`,
+          }}
+        >
           <div
-            className="banner-img"
-            style={{
-              backgroundImage: `url(${
-                BannerSliderData[this.state.currImg].image
-              })`,
-            }}
-          >
-            <div
-              className="left"
-              onClick={this.state.currImg > 0 && this.handleClickLeft}
-            ></div>
-            <div className="center"></div>
-            <div
-              className="right"
-              onClick={
-                this.state.currImg < BannerSliderData.length - 1 &&
-                this.handleClickRight
-              }
-            ></div>
-          </div>
+            className="left"
+            onClick={this.state.currImg > 0 && this.handleClickLeft}
+          ></div>
+          <div className="center"></div>
+          <div
+            className="right"
+            onClick={
+              this.state.currImg < BannerSliderData.length - 1 &&
+              this.handleClickRight
+            }
+          ></div>
         </div>
-      </>
+      </div>
     );
   }
 }
