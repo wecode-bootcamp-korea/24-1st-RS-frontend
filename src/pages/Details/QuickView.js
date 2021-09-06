@@ -1,5 +1,6 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import Features from './Features';
+import SideDishes from './SideDishes';
 
 export default class QuickView extends Component {
   constructor(props) {
@@ -7,6 +8,7 @@ export default class QuickView extends Component {
 
     this.state = {
       threePoints: [],
+      sideDishes: [],
     };
   }
 
@@ -14,17 +16,21 @@ export default class QuickView extends Component {
     fetch('/data/DetailPoint.json')
       .then(res => res.json())
       .then(res => this.setState({ threePoints: res.Result }));
+
+    fetch('/data/DetailSides.json')
+      .then(res => res.json())
+      .then(res => this.setState({ sideDishes: res.Result }));
   }
 
   render() {
     const { infoList, hashtag, awards } = this.props;
-    const { threePoints } = this.state;
+    const { threePoints, sideDishes } = this.state;
 
     return (
-      <div className="product-info">
+      <div className="quick-view">
         {infoList.map(product => {
           return (
-            <>
+            <Fragment key={product.id}>
               <div className="product-name">{product.name}</div>
               <div className="rates">평점: {product.grade}</div>
               <div className="marketing-point">
@@ -35,29 +41,32 @@ export default class QuickView extends Component {
                   <div className="tags">
                     {hashtag.map((tag, idx) => {
                       return (
-                        <span className="hashtag" key={idx}>
-                          {tag.caption}
-                        </span>
+                        <Fragment>
+                          <span>{tag.caption}</span>
+                        </Fragment>
                       );
                     })}
-                    <span># {awards}</span>
+                    <span className="awards"># {awards}</span>
                   </div>
-                  {threePoints.map(feature => {
+                  {threePoints.map((feature, idx) => {
                     return (
-                      <Features
-                        flavor={feature.point_flavor}
-                        story={feature.point_story}
-                        side={feature.point_side}
-                      />
+                      <Fragment key={idx}>
+                        <Features
+                          flavor={feature.point_flavor}
+                          story={feature.point_story}
+                          side={feature.point_side}
+                        />
+                      </Fragment>
                     );
                   })}
+                  <SideDishes dishes={sideDishes} />
                   <div className="product-price">
-                    <label className="price-info">판매금액</label>
-                    <span>{product.price}</span>
+                    <label className="price-info">판매금액 </label>
+                    <span className="price">{product.price}원</span>
                   </div>
                 </div>
               </div>
-            </>
+            </Fragment>
           );
         })}
       </div>

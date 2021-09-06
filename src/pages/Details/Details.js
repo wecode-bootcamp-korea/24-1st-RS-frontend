@@ -1,9 +1,10 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import './Details.scss';
 
 import AddToCart from './AddToCart';
 import QuickView from './QuickView';
-import Flavor from './Flavor';
+import MainDescription from './MainDescription';
+import Tasting from './Tasting';
 
 export default class Details extends Component {
   constructor(props) {
@@ -26,13 +27,14 @@ export default class Details extends Component {
   }
 
   render() {
-    const { infoList } = this.state;
+    const { infoList, flavorList } = this.state;
 
     return (
       <div className="details-wrapper">
         {infoList.map(product => {
           return (
             <QuickView
+              key={product.id}
               infoList={infoList}
               hashtag={product.hash}
               awards={product.awards}
@@ -40,12 +42,24 @@ export default class Details extends Component {
           );
         })}
         <div className="product-description">
-          <div className="facts"></div>
-          <div className="tasting-info"></div>
+          {infoList.map(product => {
+            return (
+              <Fragment key={product.id}>
+                <div>
+                  <MainDescription
+                    category={product.category_name}
+                    degree={product.dgree}
+                    ml={product.ml}
+                    expireDate={product.expire_date}
+                    keep={product.keep}
+                  />
+                  <Tasting flavorList={flavorList} />
+                </div>
+                <AddToCart price={product.price} key={product.id} />
+              </Fragment>
+            );
+          })}
         </div>
-        {/* {infoList.map(product => {
-          return <AddToCart price={product.price} key={product.id} />;
-        })} */}
       </div>
     );
   }
