@@ -5,6 +5,7 @@ import MainText from './Maintext';
 import Filter from './Filter';
 import Product from './Product.js';
 import ProductList from './Productlist.js';
+import categoryAPI from '../../config.js';
 
 export default class Category extends Component {
   constructor() {
@@ -19,7 +20,7 @@ export default class Category extends Component {
 
   componentDidMount() {
     fetch(
-      `http://211.110.167.131:8000/products/list?limit=5&order-by=${this.state.filter}&category=${this.state.category_name}`
+      `${categoryAPI}/list?limit=20&order-by=${this.state.filter}&category=${this.state.category_name}`
     )
       .then(res => res.json())
       .then(data => {
@@ -28,9 +29,7 @@ export default class Category extends Component {
         });
       });
 
-    fetch(
-      `http://211.110.167.131:8000/products/category/${this.state.category_name}`
-    )
+    fetch(`${categoryAPI}/products/category/${this.state.category_name}`)
       .then(res => res.json())
       .then(data => {
         this.setState({
@@ -42,7 +41,7 @@ export default class Category extends Component {
   componentDidUpdate(prevProps, prevState) {
     this.state.filter !== prevState.filter &&
       fetch(
-        `http://211.110.167.131:8000/products/list?limit=5&order-by=${this.state.filter}&category=${this.state.category_name}`
+        `${categoryAPI}/list?limit=20&order-by=${this.state.filter}&category=${this.state.category_name}`
       )
         .then(res => res.json())
         .then(data => {
@@ -52,7 +51,7 @@ export default class Category extends Component {
         });
   }
 
-  changeFilter = e => {
+  handleFilter = e => {
     this.setState({
       filter: e,
     });
@@ -65,8 +64,12 @@ export default class Category extends Component {
         <MainImage main={this.state.main} />
         <MainText main={this.state.main} />
         <div className="category-product-contents">
-          <Filter filter={this.state.filter} changeFilter={this.changeFilter} />
-          <ProductList products={this.state.products} />
+          <Filter filter={this.state.filter} handleFilter={this.handleFilter} />
+          <ProductList
+            products={this.state.products}
+            EnterProduct={this.EnterProduct}
+            LeaveProduct={this.LeaveProduct}
+          />
         </div>
       </div>
     );

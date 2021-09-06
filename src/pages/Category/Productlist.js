@@ -15,6 +15,8 @@ class ProductList extends Component {
               price={product.price}
               hash={product.hash}
               grade={product.grade}
+              side_dish={product.side_dish}
+              dgree={product.dgree}
             />
           );
         })}

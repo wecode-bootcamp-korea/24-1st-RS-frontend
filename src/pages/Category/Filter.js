@@ -13,7 +13,7 @@ class Filter extends Component {
             currentFilter={this.props.filter}
             filter={btn.filter}
             text={btn.text}
-            changeFilter={this.props.changeFilter}
+            handleFilter={this.props.handleFilter}
           />
         ))}
       </div>

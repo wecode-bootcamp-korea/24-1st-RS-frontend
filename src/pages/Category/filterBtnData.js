@@ -18,7 +18,22 @@ const FILTER_BTN_DATA = [
   {
     id: 4,
     filter: 'price',
-    text: '가격순',
+    text: '낮은 가격순',
+  },
+  {
+    id: 5,
+    filter: '-price',
+    text: '높은 가격순',
+  },
+  {
+    id: 6,
+    filter: 'dgree',
+    text: '낮은 도수순',
+  },
+  {
+    id: 7,
+    filter: '-dgree',
+    text: '높은 도수순',
   },
 ];
 

@@ -7,7 +7,29 @@ class Product extends Component {
     return (
       <div className="product">
         <div className="product-image">
-          <img alt="product-image" src={this.props.image}></img>
+          <img alt="product-image" src={this.props.image} />
+          <div className="product-back">
+            <div className="product-back-contents">
+              <p className="product-back-degree">#도수는_{this.props.dgree}</p>
+              <p className="product-back-side-dish">#함께_즐기면_더_좋아요</p>
+              <div className="product-back-side-dish-wrap">
+                {this.props.side_dish.map(idx => {
+                  return (
+                    <div className="product-back-side-dish-list">
+                      <img
+                        alt="side-dish-image"
+                        key={idx}
+                        src={idx.image_url}
+                      />
+                      <span className="side-dish-text" key={idx}>
+                        {idx.name}
+                      </span>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          </div>
         </div>
         <div className="product-text">
           <p className="product-name">{this.props.name}</p>

@@ -10,7 +10,7 @@ class FilterBtn extends Component {
             : 'gray-btn filter-btn'
         }
         onClick={e => {
-          this.props.changeFilter(e.currentTarget.id);
+          this.props.handleFilter(e.currentTarget.id);
         }}
         id={this.props.filter}
       >
