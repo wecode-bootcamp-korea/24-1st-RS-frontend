@@ -17,14 +17,12 @@ export default class Main extends Component {
   }
 
   componentDidMount() {
-    console.log('cond start');
     fetch('/data/Maintest.json')
       .then(response => response.json())
       .then(data => this.setState({ products: data.Result }));
   }
 
   render() {
-    console.log(this.state.products);
     return (
       <>
         <Nav />

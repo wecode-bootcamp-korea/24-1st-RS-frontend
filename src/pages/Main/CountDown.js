@@ -41,7 +41,6 @@ class CountDown extends React.Component {
 
   updateStorage = () => {
     localStorage.setItem('time', JSON.stringify(this.myInterval));
-    console.log(localStorage);
   };
 
   render() {

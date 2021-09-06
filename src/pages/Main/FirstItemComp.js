@@ -1,10 +1,9 @@
-import React, { Component } from 'react';
+import React from 'react';
 import ReviewStar from './ReviewStar';
 import './BestItem.scss';
 import './FirstItem';
 
-export const FirstItem2 = props => {
-  console.log('FirstItem2 :', props);
+export const FirstItemComp = props => {
   const { image, name, price, hash, grade } = props.product;
   return (
     <>

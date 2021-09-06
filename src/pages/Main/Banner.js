@@ -1,8 +1,5 @@
 import React, { Component } from 'react';
 import { BannerSliderData } from './BannerSliderData';
-//import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
-//import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
-//import ArrowBackIos from '@material-ui/icons/ArrowBackIos';
 export default class Banner extends Component {
   constructor() {
     super();
@@ -38,9 +35,7 @@ export default class Banner extends Component {
             <div
               className="left"
               onClick={this.state.currImg > 0 && this.handleClickLeft}
-            >
-              {/*<ArrowBackIosIcon />*/}
-            </div>
+            ></div>
             <div className="center"></div>
             <div
               className="right"
@@ -48,16 +43,7 @@ export default class Banner extends Component {
                 this.state.currImg < BannerSliderData.length - 1 &&
                 this.handleClickRight
               }
-            >
-              {/*<ArrowForwardIosIcon />*/}
-            </div>
-            {/*{BannerSliderData.map((img, idx) => {
-            return  <img
-            alt="banner-img"
-            className="banner-img"
-            src={img.image}
-          />
-          })*/}
+            ></div>
           </div>
         </div>
       </>

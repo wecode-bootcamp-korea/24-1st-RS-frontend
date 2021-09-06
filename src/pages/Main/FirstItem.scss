@@ -36,17 +36,6 @@ $i: 1;
     box-sizing: border-box;
     border-radius: 30px solid;
 
-    .first-item-card-wrapper-clicked-right {
-      display: flex;
-      transition: 0.7s ease-in-out;
-      transform: translateX(-10%);
-    }
-
-    .fist-item-card-wrapper-clicked-left {
-      display: flex;
-      transform: translateX(-10%);
-    }
-
     .first-item-card-wrapper {
       display: flex;
       //overflow: hidden;
@@ -103,4 +92,15 @@ $i: 1;
       }
     }
   }
+}
+
+.first-item-card-wrapper-clicked-right {
+  display: flex;
+  transition: 0.7s ease-in-out;
+  transform: translateX(-10%);
+}
+
+.fist-item-card-wrapper-clicked-left {
+  display: flex;
+  transform: translateX(-10%);
 }
