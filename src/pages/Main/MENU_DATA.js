@@ -1,4 +1,4 @@
-const MenuData = [
+const MENU_DATA = [
   {
     alt: 'menu1',
     image: '/images/Main/takjuImg.ec40a4eb.png',
@@ -8,8 +8,8 @@ const MenuData = [
   {
     alt: 'menu2',
     image: '/images/Main/chungjuImg.dee3ee7e.png',
-    title: '약·청주',
-    name: '약·청주',
+    title: '약주,청주',
+    name: '약주,청주',
   },
   {
     alt: 'menu3',
@@ -25,4 +25,4 @@ const MenuData = [
   },
 ];
 
-export default MenuData;
+export default MENU_DATA;

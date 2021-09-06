@@ -1,21 +1,13 @@
 import React, { Component } from 'react';
 import MenuDetail2 from './MenuDetail2';
-import MenuData from './MenuData';
+import MENU_DATA from './MENU_DATA';
 
 export default class Menu extends Component {
   render() {
     return (
       <section className="menu-bar">
-        {MenuData.map((menu, idx) => {
-          return (
-            <MenuDetail2
-              key={idx}
-              MenuDataName={menu.name}
-              MenuDataAlt={menu.alt}
-              MenuDataImg={menu.image}
-              MenuDataTitle={menu.title}
-            />
-          );
+        {MENU_DATA.map((menu, idx) => {
+          return <MenuDetail2 key={idx} Menu={menu} />;
         })}
       </section>
     );

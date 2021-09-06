@@ -1,17 +1,27 @@
 import React, { Component } from 'react';
+import { withRouter } from 'react-router-dom';
 
-export default class MenuDetail2 extends Component {
+class MenuDetail2 extends Component {
+  goToCatergory = () => {
+    this.props.history.push(`/category/${this.props.Menu.name}`);
+  };
+
   render() {
+    const { alt, image, title, name } = this.props.Menu;
     return (
       <div className="menu">
         <img
-          alt={this.props.MenuDataAlt}
+          alt={alt}
           className="menu-image"
-          src={this.props.MenuDataImg}
-          title={this.props.MenuDataTitle}
+          src={image}
+          title={title}
+          onClick={this.goToCatergory}
+          name={name}
         />
-        <label className="category-name">{this.props.MenuDataName}</label>
+        <label className="category-name">{name}</label>
       </div>
     );
   }
 }
+
+export default withRouter(MenuDetail2);
