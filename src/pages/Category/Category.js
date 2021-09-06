@@ -18,45 +18,42 @@ export default class Category extends Component {
     };
   }
 
-  componentDidMount() {
-    fetch(
-      `${categoryAPI}/products/list?limit=20&order-by=${this.state.filter}&category=${this.state.category_name}`
-    )
-      .then(res => res.json())
-      .then(data => {
-        this.setState({
-          products: data.Result,
-        });
-      });
-
-    fetch(`${categoryAPI}/products/category/${this.state.category_name}`)
-      .then(res => res.json())
-      .then(data => {
-        this.setState({
-          main: data.Result,
-        });
-      });
-  }
-
-  componentDidUpdate(prevProps, prevState) {
-    if (this.state.filter !== prevState.filter) {
-      fetch(
-        `${categoryAPI}/products/list?limit=20&order-by=${this.state.filter}&category=${this.state.category_name}`
-      )
-        .then(res => res.json())
-        .then(data => {
-          this.setState({
-            products: data.Result,
-          });
-        });
-    }
-  }
-
   handleFilter = e => {
     this.setState({
       filter: e,
     });
   };
+
+  handleFetch = (API, statename) => {
+    fetch(API)
+      .then(res => res.json())
+      .then(data => {
+        this.setState({
+          [statename]: data.Result,
+        });
+      });
+  };
+
+  componentDidMount() {
+    this.handleFetch(
+      `${categoryAPI}/products/list?limit=20&order-by=${this.state.filter}&category=${this.state.category_name}`,
+      'products'
+    );
+
+    this.handleFetch(
+      `${categoryAPI}/products/category/${this.state.category_name}`,
+      'main'
+    );
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    if (this.state.filter !== prevState.filter) {
+      this.handleFetch(
+        `${categoryAPI}/products/list?limit=20&order-by=${this.state.filter}&category=${this.state.category_name}`,
+        'products'
+      );
+    }
+  }
 
   render() {
     return (

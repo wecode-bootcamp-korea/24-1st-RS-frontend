@@ -2,19 +2,19 @@ import React, { Component } from 'react';
 
 class FilterBtn extends Component {
   render() {
+    const { currentFilter, filter, handleFilter, text } = this.props;
+
     return (
       <button
-        className={
-          this.props.currentFilter === `${this.props.filter}`
-            ? 'yellow-btn filter-btn'
-            : 'gray-btn filter-btn'
-        }
+        className={`filter-btn ${
+          currentFilter === filter ? 'yellow-btn' : 'gray-btn'
+        }`}
         onClick={e => {
-          this.props.handleFilter(e.currentTarget.id);
+          handleFilter(e.currentTarget.id);
         }}
-        id={this.props.filter}
+        id={filter}
       >
-        {this.props.text}
+        {text}
       </button>
     );
   }
