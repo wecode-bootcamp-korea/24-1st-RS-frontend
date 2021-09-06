@@ -122,22 +122,13 @@
               }
             }
 
-            @-webkit-keyframes fadein {
-              from {
-                opacity: 0;
-              }
-              to {
-                opacity: 0.75;
-              }
-            }
-
             .product-back-contents {
-              margin-top: 10px;
               display: flex;
               flex-direction: column;
+              margin-top: 10px;
+              margin-left: 20px;
               font-size: 15px;
               font-weight: bold;
-              text-align: center;
 
               .product-back-side-dish {
                 color: var(--main-yellow);
@@ -148,7 +139,6 @@
                 flex-direction: column;
                 justify-content: space-around;
                 align-items: flex-start;
-                margin-left: 20px;
 
                 .product-back-side-dish-list {
                   margin-top: 10px;

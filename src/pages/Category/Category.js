@@ -5,7 +5,7 @@ import MainText from './Maintext';
 import Filter from './Filter';
 import Product from './Product.js';
 import ProductList from './Productlist.js';
-import categoryAPI from '../../config.js';
+import { categoryAPI } from '../../config.js';
 
 export default class Category extends Component {
   constructor() {
@@ -20,7 +20,7 @@ export default class Category extends Component {
 
   componentDidMount() {
     fetch(
-      `${categoryAPI}/list?limit=20&order-by=${this.state.filter}&category=${this.state.category_name}`
+      `${categoryAPI}/products/list?limit=20&order-by=${this.state.filter}&category=${this.state.category_name}`
     )
       .then(res => res.json())
       .then(data => {
@@ -39,9 +39,9 @@ export default class Category extends Component {
   }
 
   componentDidUpdate(prevProps, prevState) {
-    this.state.filter !== prevState.filter &&
+    if (this.state.filter !== prevState.filter) {
       fetch(
-        `${categoryAPI}/list?limit=20&order-by=${this.state.filter}&category=${this.state.category_name}`
+        `${categoryAPI}/products/list?limit=20&order-by=${this.state.filter}&category=${this.state.category_name}`
       )
         .then(res => res.json())
         .then(data => {
@@ -49,6 +49,7 @@ export default class Category extends Component {
             products: data.Result,
           });
         });
+    }
   }
 
   handleFilter = e => {
