@@ -43,14 +43,14 @@
 
     .best-seller-card-wrapper {
       display: flex;
-      //width: 765px;
+      width: 100%;
       // height: 489.8px;
 
       .best-seller-card {
         //width: 240px;
         // height: 304px;
-        margin-right: 15px;
-        box-shadow: rgb(0, 0, 0 / 16%) 0px 0px 5px 0px;
+        border: lightgray 0.2px solid;
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 0px 5px 0px;
 
         .best-seller-img {
           width: 240px;

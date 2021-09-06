@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import MenuDetail from './MenuDetail';
 import MenuDetail2 from './MenuDetail2';
 import MenuData from './MenuData';
 

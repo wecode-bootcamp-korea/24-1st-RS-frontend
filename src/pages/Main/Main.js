@@ -1,30 +1,30 @@
 import React, { Component } from 'react';
-
-import { CardList } from './Card-list';
-import Clock from './Clock';
 import CountDown from './CountDown';
 import Nav from '../../components/Nav/Nav';
 import Menu from './Menu';
 import Banner from './Banner';
 import './Main.scss';
-import BestItem from './BestItem';
-import NewItem from './NewItem';
+import BestItemComp from './BestItemComp';
+import NewItemComp from './NewItemComp';
+import FirstItem from './FirstItem';
 
 export default class Main extends Component {
   constructor() {
     super();
     this.state = {
-      monsters: [],
+      products: [],
     };
   }
 
   componentDidMount() {
-    fetch('https://jsonplaceholder.typicode.com/users')
+    console.log('cond start');
+    fetch('/data/Maintest.json')
       .then(response => response.json())
-      .then(users => this.setState({ monsters: users }));
+      .then(data => this.setState({ products: data.Result }));
   }
 
   render() {
+    console.log(this.state.products);
     return (
       <>
         <Nav />
@@ -37,7 +37,7 @@ export default class Main extends Component {
         </div>
         <Banner />
         <Menu />
-        <CardList monsters={this.state.monsters} />
+        <FirstItem products={this.state.products} />
         <div className="time-section">
           <div className="product-img-wrapper">
             <img
@@ -58,9 +58,8 @@ export default class Main extends Component {
             </div>
           </div>
         </div>
-
-        <BestItem />
-        <NewItem />
+        <BestItemComp />
+        <NewItemComp />
       </>
     );
   }
