@@ -7,7 +7,6 @@ export default class AddToCart extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      total: 0,
       qty: 0,
     };
   }
@@ -30,7 +29,8 @@ export default class AddToCart extends Component {
   };
 
   render() {
-    const { qty, total } = this.state;
+    const { qty } = this.state;
+    const { price } = this.props;
 
     return (
       <div className="aside">
@@ -39,7 +39,6 @@ export default class AddToCart extends Component {
             quantity={qty}
             handlePlus={this.handlePlusBtn}
             handleMinus={this.handleMinusBtn}
-            total={total}
           />
           <Shipping />
           <AddTo />

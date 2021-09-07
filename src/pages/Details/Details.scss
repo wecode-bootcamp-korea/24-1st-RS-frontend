@@ -289,12 +289,10 @@
           }
         }
 
-        .total-price-wrapper {
-          .total-price {
-            @include aside-border-style;
-            text-align: center;
-            @include text-h4;
-          }
+        .total-price {
+          @include aside-border-style;
+          text-align: center;
+          @include text-h4;
         }
 
         .shipping-info {

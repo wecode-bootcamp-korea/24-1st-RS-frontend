@@ -40,23 +40,17 @@ export default class QuickView extends Component {
                 <div className="quick-info">
                   <div className="tags">
                     {hashtag.map((tag, idx) => {
-                      return (
-                        <Fragment>
-                          <span>{tag.caption}</span>
-                        </Fragment>
-                      );
+                      return <span>{tag.caption}</span>;
                     })}
                     <span className="awards"># {awards}</span>
                   </div>
                   {threePoints.map((feature, idx) => {
                     return (
-                      <Fragment key={idx}>
-                        <Features
-                          flavor={feature.point_flavor}
-                          story={feature.point_story}
-                          side={feature.point_side}
-                        />
-                      </Fragment>
+                      <Features
+                        flavor={feature.point_flavor}
+                        story={feature.point_story}
+                        side={feature.point_side}
+                      />
                     );
                   })}
                   <SideDishes dishes={sideDishes} />
