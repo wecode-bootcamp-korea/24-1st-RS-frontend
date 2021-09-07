@@ -3,6 +3,7 @@ import './Category.scss';
 import MainImage from './Mainimage';
 import MainText from './Maintext';
 import Filter from './Filter';
+import Footer from '../../components/Footer/Footer';
 import Product from './Product.js';
 import ProductList from './Productlist.js';
 import { categoryAPI } from '../../config.js';
@@ -57,19 +58,25 @@ export default class Category extends Component {
 
   render() {
     return (
-      <div className="category">
-        <div className="nav-bar" />
-        <MainImage main={this.state.main} />
-        <MainText main={this.state.main} />
-        <div className="category-product-contents">
-          <Filter filter={this.state.filter} handleFilter={this.handleFilter} />
-          <ProductList
-            products={this.state.products}
-            EnterProduct={this.EnterProduct}
-            LeaveProduct={this.LeaveProduct}
-          />
+      <>
+        <div className="category">
+          <div className="nav-bar" />
+          <MainImage main={this.state.main} />
+          <MainText main={this.state.main} />
+          <div className="category-product-contents">
+            <Filter
+              filter={this.state.filter}
+              handleFilter={this.handleFilter}
+            />
+            <ProductList
+              products={this.state.products}
+              EnterProduct={this.EnterProduct}
+              LeaveProduct={this.LeaveProduct}
+            />
+          </div>
         </div>
-      </div>
+        <Footer />
+      </>
     );
   }
 }
