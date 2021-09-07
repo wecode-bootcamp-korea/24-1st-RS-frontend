@@ -11,7 +11,7 @@ export default class Banner extends Component {
 
   handleClickLeft = () => {
     this.setState({
-      currImg: this.state.currImg - 1 > 0,
+      currImg: this.state.currImg - 1,
     });
   };
 
@@ -37,12 +37,16 @@ export default class Banner extends Component {
             className="left"
             onClick={this.state.currImg > 0 && this.handleClickLeft}
           >
-            <img alt="left-arrow" src="/images/Main/left-arrow.svg" />
+            <img
+              className="left-arrow arrow"
+              alt="left-arrow"
+              src="/images/Main/left-arrow.svg"
+            />
           </div>
           <div className="center"></div>
           <div className="right" onClick={this.handleClickRight}>
             <img
-              className="right-arrow"
+              className="right-arrow arrow"
               alt="right-arrow"
               src="/images/Main/left-arrow.svg"
             />
