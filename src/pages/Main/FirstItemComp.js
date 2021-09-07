@@ -12,8 +12,12 @@ export const FirstItemComp = props => {
         <div className="desc-wrapper">
           <p className="product-name">{name}</p>
           <p className="product-price">{price}원</p>
-          {hash.map(desc => {
-            return <p className="hash">{desc.caption}</p>;
+          {hash.map((desc, idx) => {
+            return (
+              <p className="hash" key={idx}>
+                {desc.caption}
+              </p>
+            );
           })}
         </div>
         <div className="rating-section">

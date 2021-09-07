@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { BannerSliderData } from './BannerSliderData';
+
 export default class Banner extends Component {
   constructor() {
     super();
@@ -10,14 +11,15 @@ export default class Banner extends Component {
 
   handleClickLeft = () => {
     this.setState({
-      currImg: this.state.currImg - 1,
+      currImg: this.state.currImg - 1 > 0,
     });
   };
 
   handleClickRight = () => {
-    this.setState({
-      currImg: this.state.currImg + 1,
-    });
+    this.state.currImg < BannerSliderData.length - 1 &&
+      this.setState({
+        currImg: this.state.currImg + 1,
+      });
   };
 
   render() {
@@ -34,15 +36,17 @@ export default class Banner extends Component {
           <div
             className="left"
             onClick={this.state.currImg > 0 && this.handleClickLeft}
-          ></div>
+          >
+            <img alt="left-arrow" src="/images/Main/left-arrow.svg" />
+          </div>
           <div className="center"></div>
-          <div
-            className="right"
-            onClick={
-              this.state.currImg < BannerSliderData.length - 1 &&
-              this.handleClickRight
-            }
-          ></div>
+          <div className="right" onClick={this.handleClickRight}>
+            <img
+              className="right-arrow"
+              alt="right-arrow"
+              src="/images/Main/left-arrow.svg"
+            />
+          </div>
         </div>
       </div>
     );

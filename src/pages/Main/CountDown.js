@@ -4,7 +4,7 @@ class CountDown extends React.Component {
   constructor() {
     super();
     this.state = {
-      hours: 80,
+      hours: 50,
       minutes: 0,
       seconds: 0,
     };
@@ -28,9 +28,10 @@ class CountDown extends React.Component {
           if (this.state.hours === 0) {
             clearInterval(this.myInterval);
           } else {
-            this.setState({ hours: this.state.hours - 1 }, this.updateStorage);
-            this.setState({ minutes: 59 }, this.updateStorage);
-            this.setState({ seconds: 59 }, this.updateStorage);
+            this.setState(
+              { hours: this.state.hours - 1, minutes: 59, seconds: 59 },
+              this.updateStorage
+            );
           }
         }
       }

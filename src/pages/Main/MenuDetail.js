@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 
-class MenuDetail2 extends Component {
+class MenuDetail extends Component {
   goToCatergory = () => {
     this.props.history.push(`/category/${this.props.Menu.name}`);
   };
@@ -24,4 +24,4 @@ class MenuDetail2 extends Component {
   }
 }
 
-export default withRouter(MenuDetail2);
+export default withRouter(MenuDetail);

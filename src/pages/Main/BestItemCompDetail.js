@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import ReviewStar from './ReviewStar';
 import './BestItem.scss';
 
-export default class BestItemComp2 extends Component {
+export default class BestItemCompDetail extends Component {
   render() {
     const { img, name, price, rating, description } = this.props.Product;
     return (

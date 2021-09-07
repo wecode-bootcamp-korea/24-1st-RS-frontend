@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { FirstItemComp } from './FirstItemComp';
-import './BestItem.scss';
 import './FirstItem.scss';
 
 export default class FirstItem extends Component {
@@ -8,49 +7,32 @@ export default class FirstItem extends Component {
     super();
     this.state = {
       currImg: false,
-      transform: 'translateX(0)',
-      x: 1,
-      initial: 0,
-      amount: 100,
+      x: 0,
     };
   }
 
   handleClickedLeft = () => {
     this.setState({
-      x: this.state.x + 240,
+      x: this.state.x + 242,
     });
+    console.log('left', this.state.x);
   };
 
   handleClickedRight = () => {
     this.setState({
-      x: this.state.x - 240,
+      x: this.state.x - 242,
     });
+    console.log('right', this.state.x);
   };
-
-  handleTest = () => {
-    this.setState({
-      transform: `translateX(${(this.state.initial += this.state.amount)}px)`,
-    });
-  };
-
-  /*handleLeftClick = () => {
-    this.setState({
-      currImg: false,
-      x: 10,
-    });
-  };
-
-  handleRightClick = () => {
-    this.setState({
-      currImg: true,
-      x: -10,
-    });
-  };*/
-
   render() {
     /*let btn_class = this.state.currImg
       ? 'first-item-card-wrapper-clicked-right'
       : 'first-item-card-wrapper';*/
+    console.log('length', this.props.products.length);
+    const productlength = this.props.products.length;
+    const imglength = 242;
+    const boxlength = 2420;
+    const containerlength = this.boxlength - 968;
 
     return (
       <div className="first-item-wrapper">
@@ -72,7 +54,7 @@ export default class FirstItem extends Component {
         </div>
         <img
           onClick={
-            this.state.x < this.props.products.length - 1 &&
+            this.state.x < Math.abs((this.props.products.length - 5) * -242) &&
             this.handleClickedRight
           }
           className="arrow-icons-right"

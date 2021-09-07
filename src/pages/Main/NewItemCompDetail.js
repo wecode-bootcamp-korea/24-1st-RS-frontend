@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import ReviewStar from './ReviewStar';
 import './NewItem.scss';
 
-export default class NewItemComp2 extends Component {
+export default class NewItemCompDetail extends Component {
   render() {
     const { img, name, price, rating, description } = this.props.Product;
     return (

@@ -13,24 +13,22 @@ class Nav extends Component {
 
   render() {
     return (
-      <>
-        <header className="header">
-          <img
-            alt="logo-img"
-            className="logo-img"
-            src="/images/Main/logoimg.png"
-          />
+      <header className="header">
+        <img
+          alt="logo-img"
+          className="logo-img"
+          src="/images/Main/logoimg.png"
+        />
 
-          <div className="sign-group">
-            <p className="login-btn" onClick={this.goToSignIn}>
-              로그인
-            </p>
-            <p className="signup-btn" onClick={this.goToSignUp}>
-              회원가입
-            </p>
-          </div>
-        </header>
-      </>
+        <div className="sign-group">
+          <p className="login-btn" onClick={this.goToSignIn}>
+            로그인
+          </p>
+          <p className="signup-btn" onClick={this.goToSignUp}>
+            회원가입
+          </p>
+        </div>
+      </header>
     );
   }
 }

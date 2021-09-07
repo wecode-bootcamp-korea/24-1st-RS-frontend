@@ -3,10 +3,10 @@ import CountDown from './CountDown';
 import Nav from '../../components/Nav/Nav';
 import Menu from './Menu';
 import Banner from './Banner';
-import './Main.scss';
 import BestItemComp from './BestItemComp';
 import NewItemComp from './NewItemComp';
 import FirstItem from './FirstItem';
+import './Main.scss';
 
 export default class Main extends Component {
   constructor() {
