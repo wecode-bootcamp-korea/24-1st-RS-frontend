@@ -2,7 +2,7 @@ import React from 'react';
 import ReviewStar from './ReviewStar';
 import './BestItem.scss';
 
-export const FirstItemComp = props => {
+export const ProductsCard = props => {
   const { image, name, price, hash, grade } = props.product;
   return (
     <div className="first-item-card">

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { FirstItemComp } from './FirstItemComp';
-import './FirstItem.scss';
+import { ProductsCard } from './ProductsCard';
+import './Recommendations.scss';
 import FIRST_ITEM_DATA from './FIRST_ITEM_DATA';
 
 const CARD_WIDTH = 242;
@@ -11,12 +11,11 @@ export default class Recommendation extends Component {
   constructor() {
     super();
     this.state = {
-      //currImg: false,
       currentOffsetX: 0,
     };
   }
 
-  handleClickedLeft = () => {
+  ClickLeftArrow = () => {
     const { currentOffsetX } = this.state;
 
     if (currentOffsetX < 0) {
@@ -26,11 +25,11 @@ export default class Recommendation extends Component {
     }
   };
 
-  handleClickedRight = () => {
+  ClickRightArrow = () => {
     const { currentOffsetX } = this.state;
     const { products } = this.props;
 
-    if (currentOffsetX < products.length * CARD_WIDTH) {
+    if (currentOffsetX > (products.length - 4) * -CARD_WIDTH) {
       this.setState({
         currentOffsetX: currentOffsetX - CARD_WIDTH,
       });
@@ -44,7 +43,7 @@ export default class Recommendation extends Component {
     return (
       <div className="first-item-wrapper">
         <img
-          onClick={this.handleClickedLeft}
+          onClick={this.ClickLeftArrow}
           className="arrow-icons-left"
           alt="left-arrow"
           src={prevBtn}
@@ -55,12 +54,12 @@ export default class Recommendation extends Component {
             style={{ transform: `translateX(${currentOffsetX}px)` }}
           >
             {products.map(product => {
-              return <FirstItemComp key={product.id} product={product} />;
+              return <ProductsCard key={product.id} product={product} />;
             })}
           </div>
         </div>
         <img
-          onClick={this.handleClickedRight}
+          onClick={this.ClickRightArrow}
           className="arrow-icons-right"
           alt="right-arrow"
           src={nextBtn}

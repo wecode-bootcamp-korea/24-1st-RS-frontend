@@ -6,7 +6,6 @@ import Banner from './Banner';
 import BestItemComp from './BestItemComp';
 import NewItemComp from './NewItemComp';
 import Recommendation from './Recommendation';
-import Footer from '../../components/Footer/Footer';
 import './Main.scss';
 
 export default class Main extends Component {
