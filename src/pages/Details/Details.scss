@@ -41,24 +41,29 @@
 }
 
 @mixin text-h2 {
-  font-size: 2.3rem;
+  font-size: 2.6rem;
   font-weight: 600;
 }
 
 @mixin text-h3 {
-  font-size: 1.5rem;
+  font-size: 2.3rem;
+  font-weight: 600;
 }
 
 @mixin text-h4 {
+  font-size: 1.5rem;
+}
+
+@mixin text-h5 {
   font-size: 1.3rem;
   font-weight: 400;
 }
 
-@mixin text-h5 {
+@mixin text-h6 {
   font-size: 1rem;
 }
 
-@mixin text-h6 {
+@mixin text-h7 {
   font-size: 0.7rem;
 }
 
@@ -73,7 +78,7 @@
     }
     .rates {
       padding-bottom: 25px;
-      @include text-h4;
+      @include text-h5;
       text-align: center;
     }
     .marketing-point {
@@ -98,11 +103,15 @@
         padding: 5px 0;
 
         .tags {
-          @include text-h4;
+          @include text-h5;
           color: var(--main-yellow);
 
           .awards {
             display: block;
+          }
+
+          .hidden {
+            visibility: hidden;
           }
         }
 
@@ -110,20 +119,21 @@
           span {
             display: block;
             margin: 7px 0;
-            @include text-h4;
+            @include text-h5;
           }
 
           .feature-label {
-            @include text-h3;
+            @include text-h4;
             font-weight: 600;
           }
 
           .quick-features {
-            margin-top: 10px;
-            @include text-h4;
+            margin: 17px 0;
+            @include text-h5;
 
             span {
-              color: var(--detail-mediumgray);
+              @include text-h5;
+              color: var(--detail-textgray);
             }
           }
         }
@@ -133,16 +143,18 @@
           justify-content: flex-start;
 
           .sidedishes {
-            margin: 10px 20px;
+            margin: 5px 10px;
             @include align-middle;
+            align-items: center;
 
             img {
               width: 4.5rem;
+              margin: 5px 5px;
             }
 
             label {
               margin: 5px auto;
-              @include text-h4;
+              @include text-h6;
             }
           }
         }
@@ -153,12 +165,12 @@
 
           label {
             padding-right: 10px;
-            @include text-h3;
+            @include text-h4;
             color: var(--detail-textgray);
           }
 
           .price {
-            @include text-h1;
+            @include text-h2;
             display: inline;
           }
         }
@@ -167,7 +179,8 @@
   }
 
   .product-description {
-    @include flex-center;
+    @include align-center;
+    align-items: flex-start;
     margin-top: 25px;
 
     .desc-left {
@@ -179,12 +192,12 @@
         label {
           display: block;
           text-align: center;
-          @include text-h2;
+          @include text-h3;
         }
 
         .table {
           @include flex-center;
-          @include text-h4;
+          @include text-h5;
 
           .col-1 {
             margin: 25px 20px;
@@ -209,7 +222,7 @@
 
       label {
         margin: 20px 0;
-        @include text-h2;
+        @include text-h3;
       }
 
       .tasting-card-all {
@@ -225,14 +238,14 @@
 
           .flavor {
             text-align: center;
-            @include text-h4;
+            @include text-h5;
             color: var(--detail-mediumgray);
           }
 
           .flavor-points {
             padding: 5px 0 10px 0;
             text-align: center;
-            @include text-h3;
+            @include text-h4;
             color: var(--main-yellow);
           }
         }
@@ -246,7 +259,7 @@
         display: inline-block;
         position: sticky;
         width: 25rem;
-        height: 40rem;
+        height: 43rem;
         top: 20px;
         margin: 40px 10px;
         padding: 35px 40px;
@@ -257,7 +270,7 @@
           @include aside-label-style;
           padding: 5px 5px;
           text-align: end;
-          @include text-h4;
+          @include text-h5;
         }
 
         .options {
@@ -277,63 +290,70 @@
 
             .amount-count {
               margin: 8px 0;
-              @include text-h4;
+              @include text-h5;
             }
 
             button {
               border: none;
               background-color: transparent;
-              @include text-h3;
+              @include text-h4;
               color: var(--main-yellow);
             }
+
+            .not-changed {
+              border: none;
+              background-color: transparent;
+              @include text-h4;
+              color: var(--detail-textgray);
+            }
+          }
+        }
+      }
+
+      .total-price {
+        @include aside-border-style;
+        text-align: center;
+        @include text-h5;
+      }
+
+      .shipping-info {
+        font-size: 10px;
+        text-align: end;
+
+        .shipping-info-wrapper {
+          margin: 7px 5px;
+          @include text-h7;
+
+          .shipping-to {
+            margin-right: 5px;
+          }
+
+          .shipping-cost {
+            font-weight: 800;
           }
         }
 
-        .total-price {
-          @include aside-border-style;
+        .shipping-info-alert {
+          margin: 70px 5px 0 5px;
           text-align: center;
-          @include text-h4;
+          @include text-h7;
+        }
+      }
+
+      .add-to-btn {
+        @include align-middle;
+        margin-top: 35px;
+
+        .add-cart {
+          @include add-btn;
+          @include text-h5;
+          background-color: var(--main-yellow);
         }
 
-        .shipping-info {
-          font-size: 10px;
-          text-align: end;
-
-          .shipping-info-wrapper {
-            margin: 7px 5px;
-            @include text-h5;
-
-            .shipping-to {
-              margin-right: 5px;
-            }
-
-            .shipping-cost {
-              font-weight: 800;
-            }
-          }
-
-          .shipping-info-alert {
-            margin: 70px 5px 0 5px;
-            text-align: center;
-            @include text-h6;
-          }
-        }
-
-        .add-to-btn {
-          @include align-middle;
-          margin-top: 35px;
-
-          .add-cart {
-            @include add-btn;
-            @include text-h5;
-            background-color: var(--main-yellow);
-          }
-
-          .buy-now {
-            @include add-btn;
-            @include text-h5;
-            background-color: var(--main-blue);
-          }
+        .buy-now {
+          @include add-btn;
+          @include text-h5;
+          background-color: var(--main-blue);
         }
       }
     }

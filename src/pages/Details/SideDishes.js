@@ -1,19 +1,31 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 
 export default class SideDishes extends Component {
+  state = {
+    sideDishes: [],
+  };
+
+  componentDidMount() {
+    fetch('/data/DetailSides.json')
+      .then(res => res.json())
+      .then(res => {
+        const sideDishes = res.Result;
+
+        this.setState({ sideDishes });
+      });
+  }
+
   render() {
-    const { dishes } = this.props;
+    const { sideDishes } = this.state;
 
     return (
       <div className="sides-all">
-        {dishes.map((sides, idx) => {
+        {sideDishes.map((dish, idx) => {
           return (
-            <Fragment key={idx}>
-              <div className="sidedishes">
-                <img alt="sidedishes" src={sides.image_url} />
-                <label>{sides.name}</label>
-              </div>
-            </Fragment>
+            <div className="sidedishes" key={idx}>
+              <img alt="sidedishes" src={dish.image_url} />
+              <label>{dish.name}</label>
+            </div>
           );
         })}
       </div>

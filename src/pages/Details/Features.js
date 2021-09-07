@@ -1,25 +1,43 @@
 import React, { Component } from 'react';
 
 export default class Features extends Component {
+  state = {
+    sellingPoint: {},
+  };
+
+  componentDidMount() {
+    fetch('/data/DetailPoint.json')
+      .then(res => res.json())
+      .then(res => {
+        const [sellingPoint] = res.Result;
+
+        this.setState({ sellingPoint });
+      });
+  }
+
   render() {
-    const { flavor, side, story } = this.props;
+    const { sellingPoint } = this.state;
 
     return (
       <div className="features">
         <label className="feature-label">매력 포인트</label>
         <div className="feature-flex">
-          <div className="quick-features">
-            <label>맛</label>
-            <span>{flavor}</span>
-          </div>
-          <div className="quick-features">
-            <label>담화</label>
-            <span>{story}</span>
-          </div>
-          <div className="quick-features">
-            <label>안주</label>
-            <span>{side}</span>
-          </div>
+          {Object.keys(sellingPoint).length && (
+            <>
+              <div className="quick-features">
+                <label>맛</label>
+                <span>{sellingPoint.point_flavor}</span>
+              </div>
+              <div className="quick-features">
+                <label>담화</label>
+                <span>{sellingPoint.point_story}</span>
+              </div>
+              <div className="quick-features">
+                <label>안주</label>
+                <span>{sellingPoint.point_side}</span>
+              </div>
+            </>
+          )}
         </div>
       </div>
     );

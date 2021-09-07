@@ -1,9 +1,9 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import './Details.scss';
 
 import AddToCart from './AddToCart';
-import QuickView from './QuickView';
-import MainDescription from './MainDescription';
+import ProductInfo from './ProductInfo';
+import ProductDetails from './ProductDetails';
 import Tasting from './Tasting';
 
 export default class Details extends Component {
@@ -11,54 +11,51 @@ export default class Details extends Component {
     super(props);
 
     this.state = {
-      infoList: [],
-      flavorList: [],
+      productInfo: {},
     };
   }
 
   componentDidMount() {
     fetch('/data/DetailTest2.json')
       .then(res => res.json())
-      .then(res => this.setState({ infoList: res.Result }));
+      .then(res => {
+        const productInfo = res.Result;
 
-    fetch('/data/DetailFlavor.json')
-      .then(res => res.json())
-      .then(res => this.setState({ flavorList: res.Result }));
+        this.setState({ productInfo });
+      });
   }
 
   render() {
-    const { infoList, flavorList } = this.state;
+    const { productInfo } = this.state;
 
     return (
       <div className="details-wrapper">
-        {infoList.map(product => {
-          return (
-            <QuickView
-              key={product.id}
-              infoList={infoList}
-              hashtag={product.hash}
-              awards={product.awards}
-            />
-          );
-        })}
+        {Object.keys(productInfo).length && (
+          <ProductInfo
+            key={productInfo.id}
+            hashtag={productInfo.hash}
+            awards={productInfo.awards}
+            name={productInfo.name}
+            grade={productInfo.grade}
+            image={productInfo.image}
+            price={productInfo.price}
+          />
+        )}
+
         <div className="product-description">
-          {infoList.map(product => {
-            return (
-              <Fragment key={product.id}>
-                <div>
-                  <MainDescription
-                    category={product.category_name}
-                    degree={product.dgree}
-                    ml={product.ml}
-                    expireDate={product.expire_date}
-                    keep={product.keep}
-                  />
-                  <Tasting flavorList={flavorList} />
-                </div>
-                <AddToCart price={product.price} key={product.id} />
-              </Fragment>
-            );
-          })}
+          <div className="desc-left">
+            {Object.keys(productInfo).length && (
+              <ProductDetails
+                category={productInfo.category_name}
+                degree={productInfo.dgree}
+                ml={productInfo.ml}
+                expireDate={productInfo.expire_date}
+                keep={productInfo.keep}
+              />
+            )}
+            <Tasting />
+          </div>
+          <AddToCart price={productInfo.price} key={productInfo.id} />
         </div>
       </div>
     );
