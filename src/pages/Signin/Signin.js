@@ -49,6 +49,10 @@ class Signin extends Component {
     this.props.history.push('/signup');
   };
 
+  // checkInput = e => {
+  //   (this.state.email === null) &&
+  // }
+
   render() {
     return (
       <div className="signin">
@@ -66,6 +70,7 @@ class Signin extends Component {
                   placeholder="이메일을 입력해주세요"
                   onChange={this.handleInput}
                 />
+                <div className="email-check">이메일을 입력해주세요</div>
               </div>
 
               <div className="input-box">
@@ -77,6 +82,7 @@ class Signin extends Component {
                   type="password"
                   onChange={this.handleInput}
                 />
+                <div className="password-check">비밀번호를 입력해주세요</div>
               </div>
             </form>
 

@@ -51,6 +51,20 @@
             border-bottom: 2px solid black;
           }
         }
+
+        .email-check {
+          margin-top: -25px;
+          display: none;
+          color: red;
+          font-size: 12px;
+        }
+
+        .password-check {
+          margin-top: -25px;
+          display: none;
+          color: red;
+          font-size: 12px;
+        }
       }
 
       .signin-btn {
