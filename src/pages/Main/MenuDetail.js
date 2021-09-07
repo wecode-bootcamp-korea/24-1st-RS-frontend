@@ -3,11 +3,11 @@ import { withRouter } from 'react-router-dom';
 
 class MenuDetail extends Component {
   goToCatergory = () => {
-    this.props.history.push(`/category/${this.props.Menu.name}`);
+    this.props.history.push(`/category/${this.props.menu.id}`);
   };
 
   render() {
-    const { alt, image, title, name } = this.props.Menu;
+    const { alt, image, title, name } = this.props.menu;
     return (
       <div className="menu">
         <img

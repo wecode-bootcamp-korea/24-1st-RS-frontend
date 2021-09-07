@@ -4,7 +4,7 @@ import './BestItem.scss';
 
 export default class BestItemCompDetail extends Component {
   render() {
-    const { img, name, price, rating, description } = this.props.Product;
+    const { img, name, price, rating, description } = this.props.product;
     return (
       <>
         <div className="best-seller-card">

@@ -20,7 +20,7 @@ export default class BestItemComp extends Component {
           </div>
           <div className="best-seller-card-wrapper">
             {BestSellerMockData.map((best, idx) => {
-              return <BestItemCompDetail key={idx} Product={best} />;
+              return <BestItemCompDetail key={idx} product={best} />;
             })}
           </div>
         </div>

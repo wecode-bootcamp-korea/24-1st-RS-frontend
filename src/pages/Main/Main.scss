@@ -3,9 +3,9 @@
   place-items: center;
   flex: 5%;
   height: 100%;
+  color: white;
   background-color: transparent;
   opacity: 0.6;
-  color: white;
   cursor: pointer;
 }
 
@@ -28,8 +28,8 @@
 }
 
 .banner-section {
-  overflow: hidden;
   width: 100%;
+  overflow: hidden;
 
   .banner-img {
     display: flex;
@@ -91,8 +91,8 @@
     }
 
     .menu-image {
-      width: 120px;
       position: relative;
+      width: 120px;
       height: 120px;
       margin: 0px 15px;
     }

@@ -7,7 +7,7 @@ export default class Menu extends Component {
     return (
       <section className="menu-bar">
         {MENU_DATA.map((menu, idx) => {
-          return <MenuDetail key={idx} Menu={menu} />;
+          return <MenuDetail key={idx} menu={menu} />;
         })}
       </section>
     );

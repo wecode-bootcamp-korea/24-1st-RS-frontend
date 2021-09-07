@@ -10,9 +10,10 @@ export default class Banner extends Component {
   }
 
   handleClickLeft = () => {
-    this.setState({
-      currImg: this.state.currImg - 1,
-    });
+    this.state.currImg > 0 &&
+      this.setState({
+        currImg: this.state.currImg - 1,
+      });
   };
 
   handleClickRight = () => {

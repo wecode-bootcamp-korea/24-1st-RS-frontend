@@ -23,6 +23,19 @@ class CountDown extends React.Component {
           this.setState({ seconds: 59 }, this.updateStorage);
         }
       }
+      /*if (!this.state.seconds && !this.state.minutes && !this.state.hours) {
+        clearInterval(this.myInterval);
+      } else {
+        this.setState(
+          {
+            hours: this.state.hours - 1,
+            minutes: 59,
+            seconds: 59,
+          },
+          this.updateStorage
+        );
+      }*/
+
       if (this.state.seconds === 0) {
         if (this.state.minutes === 0) {
           if (this.state.hours === 0) {
