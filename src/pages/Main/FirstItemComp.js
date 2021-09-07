@@ -1,7 +1,6 @@
 import React from 'react';
 import ReviewStar from './ReviewStar';
 import './BestItem.scss';
-import './FirstItem';
 
 export const FirstItemComp = props => {
   const { image, name, price, hash, grade } = props.product;

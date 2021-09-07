@@ -11,60 +11,41 @@ class CountDown extends React.Component {
   }
 
   componentDidMount() {
-    this.myInterval = setInterval(() => {
-      if (this.state.seconds > 0) {
-        this.setState({ seconds: this.state.seconds - 1 }, this.updateStorage);
-      } else {
-        if (this.state.minutes > 0) {
-          this.setState(
-            { minutes: this.state.minutes - 1 },
-            this.updateStorage
-          );
-          this.setState({ seconds: 59 }, this.updateStorage);
-        }
-      }
-      /*if (!this.state.seconds && !this.state.minutes && !this.state.hours) {
-        clearInterval(this.myInterval);
-      } else {
-        this.setState(
-          {
-            hours: this.state.hours - 1,
-            minutes: 59,
-            seconds: 59,
-          },
-          this.updateStorage
-        );
-      }*/
-
-      if (this.state.seconds === 0) {
-        if (this.state.minutes === 0) {
-          if (this.state.hours === 0) {
-            clearInterval(this.myInterval);
-          } else {
-            this.setState(
-              { hours: this.state.hours - 1, minutes: 59, seconds: 59 },
-              this.updateStorage
-            );
-          }
-        }
-      }
-    }, 1000);
-
-    const time = localStorage.getItem('time');
+    this.startTimer();
   }
 
+  startTimer = () => {
+    this.timer = setInterval(() => {
+      const { seconds, minutes, hours } = this.state;
+
+      const updateTime = next => this.setState(next, this.updateStorage);
+
+      if (seconds > 0) {
+        updateTime({ seconds: seconds - 1 });
+      } else if (minutes > 0) {
+        updateTime({ minutes: minutes - 1, seconds: 59 });
+      } else if (hours > 0) {
+        updateTime({
+          hours: hours - 1,
+          minutes: 59,
+          seconds: 59,
+        });
+      } else {
+        clearInterval(this.timer);
+      }
+    }, 1000);
+  };
+
   updateStorage = () => {
-    localStorage.setItem('time', JSON.stringify(this.myInterval));
+    localStorage.setItem('time', JSON.stringify(this.timer));
   };
 
   render() {
-    const { hours, minutes, seconds } = this.state;
-    return (
-      <div>
-        {hours}:{minutes < 10 ? `0${minutes}` : minutes}:
-        {seconds < 10 ? `0${seconds}` : seconds}
-      </div>
-    );
+    const { hours: hour, minutes, seconds } = this.state;
+    const min = minutes < 10 ? `0${minutes}` : minutes;
+    const sec = seconds < 10 ? `0${seconds}` : seconds;
+
+    return <div>{`${hour}:${min}:${sec}`}</div>;
   }
 }
 

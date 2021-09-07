@@ -3,49 +3,58 @@ import { FirstItemComp } from './FirstItemComp';
 import './FirstItem.scss';
 import FIRST_ITEM_DATA from './FIRST_ITEM_DATA';
 
-export default class FirstItem extends Component {
+const CARD_WIDTH = 242;
+const prevBtn = FIRST_ITEM_DATA[0].img;
+const nextBtn = FIRST_ITEM_DATA[1].img;
+
+export default class Recommendation extends Component {
   constructor() {
     super();
     this.state = {
       //currImg: false,
-      x: 0,
+      currentOffsetX: 0,
     };
   }
 
   handleClickedLeft = () => {
-    this.state.x < 0 &&
+    const { currentOffsetX } = this.state;
+
+    if (currentOffsetX < 0) {
       this.setState({
-        x: this.state.x + 242,
+        currentOffsetX: currentOffsetX + CARD_WIDTH,
       });
-    console.log('left', this.state.x);
+    }
   };
 
   handleClickedRight = () => {
-    this.state.x < Number(this.props.products.length) * 242 &&
+    const { currentOffsetX } = this.state;
+    const { products } = this.props;
+
+    if (currentOffsetX < products.length * CARD_WIDTH) {
       this.setState({
-        x: this.state.x - 242,
+        currentOffsetX: currentOffsetX - CARD_WIDTH,
       });
-    console.log('right', this.state.x);
+    }
   };
+
   render() {
-    /*let btn_class = this.state.currImg
-      ? 'first-item-card-wrapper-clicked-right'
-      : 'first-item-card-wrapper';*/
-    console.log('length', this.props.products.length);
+    const { currentOffsetX } = this.state;
+    const { products } = this.props;
+
     return (
       <div className="first-item-wrapper">
         <img
           onClick={this.handleClickedLeft}
           className="arrow-icons-left"
           alt="left-arrow"
-          src={FIRST_ITEM_DATA[0].img}
+          src={prevBtn}
         />
         <div className="first-item-section">
           <div
             className="first-item-card-wrapper"
-            style={{ transform: `translateX(${this.state.x}px)` }}
+            style={{ transform: `translateX(${currentOffsetX}px)` }}
           >
-            {this.props.products.map(product => {
+            {products.map(product => {
               return <FirstItemComp key={product.id} product={product} />;
             })}
           </div>
@@ -54,7 +63,7 @@ export default class FirstItem extends Component {
           onClick={this.handleClickedRight}
           className="arrow-icons-right"
           alt="right-arrow"
-          src={FIRST_ITEM_DATA[1].img}
+          src={nextBtn}
         />
       </div>
     );

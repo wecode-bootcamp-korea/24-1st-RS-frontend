@@ -34,17 +34,14 @@ export default class Banner extends Component {
             })`,
           }}
         >
-          <div
-            className="left"
-            onClick={this.state.currImg > 0 && this.handleClickLeft}
-          >
+          <div className="left" onClick={this.handleClickLeft}>
             <img
               className="left-arrow arrow"
               alt="left-arrow"
               src="/images/Main/left-arrow.svg"
             />
           </div>
-          <div className="center"></div>
+          <div className="center" />
           <div className="right" onClick={this.handleClickRight}>
             <img
               className="right-arrow arrow"

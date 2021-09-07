@@ -5,7 +5,7 @@ import Menu from './Menu';
 import Banner from './Banner';
 import BestItemComp from './BestItemComp';
 import NewItemComp from './NewItemComp';
-import FirstItem from './FirstItem';
+import Recommendation from './Recommendation';
 import Footer from '../../components/Footer/Footer';
 import './Main.scss';
 
@@ -36,7 +36,7 @@ export default class Main extends Component {
         </div>
         <Banner />
         <Menu />
-        <FirstItem products={this.state.products} />
+        <Recommendation products={this.state.products} />
         <div className="time-section">
           <div className="product-img-wrapper">
             <img
@@ -59,8 +59,6 @@ export default class Main extends Component {
         </div>
         <BestItemComp />
         <NewItemComp />
-        <NewItemComp />
-        <Footer />
       </>
     );
   }
