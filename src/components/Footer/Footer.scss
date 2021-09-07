@@ -1,9 +1,10 @@
 .footer {
   display: flex;
   width: 100%;
-  position: fixed;
-  padding: 30px 0px 70px;
-  margin: 0 auto;
+  bottom: 0;
+  justify-content: space-around;
+  padding: 30px 0px 30px;
+  margin-top: 150px;
   background: rgb(255, 252, 247);
 
   .partner {

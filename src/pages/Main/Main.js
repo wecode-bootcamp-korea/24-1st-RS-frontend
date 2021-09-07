@@ -6,6 +6,7 @@ import Banner from './Banner';
 import BestItemComp from './BestItemComp';
 import NewItemComp from './NewItemComp';
 import FirstItem from './FirstItem';
+import Footer from '../../components/Footer/Footer';
 import './Main.scss';
 
 export default class Main extends Component {
@@ -58,6 +59,8 @@ export default class Main extends Component {
         </div>
         <BestItemComp />
         <NewItemComp />
+        <NewItemComp />
+        <Footer />
       </>
     );
   }
