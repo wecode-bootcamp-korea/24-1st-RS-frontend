@@ -73,7 +73,6 @@ export default class Category extends Component {
   }
 
   render() {
-    console.log(this.state.sideDish);
     return (
       <>
         <div className="category">
