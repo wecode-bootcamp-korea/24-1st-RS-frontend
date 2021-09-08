@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import './Signup.scss';
-import { signAPI } from '../../config';
-import Footer from '../../components/Footer/Footer';
+import API from '../../config';
 
 export default class Signup extends Component {
   constructor(props) {
@@ -20,7 +19,7 @@ export default class Signup extends Component {
     const { email, password, repassword, name, smscheck, emailcheck } =
       this.state;
 
-    fetch(`${signAPI}/users/signup`, {
+    fetch(`${API}/users/signup`, {
       method: 'POST',
       body: JSON.stringify({
         email,
@@ -146,7 +145,6 @@ export default class Signup extends Component {
             </div>
           </main>
         </div>
-        <Footer />
       </>
     );
   }

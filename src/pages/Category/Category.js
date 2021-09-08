@@ -3,10 +3,8 @@ import './Category.scss';
 import MainImage from './Mainimage';
 import MainText from './Maintext';
 import Filter from './Filter';
-import Footer from '../../components/Footer/Footer';
-import Product from './Product.js';
 import ProductList from './Productlist.js';
-import { categoryAPI } from '../../config.js';
+import API from '../../config.js';
 
 export default class Category extends Component {
   constructor() {
@@ -40,7 +38,7 @@ export default class Category extends Component {
 
   handleSideDish = () => {
     this.handleFetch(
-      `${categoryAPI}list?limit=20&order-by=${this.state.filter}&category=${this.props.match.params.id}&side-dish=${this.state.sideDish}`,
+      `${API}/products/list?limit=20&order-by=${this.state.filter}&category=${this.props.match.params.id}&side-dish=${this.state.sideDish}`,
       data =>
         this.setState({
           products: data.Result,
@@ -53,12 +51,12 @@ export default class Category extends Component {
     const updateMain = data => this.setState({ main: data.Result });
 
     this.handleFetch(
-      `${categoryAPI}list?limit=20&order-by=${this.state.filter}&category=${this.props.match.params.id}&side-dish=${this.state.sideDish}`,
+      `${API}/products/list?limit=20&order-by=${this.state.filter}&category=${this.props.match.params.id}&side-dish=${this.state.sideDish}`,
       updateProducts
     );
 
     this.handleFetch(
-      `${categoryAPI}category/${this.props.match.params.id}`,
+      `${API}/products/category/${this.props.match.params.id}`,
       updateMain
     );
   }
@@ -66,7 +64,7 @@ export default class Category extends Component {
   componentDidUpdate(prevProps, prevState) {
     if (this.state.filter !== prevState.filter) {
       this.handleFetch(
-        `${categoryAPI}list?limit=20&order-by=${this.state.filter}&category=${this.props.match.params.id}&side-dish=${this.state.sideDish}`,
+        `${API}/products/list?limit=20&order-by=${this.state.filter}&category=${this.props.match.params.id}&side-dish=${this.state.sideDish}`,
         data => this.setState({ products: data.Result })
       );
     }
@@ -93,7 +91,6 @@ export default class Category extends Component {
             />
           </div>
         </div>
-        <Footer />
       </>
     );
   }
