@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Nav from '../../components/Nav/Nav';
 import Menu from './Menu';
 import Banner from './Banner';
 import BestItemComp from './BestItemComp';
@@ -7,7 +6,6 @@ import NewItemComp from './NewItemComp';
 import Recommendation from './Recommendation';
 import Holiday from './Holiday';
 import Time from './Time';
-import Footer from '../../components/Footer/Footer';
 import './Main.scss';
 
 export default class Main extends Component {

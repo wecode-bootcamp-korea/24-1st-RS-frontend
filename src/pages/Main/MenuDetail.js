@@ -14,7 +14,7 @@ class MenuDetail extends Component {
           alt={`img${id}`}
           className="menu-image"
           src={image_url}
-          title="asd"
+          title={name}
           onClick={this.goToCatergory}
           name={name}
         />
