@@ -28,36 +28,6 @@ export default class Modal extends Component {
       });
   }
 
-  handleCardDelete = () => {
-    console.log('this func called');
-    const { id } = this.props;
-
-    const del_url = `http://10.58.3.176:8000/carts?product_id=${id}`;
-    // const get_url = 'http://10.58.3.176:8000/carts';
-
-    fetch(del_url, {
-      method: 'DELETE',
-      headers: {
-        'Content-Type': 'application/json',
-        Authorization:
-          'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MTF9.fCPlhBdz7rrwyrTNXbhpF47oTWcLIKI1RQiNTahKTpk',
-      },
-    })
-      .then(res => res.json())
-      .then(res => {
-        const cartList = res.Result;
-
-        this.setState({ cartList });
-      });
-    console.log('Just got =>>>', this.state.cartList);
-  };
-
-  // handleChechbox = () => {
-  //   const { isChecked } = this.state;
-
-  //   return {isChecked: !isChecked  ? this.setState({ isChecked };  }
-  // };
-
   render() {
     const { open, close } = this.props;
     const { cartList, isChecked } = this.state;
