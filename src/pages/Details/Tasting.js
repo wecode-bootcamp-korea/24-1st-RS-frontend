@@ -6,7 +6,7 @@ export default class Tasting extends Component {
   };
 
   componentDidMount() {
-    fetch('/data/DetailFlavor.json')
+    fetch('http://10.58.1.135:8000/products/4/flavors')
       .then(res => res.json())
       .then(res => {
         const flavors = res.Result;

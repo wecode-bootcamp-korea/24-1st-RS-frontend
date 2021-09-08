@@ -45,7 +45,9 @@ export default class AddToCart extends Component {
   render() {
     const { price, key } = this.props;
     const { quantity } = this.state;
-    const totalPrice = price * quantity;
+    const totalPrice = (price.split(',').join('') * quantity).toLocaleString(
+      'ko-KR'
+    );
 
     return (
       <div className="aside">

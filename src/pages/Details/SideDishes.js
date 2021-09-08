@@ -6,7 +6,7 @@ export default class SideDishes extends Component {
   };
 
   componentDidMount() {
-    fetch('/data/DetailSides.json')
+    fetch('http://10.58.1.135:8000/products/4/sidedishes')
       .then(res => res.json())
       .then(res => {
         const sideDishes = res.Result;

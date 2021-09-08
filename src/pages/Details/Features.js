@@ -6,7 +6,7 @@ export default class Features extends Component {
   };
 
   componentDidMount() {
-    fetch('/data/DetailPoint.json')
+    fetch('http://10.58.1.135:8000/products/4/detail')
       .then(res => res.json())
       .then(res => {
         const [sellingPoint] = res.Result;
