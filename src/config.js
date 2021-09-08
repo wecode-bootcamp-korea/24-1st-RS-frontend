@@ -1,3 +1,3 @@
-const signinAPI = 'http://10.58.3.176:8000/users';
+const signAPI = 'http://10.58.3.176:8000';
 
-export default signinAPI;
+export default signAPI;
