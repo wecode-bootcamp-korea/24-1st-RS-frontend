@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import CheckBox from './CheckBox';
 import ReadyToBuy from './ReadyToBuy';
 
 export default class Modal extends Component {
@@ -9,32 +8,22 @@ export default class Modal extends Component {
     isChecked: false,
   };
 
-  handleGetRequest = () => {
-    const url = 'http://10.58.3.176:8000/carts';
+  componentDidMount() {
+    const url = '/data/CartTest.json';
 
-    fetch(url, {
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/json',
-        Authorization:
-          'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MTF9.fCPlhBdz7rrwyrTNXbhpF47oTWcLIKI1RQiNTahKTpk',
-      },
-    })
+    fetch(url)
       .then(res => res.json())
       .then(res => {
         const cartList = res.Result;
 
         this.setState({ cartList });
       });
-  };
-
-  componentDidMount() {
-    this.handleGetRequest();
+    console.log('cartList is >>>', this.state.cartList);
   }
 
   render() {
     const { open, close } = this.props;
-    const { cartList, isChecked } = this.state;
+    const { cartList } = this.state;
     const totalAmount = cartList.length;
 
     return (
@@ -51,18 +40,11 @@ export default class Modal extends Component {
               {cartList.map((cart, idx) => {
                 return (
                   <div className="card-wrapper">
-                    <CheckBox
-                      isChecked={isChecked}
-                      handleChechbox={this.handleChechbox}
-                    />
                     <ReadyToBuy
                       id={cart.product_id}
                       name={cart.product_name}
                       price={cart.product_price}
                       qty={cart.quantity}
-                      img={cart.image_url}
-                      get={this.handleGetRequest}
-                      listState={cartList}
                     />
                   </div>
                 );

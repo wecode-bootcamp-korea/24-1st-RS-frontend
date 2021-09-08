@@ -20,7 +20,7 @@ export default class ReadyToBuy extends Component {
   };
 
   render() {
-    const { id, name, price, qty, img } = this.props;
+    const { id, name, price, qty } = this.props;
 
     return (
       <div key={id}>
@@ -46,7 +46,7 @@ export default class ReadyToBuy extends Component {
             </div>
           </header>
           <main className="card-main">
-            <img alt="product-img" src={img} className="img-in-cart" />
+            <img alt="product-img" src="#" className="img-in-cart" />
             <label>수량: </label>
             <div className="added-product">
               <button className="minus">-</button>
