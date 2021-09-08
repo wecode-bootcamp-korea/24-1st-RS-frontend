@@ -8,7 +8,6 @@ export default class AddToCart extends Component {
   };
 
   handlePlusBtn = () => {
-    console.log('clicked');
     const { quantity } = this.state;
 
     this.setState({
