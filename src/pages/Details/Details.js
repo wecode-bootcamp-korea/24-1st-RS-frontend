@@ -33,27 +33,13 @@ export default class Details extends Component {
     return (
       <div className="details-wrapper">
         {Object.keys(productInfo).length && (
-          <ProductInfo
-            key={productInfo.id}
-            hashtag={productInfo.hash}
-            awards={productInfo.awards}
-            name={productInfo.name}
-            grade={productInfo.grade}
-            image={productInfo.image}
-            price={productInfo.price}
-          />
+          <ProductInfo productInfo={productInfo} />
         )}
 
         <div className="product-description">
           <div className="desc-left">
             {Object.keys(productInfo).length && (
-              <ProductDetails
-                category={productInfo.category_name}
-                degree={productInfo.dgree}
-                ml={productInfo.ml}
-                expireDate={productInfo.expire_date}
-                keep={productInfo.keep}
-              />
+              <ProductDetails productInfo={productInfo} />
             )}
             <Tasting />
           </div>

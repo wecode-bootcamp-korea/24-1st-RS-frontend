@@ -26,7 +26,6 @@ export default class Main extends Component {
   render() {
     return (
       <>
-        <Nav />
         <div className="search-bar">
           <input
             className="search"

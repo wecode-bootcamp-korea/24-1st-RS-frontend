@@ -3,10 +3,8 @@ import './Category.scss';
 import MainImage from './Mainimage';
 import MainText from './Maintext';
 import Filter from './Filter';
-import Footer from '../../components/Footer/Footer';
-import Product from './Product.js';
 import ProductList from './Productlist.js';
-import { categoryAPI } from '../../config.js';
+import API from '../../config.js';
 
 export default class Category extends Component {
   constructor() {
@@ -37,12 +35,12 @@ export default class Category extends Component {
 
   componentDidMount() {
     this.handleFetch(
-      `${categoryAPI}/products/list?limit=20&order-by=${this.state.filter}&category=${this.state.category_name}`,
+      `${API}/products/list?limit=20&order-by=${this.state.filter}&category=${this.state.category_name}`,
       'products'
     );
 
     this.handleFetch(
-      `${categoryAPI}/products/category/${this.state.category_name}`,
+      `${API}/products/category/${this.state.category_name}`,
       'main'
     );
   }
@@ -50,7 +48,7 @@ export default class Category extends Component {
   componentDidUpdate(prevProps, prevState) {
     if (this.state.filter !== prevState.filter) {
       this.handleFetch(
-        `${categoryAPI}/products/list?limit=20&order-by=${this.state.filter}&category=${this.state.category_name}`,
+        `${API}/products/list?limit=20&order-by=${this.state.filter}&category=${this.state.category_name}`,
         'products'
       );
     }
@@ -75,7 +73,6 @@ export default class Category extends Component {
             />
           </div>
         </div>
-        <Footer />
       </>
     );
   }

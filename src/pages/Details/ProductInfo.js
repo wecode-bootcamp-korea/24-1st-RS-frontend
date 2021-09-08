@@ -4,28 +4,30 @@ import SideDishes from './SideDishes';
 
 export default class ProductInfo extends Component {
   render() {
-    const { id, name, grade, image, hashtag, awards, price } = this.props;
+    const { productInfo } = this.props;
 
     return (
-      <div className="quick-view" key={id}>
-        <div className="product-name">{name}</div>
-        <div className="rates">평점: {grade}</div>
+      <div className="quick-view" key={productInfo.id}>
+        <div className="product-name">{productInfo.name}</div>
+        <div className="rates">평점: {productInfo.grade}</div>
         <div className="marketing-point">
           <div className="main-img">
-            <img alt="main-img" src={image} />
+            <img alt="main-img" src={productInfo.image} />
           </div>
           <div className="quick-info">
             <div className="tags">
-              {hashtag.map((tag, idx) => {
+              {productInfo.hashtag.map((tag, idx) => {
                 return <span key={idx}>{tag.caption}</span>;
               })}
-              <span className={!awards ? 'hidden' : 'awards'}># {awards}</span>
+              <span className={!productInfo.awards ? 'hidden' : 'awards'}>
+                # {productInfo.awards}
+              </span>
             </div>
             <Features />
             <SideDishes />
             <div className="product-price">
               <label className="price-info">판매금액 </label>
-              <span className="price">{price}원</span>
+              <span className="price">{productInfo.price}원</span>
             </div>
           </div>
         </div>

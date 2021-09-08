@@ -22,7 +22,7 @@ export default class Routes extends Component {
             <Route exact path="/signup" component={Signup} />
             <Route exact path="/details" component={Details} />
             <Route exact path="/cart" component={Cart} />
-            <Route exact path="/category" component={Category} />
+            <Route exact path="/category/:id" component={Category} />
           </Switch>
           <Footer />
         </Router>
