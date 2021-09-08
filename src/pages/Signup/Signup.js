@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import './Signup.scss';
 import API from '../../config';
-import Footer from '../../components/Footer/Footer';
 
 export default class Signup extends Component {
   constructor(props) {
@@ -146,7 +145,6 @@ export default class Signup extends Component {
             </div>
           </main>
         </div>
-        <Footer />
       </>
     );
   }
