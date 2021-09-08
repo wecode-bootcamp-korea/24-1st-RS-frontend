@@ -49,10 +49,6 @@ class Signin extends Component {
     this.props.history.push('/signup');
   };
 
-  // checkInput = e => {
-  //   (this.state.email === null) &&
-  // }
-
   render() {
     return (
       <div className="signin">
@@ -86,7 +82,7 @@ class Signin extends Component {
               </div>
             </form>
 
-            <button className="signin-btn" onClick={this.handleLogin}>
+            <button className="signin-btn" onClick={this.handleInput}>
               로그인
             </button>
             <KakaoButton />
