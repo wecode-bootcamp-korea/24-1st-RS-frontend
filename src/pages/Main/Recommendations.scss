@@ -86,14 +86,3 @@ $i: 0;
     }
   }
 }
-
-.first-item-card-wrapper-clicked-right {
-  display: flex;
-  transition: 0.7s ease-in-out;
-  transform: translateX(-10%);
-}
-
-.fist-item-card-wrapper-clicked-left {
-  display: flex;
-  transform: translateX(-10%);
-}

@@ -7,7 +7,7 @@ export default class BestItemCompDetail extends Component {
   render() {
     const { image, name, price, grade, hash, id } = this.props.product;
     return (
-      <Link to={`/details/${id}`} style={{ textDecoration: 'none' }}>
+      <Link to={`/details/${id}`}>
         <div className="best-seller-card">
           <img className="best-seller-img" alt="best-img-1" src={image} />
           <div className="best-seller-desc">

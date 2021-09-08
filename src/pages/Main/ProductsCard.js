@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 export const ProductsCard = props => {
   const { image, name, price, hash, grade, id } = props.product;
   return (
-    <Link to={`/details/${id}`} style={{ textDecoration: 'none' }}>
+    <Link to={`/details/${id}`}>
       <div className="first-item-card">
         <img className="first-item-img" alt="best-img-1" src={image} />
         <div className="first-item-desc">
