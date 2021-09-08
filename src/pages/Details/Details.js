@@ -16,7 +16,7 @@ export default class Details extends Component {
   }
 
   componentDidMount() {
-    const url = 'http://10.58.1.135:8000/products/4';
+    const url = 'http://10.58.1.135:8000/products/33';
     // const url = '/data/DetailTest2.json';
 
     fetch(url)
