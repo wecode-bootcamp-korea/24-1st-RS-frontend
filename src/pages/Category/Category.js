@@ -51,7 +51,7 @@ export default class Category extends Component {
     const updateMain = data => this.setState({ main: data.Result });
 
     this.handleFetch(
-      `${API}/products/list?limit=20&order-by=${this.state.filter}&category=${this.props.match.params.id}&side-dish=${this.state.sideDish}`,
+      `${API}/products/list?limit=20&order-by=${this.state.filter}&category=${this.props.match.params.id}`,
       updateProducts
     );
 
@@ -62,10 +62,11 @@ export default class Category extends Component {
   }
 
   componentDidUpdate(prevProps, prevState) {
+    const updateProducts = data => this.setState({ products: data.Result });
     if (this.state.filter !== prevState.filter) {
       this.handleFetch(
-        `${API}/products/list?limit=20&order-by=${this.state.filter}&category=${this.props.match.params.id}&side-dish=${this.state.sideDish}`,
-        data => this.setState({ products: data.Result })
+        `${API}/products/list?limit=20&order-by=${this.state.filter}&category=${this.props.match.params.id}`,
+        updateProducts
       );
     }
   }
