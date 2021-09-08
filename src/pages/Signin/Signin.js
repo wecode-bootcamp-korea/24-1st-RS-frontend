@@ -3,7 +3,7 @@ import { withRouter } from 'react-router-dom';
 import GoogleButton from './GoogleButton';
 import KakaoButton from './KakaoButton';
 import NaverButton from './NaverButton';
-import signinAPI from '../../config';
+import signAPI from '../../config';
 import './Signin.scss';
 
 class Signin extends Component {
@@ -16,7 +16,7 @@ class Signin extends Component {
   }
 
   handleLogin = () => {
-    fetch(`${signinAPI}/login`, {
+    fetch(`${signAPI}/users/login`, {
       method: 'POST',
       body: JSON.stringify({
         email: this.state.email,

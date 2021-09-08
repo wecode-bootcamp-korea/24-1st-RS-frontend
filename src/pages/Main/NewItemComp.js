@@ -7,7 +7,7 @@ export default class NewItemComp extends Component {
   render() {
     return (
       <div className="best-seller-wrapper">
-        <p className="desc-word">새로 입점한 우리술이에요!</p>
+        <p className="new-desc-word">새로 입점한 우리술이에요!</p>
         <div className="best-seller-section">
           <div className="new-item">
             <span></span>

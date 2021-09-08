@@ -7,14 +7,14 @@ class MenuDetail extends Component {
   };
 
   render() {
-    const { alt, image, title, name } = this.props.menu;
+    const { image_url, name, id } = this.props.menu;
     return (
       <div className="menu">
         <img
-          alt={alt}
+          alt={`img${id}`}
           className="menu-image"
-          src={image}
-          title={title}
+          src={image_url}
+          title="asd"
           onClick={this.goToCatergory}
           name={name}
         />
