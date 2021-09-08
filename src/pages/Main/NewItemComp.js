@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import BestSellerMockData from './BestSellerMockData';
 import NewItemCompDetail from './NewItemCompDetail';
 import './NewItem.scss';
 
@@ -19,8 +18,8 @@ export default class NewItemComp extends Component {
             <p className="word-below-rocket">금주의 신상품</p>
           </div>
           <div className="best-seller-card-wrapper">
-            {BestSellerMockData.map((newDrink, idx) => {
-              return <NewItemCompDetail key={idx} Product={newDrink} />;
+            {this.props.new.map((newDrink, idx) => {
+              return <NewItemCompDetail key={idx} product={newDrink} />;
             })}
           </div>
         </div>

@@ -9,12 +9,15 @@ class Nav extends Component {
 
   goToSignUp = () => {
     this.props.history.push('/signup');
-    //localStorage.setItem('login-token', 'Tom');
   };
 
   logOut = () => {
     localStorage.clear();
     this.props.history.push('/');
+  };
+
+  goToCart = () => {
+    this.props.history.push('/cart');
   };
 
   render() {
@@ -30,9 +33,14 @@ class Nav extends Component {
 
         <div className="sign-group">
           {localStorage.getItem('login-token') ? (
-            <p className="login-btn" onClick={this.logOut}>
-              로그아웃
-            </p>
+            <>
+              <p className="login-btn" onClick={this.goToCart}>
+                장바구니
+              </p>
+              <p className="login-btn" onClick={this.logOut}>
+                로그아웃
+              </p>
+            </>
           ) : (
             <>
               <p className="login-btn" onClick={this.goToSignIn}>
