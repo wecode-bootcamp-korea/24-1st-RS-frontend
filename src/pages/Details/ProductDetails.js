@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 
 export default class ProductDetails extends Component {
   render() {
-    const { productInfo } = this.props;
+    const { category_name, dgree, ml, expire_date, keep } =
+      this.props.productInfo;
 
     return (
       <div className="facts">
@@ -19,11 +20,11 @@ export default class ProductDetails extends Component {
           </div>
           <div className="col-2">
             <ul>
-              <li>{productInfo.category}</li>
-              <li>{productInfo.degree}%</li>
-              <li>{productInfo.ml}ml</li>
-              <li>{productInfo.expireDate}</li>
-              <li>{productInfo.keep}</li>
+              <li>{category_name}</li>
+              <li>{dgree}%</li>
+              <li>{ml}ml</li>
+              <li>{expire_date}</li>
+              <li>{keep}</li>
             </ul>
           </div>
         </div>
