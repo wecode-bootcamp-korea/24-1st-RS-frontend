@@ -1,0 +1,224 @@
+{
+  "Result": [
+    {
+      "id": 30,
+      "name": "나루 생 막걸리 6%",
+      "price": 21000,
+      "dgree": "6.0",
+      "ml": 935,
+      "awards": "",
+      "tiny_description": "서울의 첫 번째 지역 특산주",
+      "hash": [
+        {
+          "caption": "#참외향"
+        },
+        {
+          "caption": "#깔끔한_단맛"
+        }
+      ],
+      "grade": "5.0",
+      "image": "https://sooldamhwa-static-files.s3.ap-northeast-2.amazonaws.com/content_images/contents_images-1626677251971-%EB%82%98%EB%A3%A8%EC%83%9D%EB%A7%89%EA%B1%B8%EB%A6%AC6-3.jpg",
+      "expire_date": "제조일로부터 30일",
+      "keep": "세워서 냉장 보관",
+      "category_name": "탁주"
+    },
+    {
+      "id": 25,
+      "name": "대대포 블루",
+      "price": 28000,
+      "dgree": "6.0",
+      "ml": 600,
+      "awards": "",
+      "tiny_description": "벌꿀이 녹아 있는 가볍고 달콤한 막걸리",
+      "hash": [
+        {
+          "caption": "#꿀먹은_막걸리 "
+        },
+        {
+          "caption": "#라벨만큼은_죠니워커"
+        }
+      ],
+      "grade": "5.0",
+      "image": "https://sooldamhwa-static-files.s3.ap-northeast-2.amazonaws.com/content_images/contents_images-1629349065009-%EB%8C%80%EB%8C%80%ED%8F%AC_%EA%B8%B0%EC%A1%B4%EB%9D%BC%EB%B2%A8-1.jpg",
+      "expire_date": "병입일로부터 30일",
+      "keep": "냉장 보관",
+      "category_name": "탁주"
+    },
+    {
+      "id": 29,
+      "name": "구름을 벗삼아",
+      "price": 17500,
+      "dgree": "6.0",
+      "ml": 500,
+      "awards": "",
+      "tiny_description": "구름처럼 부드럽고 달콤한 막걸리",
+      "hash": [
+        {
+          "caption": "#깔끔하고_가볍"
+        },
+        {
+          "caption": "#청량한"
+        }
+      ],
+      "grade": "5.0",
+      "image": "https://sooldamhwa-static-files.s3.ap-northeast-2.amazonaws.com/content_images/contents_images-1621565360499-%EA%B5%AC%EB%A6%84%EC%9D%84%EB%B2%97%EC%82%BC%EC%95%84-1.png",
+      "expire_date": "제조일로부터 30일",
+      "keep": "세워서 냉장 보관",
+      "category_name": "탁주"
+    },
+    {
+      "id": 21,
+      "name": "벗이랑 홍국",
+      "price": 13500,
+      "dgree": "15.0",
+      "ml": 500,
+      "awards": "",
+      "tiny_description": "벚꽃이 진다고 버찌를 잊은 적 없다",
+      "hash": [
+        {
+          "caption": "#달콤함과_씁쓸함의_만남"
+        },
+        {
+          "caption": "#홍국쌀_버찌_크로스"
+        }
+      ],
+      "grade": "0.0",
+      "image": "https://sooldamhwa-static-files.s3.ap-northeast-2.amazonaws.com/content_images/contents_images-1630039988553-%EB%B2%97%EC%9D%B4%EB%9E%91%20%EB%B2%84%EC%B0%8C-2.jpg",
+      "expire_date": "병입일로부터 3개월",
+      "keep": "냉장 보관",
+      "category_name": "탁주"
+    },
+    {
+      "id": 33,
+      "name": "한청",
+      "price": 20000,
+      "dgree": "15.0",
+      "ml": 700,
+      "awards": "",
+      "tiny_description": "일본 사케에 대항할 우리나라의 청주에요",
+      "hash": [
+        {
+          "caption": "#토종효모로_청주를_만든다면?"
+        },
+        {
+          "caption": "#새콤달콤한_청주"
+        }
+      ],
+      "grade": "5.0",
+      "image": "https://sooldamhwa-static-files.s3.ap-northeast-2.amazonaws.com/content_images/contents_images-1626419075527-%ED%95%9C%EC%B2%AD+1%EB%B3%91-3.jpg",
+      "expire_date": "유통기한 없음",
+      "keep": "상온 보관 가능",
+      "category_name": "청주"
+    },
+    {
+      "id": 22,
+      "name": "벗이랑 조릿대",
+      "price": 13500,
+      "dgree": "15.0",
+      "ml": 500,
+      "awards": "",
+      "tiny_description": "국내 유일 조릿대가 들어간 막걸리",
+      "hash": [
+        {
+          "caption": "#막걸리에서_다크초콜릿의_풍미가? "
+        },
+        {
+          "caption": "#묵직하면서_드라이한술"
+        }
+      ],
+      "grade": "0.0",
+      "image": "https://sooldamhwa-static-files.s3.ap-northeast-2.amazonaws.com/content_images/contents_images-1630037508228-%EB%B2%97%EC%9D%B4%EB%9E%91%20%EC%A1%B0%EB%A6%BF%EB%8C%80-3.jpg",
+      "expire_date": "병입일로부터 3개월",
+      "keep": "냉장 보관",
+      "category_name": "탁주"
+    },
+    {
+      "id": 27,
+      "name": "나루 생 막걸리 11.5%",
+      "price": 33000,
+      "dgree": "11.5",
+      "ml": 500,
+      "awards": "",
+      "tiny_description": "깊고 묵직한 맛의 나루 생 막걸리",
+      "hash": [
+        {
+          "caption": "#걸쭉한_단맛"
+        },
+        {
+          "caption": "#바나나와_참외향"
+        }
+      ],
+      "grade": "5.0",
+      "image": "https://sooldamhwa-static-files.s3.ap-northeast-2.amazonaws.com/content_images/contents_images-1626677187168-%EB%82%98%EB%A3%A8%EC%83%9D%EB%A7%89%EA%B1%B8%EB%A6%AC11.5-4.jpg",
+      "expire_date": "제조일로부터 60일",
+      "keep": "세워서 냉장 보관",
+      "category_name": "탁주"
+    },
+    {
+      "id": 24,
+      "name": "용봉백주 오향주",
+      "price": 20000,
+      "dgree": "12.0",
+      "ml": 500,
+      "awards": "",
+      "tiny_description": "다섯가지의 향을 느낀다면 여러분은 이미 소믈리에",
+      "hash": [
+        {
+          "caption": "#백주=막걸리"
+        },
+        {
+          "caption": "#드라이한_막걸리를_좋아한다면"
+        }
+      ],
+      "grade": "0.0",
+      "image": "https://sooldamhwa-static-files.s3.ap-northeast-2.amazonaws.com/content_images/contents_images-1628825087670-%EC%9A%A9%EB%B4%89%EC%A3%BC%EC%A1%B0+%EC%98%A4%ED%96%A5%EC%A3%BC+%ED%83%81%EC%A3%BC-2.jpg",
+      "expire_date": "병입일로부터 30일",
+      "keep": "냉장 보관",
+      "category_name": "탁주"
+    },
+    {
+      "id": 23,
+      "name": "벗이랑 강황",
+      "price": 13500,
+      "dgree": "15.0",
+      "ml": 500,
+      "awards": "",
+      "tiny_description": "강황이 들어간 가볍고 부드러운 막걸리",
+      "hash": [
+        {
+          "caption": "#쉐이크처럼_부드러운_단맛"
+        },
+        {
+          "caption": "#카레맛_안남"
+        }
+      ],
+      "grade": "0.0",
+      "image": "https://sooldamhwa-static-files.s3.ap-northeast-2.amazonaws.com/content_images/contents_images-1630040753366-%EB%B2%97%EC%9D%B4%EB%9E%91%20%EA%B0%95%ED%99%A9-1.jpg",
+      "expire_date": "병입일로부터 3개월",
+      "keep": "냉장 보관",
+      "category_name": "탁주"
+    },
+    {
+      "id": 28,
+      "name": "가덕 순쌀 생 막걸리",
+      "price": 16400,
+      "dgree": "6.0",
+      "ml": 750,
+      "awards": "",
+      "tiny_description": "청주 햅쌀로 빚는 생 막걸리",
+      "hash": [
+        {
+          "caption": "#담백한"
+        },
+        {
+          "caption": "#깔끔한"
+        }
+      ],
+      "grade": "5.0",
+      "image": "https://sooldamhwa-static-files.s3.ap-northeast-2.amazonaws.com/content_images/contents_images-1621484808082-%EA%B0%80%EB%8D%95%EC%88%9C%EC%8C%80%EB%A7%89%EA%B1%B8%EB%A6%AC-2.png",
+      "expire_date": "제조일로부터 1개월 이내",
+      "keep": "세워서 냉장 보관",
+      "category_name": "탁주"
+    }
+  ]
+}
