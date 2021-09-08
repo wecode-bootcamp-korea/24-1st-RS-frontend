@@ -5,17 +5,52 @@ import ReadyToBuy from './ReadyToBuy';
 export default class Modal extends Component {
   state = {
     cartList: [],
+    updatedList: [],
     isChecked: false,
   };
 
   componentDidMount() {
-    fetch('/data/CartTest.json')
+    const url = 'http://10.58.3.176:8000/carts';
+
+    fetch(url, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization:
+          'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MTF9.fCPlhBdz7rrwyrTNXbhpF47oTWcLIKI1RQiNTahKTpk',
+      },
+    })
       .then(res => res.json())
       .then(res => {
         const cartList = res.Result;
+
         this.setState({ cartList });
       });
   }
+
+  handleCardDelete = () => {
+    console.log('this func called');
+    const { id } = this.props;
+
+    const del_url = `http://10.58.3.176:8000/carts?product_id=${id}`;
+    // const get_url = 'http://10.58.3.176:8000/carts';
+
+    fetch(del_url, {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization:
+          'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MTF9.fCPlhBdz7rrwyrTNXbhpF47oTWcLIKI1RQiNTahKTpk',
+      },
+    })
+      .then(res => res.json())
+      .then(res => {
+        const cartList = res.Result;
+
+        this.setState({ cartList });
+      });
+    console.log('Just got =>>>', this.state.cartList);
+  };
 
   // handleChechbox = () => {
   //   const { isChecked } = this.state;
@@ -39,21 +74,22 @@ export default class Modal extends Component {
               </button>
             </header>
             <main className="main-body">
-              {cartList.map(cart => {
+              {cartList.map((cart, idx) => {
                 return (
-                  <>
+                  <div className="card-wrapper">
                     <CheckBox
                       isChecked={isChecked}
                       handleChechbox={this.handleChechbox}
                     />
                     <ReadyToBuy
-                      key={cart.cart_id}
-                      name={cart.name}
-                      price={cart.price}
+                      id={cart.product_id}
+                      name={cart.product_name}
+                      price={cart.product_price}
                       qty={cart.quantity}
-                      img={cart.image}
+                      img={cart.image_url}
+                      del={this.handleCardDelete}
                     />
-                  </>
+                  </div>
                 );
               })}
             </main>

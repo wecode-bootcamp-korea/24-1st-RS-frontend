@@ -1,13 +1,50 @@
 import React, { Component } from 'react';
 
 export default class ReadyToBuy extends Component {
+  // handleCardDelete = () => {
+  //   const { id } = this.props;
+
+  //   const del_url = `http://10.58.3.176:8000/carts?product_id=${id}`;
+  //   const get_url = 'http://10.58.3.176:8000/carts';
+
+  //   fetch(del_url, {
+  //     method: 'DELETE',
+  //     headers: {
+  //       'Content-Type': 'application/json',
+  //       Authorization:
+  //         'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MTF9.fCPlhBdz7rrwyrTNXbhpF47oTWcLIKI1RQiNTahKTpk',
+  //     },
+  //   })
+  //     .then(res => res.json())
+  //     .then(res => {
+  //       const cartList = res.Result;
+
+  //       this.setState({ cartList };
+  //     });
+
+  // fetch(get_url, {
+  //   method: 'GET',
+  //   headers: {
+  //     'Content-Type': 'application/json',
+  //     Authorization:
+  //       'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MTF9.fCPlhBdz7rrwyrTNXbhpF47oTWcLIKI1RQiNTahKTpk',
+  //   },
+  // })
+  //   .then(res => res.json())
+  //   .then(res => {
+  //     return console.log('succ');
+  //   });
+  // };
+
   render() {
-    const { key, name, price, qty, img } = this.props;
+    const { id, del, name, price, qty, img } = this.props;
 
     return (
-      <div className="card-wrapper" key={key}>
+      <div key={id}>
         <div className="card">
-          {/* <input type="checkbox" className="select-box" /> */}
+          <button className="delete-card" onClick={del}>
+            &times;
+          </button>
           <header className="card-header">
             <div className="header-text-between">
               <label>제품명 </label>
