@@ -16,11 +16,13 @@ export default class Details extends Component {
   }
 
   componentDidMount() {
-    fetch('/data/DetailTest2.json')
+    // const url = 'http://10.58.1.135:8000/product/1';
+    const url = '/data/DetailTest2.json';
+
+    fetch(url)
       .then(res => res.json())
       .then(res => {
         const productInfo = res.Result;
-
         this.setState({ productInfo });
       });
   }

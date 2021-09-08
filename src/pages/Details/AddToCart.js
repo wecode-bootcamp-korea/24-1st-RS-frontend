@@ -38,7 +38,7 @@ export default class AddToCart extends Component {
     })
       .then(res => res.json())
       .then(res => {
-        return console.log('succ');
+        return console.log('status?');
       });
   };
 
@@ -53,14 +53,9 @@ export default class AddToCart extends Component {
           <div className="amount">
             <label className="opt-header">수량</label>
             <div className="select-amount">
-              <button onClick={this.handleMinusBtn} className="">
-                -
-              </button>
+              <button onClick={this.handleMinusBtn}>-</button>
               <span className="amount-count">{quantity}</span>
-              <button
-                onClick={this.handlePlusBtn}
-                className={quantity === 1 && 'not-changed'}
-              >
+              <button onClick={this.handlePlusBtn} className="not-changed">
                 +
               </button>
             </div>
