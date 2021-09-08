@@ -1,0 +1,43 @@
+@mixin button {
+  border: none;
+  background-color: #ffff;
+  outline: none;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+@mixin button-hover {
+  color: #f4bb5f;
+  transition: 0.3s ease;
+}
+
+.header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding-bottom: 5px;
+  margin-top: 5px;
+
+  .sign-group {
+    display: flex;
+
+    .login-btn {
+      @include button;
+      margin-right: 20px;
+    }
+
+    .signup-btn {
+      @include button;
+    }
+
+    .login-btn:hover,
+    .signup-btn:hover {
+      @include button-hover;
+    }
+  }
+
+  .logo-img {
+    width: 85px;
+    height: 25px;
+  }
+}

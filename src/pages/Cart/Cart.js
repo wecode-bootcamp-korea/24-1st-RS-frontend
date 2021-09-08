@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import './Cart.scss';
 
 import Modal from './Modal';
 

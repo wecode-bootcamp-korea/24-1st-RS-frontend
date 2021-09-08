@@ -1,1 +1,362 @@
-//style
+@import '../../styles/common.scss';
+
+@mixin align-center {
+  display: flex;
+  justify-content: center;
+}
+
+@mixin align-middle {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin aside-label-style {
+  display: block;
+  margin: 8px auto;
+  color: var(--main-gray);
+  font-size: 15px;
+}
+
+@mixin aside-border-style {
+  height: 3.5rem;
+  margin: 20px 0;
+  padding: 13px 10px;
+  border-radius: 4px;
+  border: 1px solid var(--detail-bordergray);
+}
+
+@mixin add-btn {
+  display: block;
+  width: 80%;
+  height: 4rem;
+  margin: 10px auto;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  color: white;
+}
+
+@mixin text-h1 {
+  font-size: 3rem;
+  font-weight: 600;
+}
+
+@mixin text-h2 {
+  font-size: 2.6rem;
+  font-weight: 600;
+}
+
+@mixin text-h3 {
+  font-size: 2.3rem;
+  font-weight: 600;
+}
+
+@mixin text-h4 {
+  font-size: 1.5rem;
+}
+
+@mixin text-h5 {
+  font-size: 1.3rem;
+  font-weight: 400;
+}
+
+@mixin text-h6 {
+  font-size: 1rem;
+}
+
+@mixin text-h7 {
+  font-size: 0.7rem;
+}
+
+.details-wrapper {
+  color: var(--detail-textgray);
+
+  .quick-view {
+    .product-name {
+      @include text-h1;
+      padding: 25px 0;
+      text-align: center;
+    }
+    .rates {
+      padding-bottom: 25px;
+      @include text-h5;
+      text-align: center;
+    }
+    .marketing-point {
+      @include flex-center;
+
+      .main-img {
+        @include flex-center;
+        width: 45rem;
+        height: 30rem;
+
+        img {
+          height: 30rem;
+          object-fit: cover;
+        }
+      }
+
+      .quick-info {
+        @include align-middle;
+        justify-content: space-between;
+        width: 35rem;
+        height: 30rem;
+        padding: 5px 0;
+
+        .tags {
+          @include text-h5;
+          color: var(--main-yellow);
+
+          .awards {
+            display: block;
+          }
+
+          .hidden {
+            visibility: hidden;
+          }
+        }
+
+        .features {
+          span {
+            display: block;
+            margin: 7px 0;
+            @include text-h5;
+          }
+
+          .feature-label {
+            @include text-h4;
+            font-weight: 600;
+          }
+
+          .quick-features {
+            margin: 17px 0;
+            @include text-h5;
+
+            span {
+              @include text-h5;
+              color: var(--detail-textgray);
+            }
+          }
+        }
+
+        .sides-all {
+          display: flex;
+          justify-content: flex-start;
+
+          .sidedishes {
+            margin: 5px 10px;
+            @include align-middle;
+            align-items: center;
+
+            img {
+              width: 4.5rem;
+              margin: 5px 5px;
+            }
+
+            label {
+              margin: 5px auto;
+              @include text-h6;
+            }
+          }
+        }
+
+        .product-price {
+          display: flex;
+          align-items: center;
+
+          label {
+            padding-right: 10px;
+            @include text-h4;
+            color: var(--detail-textgray);
+          }
+
+          .price {
+            @include text-h2;
+            display: inline;
+          }
+        }
+      }
+    }
+  }
+
+  .product-description {
+    @include align-center;
+    align-items: flex-start;
+    margin-top: 25px;
+
+    .desc-left {
+      width: 40rem;
+
+      .facts {
+        margin: 10px;
+
+        label {
+          display: block;
+          text-align: center;
+          @include text-h3;
+        }
+
+        .table {
+          @include flex-center;
+          @include text-h5;
+
+          .col-1 {
+            margin: 25px 20px;
+            padding-right: 15px;
+            border-right: 1px solid var(--detail-bordergray);
+            text-align: right;
+          }
+
+          li {
+            margin: 20px 10px;
+            font-weight: 300;
+            color: black;
+          }
+        }
+      }
+    }
+
+    .tasting-info {
+      @include align-middle;
+      align-items: center;
+      margin: 15px 15px;
+
+      label {
+        margin: 20px 0;
+        @include text-h3;
+      }
+
+      .tasting-card-all {
+        @include flex-center;
+
+        .flavor-card {
+          @include align-middle;
+          width: 6.7rem;
+          margin: 10px 10px;
+          padding: 5px 15px 10px 15px;
+          border: 1px solid var(--detail-bordergray);
+          border-radius: 10px;
+
+          .flavor {
+            text-align: center;
+            @include text-h5;
+            color: var(--detail-mediumgray);
+          }
+
+          .flavor-points {
+            padding: 5px 0 10px 0;
+            text-align: center;
+            @include text-h4;
+            color: var(--main-yellow);
+          }
+        }
+      }
+    }
+
+    .aside {
+      width: 35rem;
+
+      .add-to-cart {
+        display: inline-block;
+        position: sticky;
+        width: 25rem;
+        height: 43rem;
+        top: 20px;
+        margin: 40px 10px;
+        padding: 35px 40px;
+        border-radius: 7px;
+        border: 1px solid #dbd9d6;
+
+        .opt-header {
+          @include aside-label-style;
+          padding: 5px 5px;
+          text-align: end;
+          @include text-h5;
+        }
+
+        .options {
+          padding: 0 5px;
+
+          .opt-wrapper {
+            @include aside-border-style;
+          }
+        }
+
+        .amount {
+          .select-amount {
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            @include aside-border-style;
+
+            .amount-count {
+              margin: 8px 0;
+              @include text-h5;
+            }
+
+            button {
+              border: none;
+              background-color: transparent;
+              @include text-h4;
+              color: var(--main-yellow);
+            }
+
+            .not-changed {
+              border: none;
+              background-color: transparent;
+              @include text-h4;
+              color: var(--detail-textgray);
+            }
+          }
+        }
+      }
+
+      .total-price {
+        @include aside-border-style;
+        text-align: center;
+        @include text-h5;
+      }
+
+      .shipping-info {
+        font-size: 10px;
+        text-align: end;
+
+        .shipping-info-wrapper {
+          margin: 7px 5px;
+          @include text-h7;
+
+          .shipping-to {
+            margin-right: 5px;
+          }
+
+          .shipping-cost {
+            font-weight: 800;
+          }
+        }
+
+        .shipping-info-alert {
+          margin: 70px 5px 0 5px;
+          text-align: center;
+          @include text-h7;
+        }
+      }
+
+      .add-to-btn {
+        @include align-middle;
+        margin-top: 35px;
+
+        .add-cart {
+          @include add-btn;
+          @include text-h5;
+          background-color: var(--main-yellow);
+        }
+
+        .buy-now {
+          @include add-btn;
+          @include text-h5;
+          background-color: var(--main-blue);
+        }
+      }
+    }
+  }
+}
