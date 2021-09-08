@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import API from '../../config';
 
 export default class Features extends Component {
   state = {
@@ -6,7 +7,7 @@ export default class Features extends Component {
   };
 
   componentDidMount() {
-    fetch('http://10.58.1.135:8000/products/4/detail')
+    fetch(`${API}/products/1/detail`)
       .then(res => res.json())
       .then(res => {
         const [sellingPoint] = res.Result;

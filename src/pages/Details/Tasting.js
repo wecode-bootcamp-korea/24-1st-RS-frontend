@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import API from '../../config';
 
 export default class Tasting extends Component {
   state = {
@@ -6,7 +7,7 @@ export default class Tasting extends Component {
   };
 
   componentDidMount() {
-    fetch('http://10.58.1.135:8000/products/4/flavors')
+    fetch(`${API}/products/1/flavors`)
       .then(res => res.json())
       .then(res => {
         const flavors = res.Result;

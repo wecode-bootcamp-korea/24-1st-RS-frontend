@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import API from '../../config';
 import './Details.scss';
 
 import AddToCart from './AddToCart';
@@ -16,8 +17,7 @@ export default class Details extends Component {
   }
 
   componentDidMount() {
-    const url = 'http://10.58.1.135:8000/products/33';
-    // const url = '/data/DetailTest2.json';
+    const url = `${API}/products/1`;
 
     fetch(url)
       .then(res => res.json())
