@@ -55,7 +55,9 @@ export default class Details extends Component {
             )}
             <Tasting />
           </div>
-          <AddToCart price={productInfo.price} key={productInfo.id} />
+          {Object.keys(productInfo).length && (
+            <AddToCart price={productInfo.price} productID={productInfo.id} />
+          )}
         </div>
       </div>
     );
