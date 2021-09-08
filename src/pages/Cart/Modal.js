@@ -30,7 +30,6 @@ export default class Modal extends Component {
 
   componentDidMount() {
     this.handleGetRequest();
-    console.log('worked!');
   }
 
   render() {
