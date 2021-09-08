@@ -66,6 +66,7 @@
 
     .main-body {
       display: flex;
+      flex-direction: column;
       overflow: scroll;
       width: 100%;
       max-height: 400px;
@@ -121,11 +122,6 @@
           align-items: center;
           margin: 20px 0;
 
-          .img-in-cart {
-            width: 10rem;
-            margin-bottom: 15px;
-          }
-
           .added-product {
             display: flex;
             align-items: center;
@@ -140,6 +136,10 @@
               font-size: 1.3rem;
             }
           }
+        }
+        .img-in-cart {
+          width: 10rem;
+          margin-bottom: 15px;
         }
       }
     }

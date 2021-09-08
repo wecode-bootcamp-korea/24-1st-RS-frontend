@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
+import CheckBox from './CheckBox';
 import ReadyToBuy from './ReadyToBuy';
 
 export default class Modal extends Component {
   state = {
     cartList: [],
+    isChecked: false,
   };
 
   componentDidMount() {
@@ -15,11 +17,15 @@ export default class Modal extends Component {
       });
   }
 
-  handleSelectedProduct = () => {};
+  // handleChechbox = () => {
+  //   const { isChecked } = this.state;
+
+  //   return {isChecked: !isChecked  ? this.setState({ isChecked };  }
+  // };
 
   render() {
     const { open, close } = this.props;
-    const { cartList } = this.state;
+    const { cartList, isChecked } = this.state;
     const totalAmount = cartList.length;
 
     return (
@@ -36,6 +42,10 @@ export default class Modal extends Component {
               {cartList.map(cart => {
                 return (
                   <>
+                    <CheckBox
+                      isChecked={isChecked}
+                      handleChechbox={this.handleChechbox}
+                    />
                     <ReadyToBuy
                       key={cart.cart_id}
                       name={cart.name}

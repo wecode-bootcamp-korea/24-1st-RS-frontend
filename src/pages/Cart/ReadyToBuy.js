@@ -7,7 +7,7 @@ export default class ReadyToBuy extends Component {
     return (
       <div className="card-wrapper" key={key}>
         <div className="card">
-          <input type="checkbox" className="select-box" />
+          {/* <input type="checkbox" className="select-box" /> */}
           <header className="card-header">
             <div className="header-text-between">
               <label>제품명 </label>
