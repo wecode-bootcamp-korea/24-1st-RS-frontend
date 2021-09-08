@@ -9,7 +9,7 @@ export default class Modal extends Component {
     isChecked: false,
   };
 
-  componentDidMount() {
+  handleGetRequest = () => {
     const url = 'http://10.58.3.176:8000/carts';
 
     fetch(url, {
@@ -26,6 +26,11 @@ export default class Modal extends Component {
 
         this.setState({ cartList });
       });
+  };
+
+  componentDidMount() {
+    this.handleGetRequest();
+    console.log('worked!');
   }
 
   render() {
@@ -57,7 +62,8 @@ export default class Modal extends Component {
                       price={cart.product_price}
                       qty={cart.quantity}
                       img={cart.image_url}
-                      del={this.handleCardDelete}
+                      get={this.handleGetRequest}
+                      listState={cartList}
                     />
                   </div>
                 );
