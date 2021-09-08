@@ -2,38 +2,38 @@ import React, { Component } from 'react';
 
 export default class ReadyToBuy extends Component {
   render() {
+    const { key, name, price, qty, img } = this.props;
+
     return (
-      <div>
+      <div className="card-wrapper" key={key}>
         <div className="card">
-          <header>
-            <div className="header1">
-              <label>양조장: </label>
-              <span>양조장 명</span>
+          <input type="checkbox" className="select-box" />
+          <header className="card-header">
+            <div className="header-text-between">
+              <label>제품명 </label>
+              <span>{name}</span>
             </div>
-            <div className="header2">
-              <label>배송비: </label>
-              <span>3,000원</span>
+            <div className="header-text-between">
+              <label>가격: </label>
+              <span>{price}</span>
             </div>
-            <div>27,000원 이상 구매 시 배송비 무료</div>
+            <div className="header-text-between">
+              <label>총 기격: </label>
+              <span>{price * qty}</span>
+            </div>
+            <div className="shipping-alert">
+              27,000원 이상 구매 시 배송비 무료
+            </div>
           </header>
-          <div className="added-product">
-            <label>name</label>
-            <img alt="product-img" src="#" />
-          </div>
-          <div>
-            <div className="select-qty">
-              <label>수량: </label>
-              <div className="select-amount">
-                <button className="minus">-</button>
-                <span className="amount-count">qty</span>
-                <button className="plus">+</button>
-              </div>
+          <main className="card-main">
+            <img alt="product-img" src={img} className="img-in-cart" />
+            <label>수량: </label>
+            <div className="added-product">
+              <button className="minus">-</button>
+              <span className="amount-count">{qty}개</span>
+              <button className="plus">+</button>
             </div>
-          </div>
-        </div>
-        <div className="final-price">
-          <label>가격: </label>
-          <span>price</span>
+          </main>
         </div>
       </div>
     );

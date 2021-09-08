@@ -8,19 +8,12 @@ export default class Cart extends Component {
     super(props);
 
     this.state = {
-      isModalOpen: false,
+      isModalOpen: true,
     };
-  }
-
-  componentDidMount() {
-    fetch('/data/DetailTest2.json')
-      .then(res => res.json())
-      .then(res => this.setState({ infoList: res.Result }));
   }
 
   handleModalOpen = () => {
     this.setState({ isModalOpen: true });
-    console.log(this.state.isModalOpen);
   };
 
   handleModalClosed = () => {
@@ -31,13 +24,9 @@ export default class Cart extends Component {
     const { isModalOpen } = this.state;
 
     return (
-      <div>
+      <div className="modal-wrapper">
         <button onClick={this.handleModalOpen}> 장바구니 보기 </button>
-        <Modal
-          open={isModalOpen}
-          close={this.handleModalClosed}
-          title="Create a chat roozxm"
-        />
+        <Modal open={isModalOpen} close={this.handleModalClosed} />
       </div>
     );
   }
