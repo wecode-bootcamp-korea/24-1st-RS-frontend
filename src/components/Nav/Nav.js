@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './Nav.scss';
-import { withRouter } from 'react-router-dom';
+import { withRouter, Link } from 'react-router-dom';
 
 class Nav extends Component {
   goToSignIn = () => {
@@ -11,22 +11,46 @@ class Nav extends Component {
     this.props.history.push('/signup');
   };
 
+  logOut = () => {
+    localStorage.clear();
+    this.props.history.push('/');
+  };
+
+  goToCart = () => {
+    this.props.history.push('/cart');
+  };
+
   render() {
     return (
       <header className="header">
-        <img
-          alt="logo-img"
-          className="logo-img"
-          src="/images/Main/logoimg.png"
-        />
+        <Link to="/">
+          <img
+            alt="logo-img"
+            className="logo-img"
+            src="/images/Main/logoimg.png"
+          />
+        </Link>
 
         <div className="sign-group">
-          <p className="login-btn" onClick={this.goToSignIn}>
-            로그인
-          </p>
-          <p className="signup-btn" onClick={this.goToSignUp}>
-            회원가입
-          </p>
+          {localStorage.getItem('login-token') ? (
+            <>
+              <p className="login-btn" onClick={this.goToCart}>
+                장바구니
+              </p>
+              <p className="login-btn" onClick={this.logOut}>
+                로그아웃
+              </p>
+            </>
+          ) : (
+            <>
+              <p className="login-btn" onClick={this.goToSignIn}>
+                로그인
+              </p>
+              <p className="signup-btn" onClick={this.goToSignUp}>
+                회원가입
+              </p>
+            </>
+          )}
         </div>
       </header>
     );

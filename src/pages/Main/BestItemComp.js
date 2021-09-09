@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import BestSellerMockData from './BestSellerMockData';
 import BestItemCompDetail from './BestItemCompDetail';
 import './BestItem.scss';
 
@@ -19,7 +18,7 @@ export default class BestItemComp extends Component {
             <p className="word-below-rocket">베스트 셀러</p>
           </div>
           <div className="best-seller-card-wrapper">
-            {BestSellerMockData.map((best, idx) => {
+            {this.props.best.map((best, idx) => {
               return <BestItemCompDetail key={idx} product={best} />;
             })}
           </div>

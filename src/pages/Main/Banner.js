@@ -10,28 +10,29 @@ export default class Banner extends Component {
   }
 
   handleClickLeft = () => {
-    this.state.currImg > 0 &&
+    const { currImg } = this.state;
+    currImg > 0 &&
       this.setState({
-        currImg: this.state.currImg - 1,
+        currImg: currImg - 1,
       });
   };
 
   handleClickRight = () => {
-    this.state.currImg < BannerSliderData.length - 1 &&
+    const { currImg } = this.state;
+    currImg < BannerSliderData.length - 1 &&
       this.setState({
-        currImg: this.state.currImg + 1,
+        currImg: currImg + 1,
       });
   };
 
   render() {
+    const { currImg } = this.state;
     return (
       <div className="banner-section">
         <div
           className="banner-img"
           style={{
-            backgroundImage: `url(${
-              BannerSliderData[this.state.currImg].image
-            })`,
+            backgroundImage: `url(${BannerSliderData[currImg].image})`,
           }}
         >
           <div className="left" onClick={this.handleClickLeft}>

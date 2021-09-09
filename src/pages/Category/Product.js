@@ -7,10 +7,7 @@ import { Route } from 'react-router';
 class Product extends Component {
   render() {
     return (
-      <Link
-        to={`/category/details/${this.props.id}`}
-        style={{ textDecoration: 'none' }}
-      >
+      <Link to={`/details/${this.props.id}`} style={{ textDecoration: 'none' }}>
         <div className="product">
           <div className="product-image">
             <img alt="product-image" src={this.props.image} />

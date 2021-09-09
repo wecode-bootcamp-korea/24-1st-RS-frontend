@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import API from '../../config';
+import { withRouter } from 'react-router';
 
-export default class Features extends Component {
+class Features extends Component {
   state = {
     sellingPoint: {},
   };
 
   componentDidMount() {
-    fetch(`${API}/products/1/detail`)
+    fetch(`${API}/products/${this.props.match.params.id}/detail`)
       .then(res => res.json())
       .then(res => {
         const [sellingPoint] = res.Result;
@@ -44,3 +45,5 @@ export default class Features extends Component {
     );
   }
 }
+
+export default withRouter(Features);

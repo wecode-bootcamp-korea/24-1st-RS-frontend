@@ -48,6 +48,8 @@
 
         .best-seller-img {
           width: 240px;
+          height: 319px;
+          object-fit: cover;
         }
 
         .best-seller-desc {
@@ -79,4 +81,8 @@
       }
     }
   }
+}
+
+a {
+  text-decoration: none;
 }

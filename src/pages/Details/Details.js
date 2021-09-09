@@ -17,7 +17,7 @@ export default class Details extends Component {
   }
 
   componentDidMount() {
-    const url = `${API}/products/1`;
+    const url = `${API}/products/${this.props.match.params.id}`;
 
     fetch(url)
       .then(res => res.json())
@@ -32,6 +32,7 @@ export default class Details extends Component {
 
     return (
       <div className="details-wrapper">
+        <div className="nav-bar" />
         {Object.keys(productInfo).length && (
           <ProductInfo productInfo={productInfo} />
         )}
