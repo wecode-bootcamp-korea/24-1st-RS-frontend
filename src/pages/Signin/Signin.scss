@@ -14,7 +14,6 @@
     .signin-box {
       @include flex-center;
       flex-direction: column;
-
       text-align: center;
 
       .signin-pagetitle {
@@ -50,6 +49,36 @@
             outline: none;
             border-bottom: 2px solid black;
           }
+        }
+
+        .signin-input-done {
+          width: 250px;
+          margin-bottom: 30px;
+          padding-bottom: 5px;
+          border: 0;
+          border-bottom: 2px solid var(--main-yellow);
+          font-size: 16px;
+          font-weight: lighter;
+          text-align: center;
+
+          &:hover {
+            outline: none;
+            border-bottom: 2px solid var(--main-yellow);
+          }
+        }
+
+        .email-check {
+          margin-top: -25px;
+          display: none;
+          color: red;
+          font-size: 12px;
+        }
+
+        .password-check {
+          margin-top: -25px;
+          display: none;
+          color: red;
+          font-size: 12px;
         }
       }
 

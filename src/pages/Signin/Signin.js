@@ -62,7 +62,9 @@ class Signin extends Component {
                 <div className="input-box">
                   <span className="input-name">이메일</span>
                   <input
-                    className="signin-input"
+                    className={
+                      !this.state.email ? 'signin-input' : 'signin-input-done'
+                    }
                     name="email"
                     placeholder="이메일을 입력해주세요"
                     onChange={this.handleInput}
@@ -72,7 +74,11 @@ class Signin extends Component {
                 <div className="input-box">
                   <span className="input-name">비밀번호</span>
                   <input
-                    className="signin-input"
+                    className={
+                      !this.state.password
+                        ? 'signin-input'
+                        : 'signin-input-done'
+                    }
                     placeholder="비밀번호를 입력해주세요"
                     name="password"
                     type="password"
