@@ -1,0 +1,22 @@
+export const BannerSliderData = [
+  {
+    image:
+      'https://images.unsplash.com/photo-1530064161350-7824b8cdeee9?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80',
+  },
+  {
+    image:
+      'https://images.unsplash.com/photo-1496134732667-ae8d2853a045?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2850&q=80',
+  },
+  {
+    image:
+      'https://images.unsplash.com/photo-1496318447583-f524534e9ce1?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=3205&q=80',
+  },
+  {
+    image:
+      'https://cdn.pixabay.com/photo/2016/11/29/15/05/drink-1870139_960_720.jpg',
+  },
+  {
+    image:
+      'https://images.unsplash.com/photo-1446822775955-c34f483b410b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80',
+  },
+];
