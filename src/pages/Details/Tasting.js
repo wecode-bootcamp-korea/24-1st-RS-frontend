@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
+import { withRouter } from 'react-router';
 import API from '../../config';
 
-export default class Tasting extends Component {
+class Tasting extends Component {
   state = {
     flavors: [],
   };
 
   componentDidMount() {
-    fetch(`${API}/products/1/flavors`)
+    fetch(`${API}/products/${this.props.match.params.id}/flavors`)
       .then(res => res.json())
       .then(res => {
         const flavors = res.Result;
@@ -36,3 +37,5 @@ export default class Tasting extends Component {
     );
   }
 }
+
+export default withRouter(Tasting);

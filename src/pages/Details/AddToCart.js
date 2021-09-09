@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Shipping from './Shipping';
+import API from '../../config';
 
 export default class AddToCart extends Component {
   state = {
@@ -24,10 +25,10 @@ export default class AddToCart extends Component {
     const { productID } = this.props;
     const { quantity } = this.state;
 
-    const url = 'http://10.58.3.176:8000/carts';
+    const post_url = `${API}/carts`;
     const data = { product_id: productID, quantity: quantity };
 
-    fetch(url, {
+    fetch(post_url, {
       method: 'POST',
       body: JSON.stringify(data),
       headers: {
@@ -38,12 +39,12 @@ export default class AddToCart extends Component {
     })
       .then(res => res.json())
       .then(res => {
-        return console.log('status?');
+        console.log(res);
       });
   };
 
   render() {
-    const { price, key } = this.props;
+    const { price, productID } = this.props;
     const { quantity } = this.state;
     const totalPrice = (price.split(',').join('') * quantity).toLocaleString(
       'ko-KR'
@@ -69,7 +70,7 @@ export default class AddToCart extends Component {
             </div>
           </div>
           <Shipping />
-          <div className="add-to-btn" key={key}>
+          <div className="add-to-btn" key={productID}>
             <button className="add-cart" onClick={this.handleAddToBtn}>
               장바구니 담기
             </button>

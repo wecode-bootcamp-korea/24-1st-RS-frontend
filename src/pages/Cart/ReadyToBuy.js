@@ -1,31 +1,29 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
+import API from '../../config';
 
 export default class ReadyToBuy extends Component {
   handleCardDelete = () => {
     const { id } = this.props;
-    const del_url = `/data/CartTest.json?product_id=${id}`;
-    // const del_url = `http://10.58.3.176:8000/carts?product_id=${id}`;
+    const del_url = `${API}/carts/${id}`;
 
-    // fetch(del_url, {
-    //   method: 'DELETE',
-    //   headers: {
-    //     'Content-Type': 'application/json',
-    //     Authorization:
-    //       'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MTF9.fCPlhBdz7rrwyrTNXbhpF47oTWcLIKI1RQiNTahKTpk',
-    //   },
-    // })
-    fetch(del_url)
-      .then(res => res.json())
-      .then(res => {
-        window.location.reload();
-      });
+    fetch(del_url, {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization:
+          'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MTF9.fCPlhBdz7rrwyrTNXbhpF47oTWcLIKI1RQiNTahKTpk',
+      },
+    }).then(res => {
+      console.log(res);
+      window.location.reload();
+    });
   };
 
   render() {
-    const { id, name, price, qty, handleAmount } = this.props;
+    const { id, name, price, qty, handlePlus, handleMinus, image } = this.props;
 
     return (
-      <div key={id}>
+      <Fragment>
         <div className="card">
           <button className="delete-card" onClick={this.handleCardDelete}>
             &times;
@@ -44,22 +42,24 @@ export default class ReadyToBuy extends Component {
               <span>{(price * qty).toLocaleString('ko-KR')} 원</span>
             </div>
             <div className="shipping-alert">
-              27,000원 이상 구매 시 배송비 무료
+              200,000원 이상 구매 시 배송비 무료
             </div>
           </header>
           <main className="card-main">
-            <img alt="product-img" src="#" className="img-in-cart" />
+            <img alt="product-img" src={image} className="img-in-cart" />
             <label>수량: </label>
             <div className="added-product">
-              <button className="minus" onClick={handleAmount}>
+              <button className="minus" onClick={() => handleMinus(id)}>
                 -
               </button>
               <span className="amount-count">{qty}개</span>
-              <button className="plus">+</button>
+              <button className="plus" onClick={() => handlePlus(id)}>
+                +
+              </button>
             </div>
           </main>
         </div>
-      </div>
+      </Fragment>
     );
   }
 }

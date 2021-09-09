@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
+import { withRouter } from 'react-router';
 import API from '../../config';
 
-export default class SideDishes extends Component {
+class SideDishes extends Component {
   state = {
     sideDishes: [],
   };
 
   componentDidMount() {
-    fetch(`${API}/products/1/sidedishes`)
+    fetch(`${API}/products/${this.props.match.params.id}/sidedishes`)
       .then(res => res.json())
       .then(res => {
         const sideDishes = res.Result;
@@ -33,3 +34,5 @@ export default class SideDishes extends Component {
     );
   }
 }
+
+export default withRouter(SideDishes);

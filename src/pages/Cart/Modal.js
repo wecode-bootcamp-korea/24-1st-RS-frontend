@@ -1,59 +1,86 @@
 import React, { Component } from 'react';
 import ReadyToBuy from './ReadyToBuy';
+import API from '../../config';
 
 export default class Modal extends Component {
   state = {
     cartList: [],
-    isChecked: false,
+    totalSum: 0,
   };
 
   componentDidMount() {
-    const url = '/data/CartTest.json';
-    // const url = 'http://10.58.3.176:8000/carts?product_id=${id}';
+    const url = `${API}/carts`;
 
-    // fetch(url, {
-    //   method: 'GET',
-    //   headers: {
-    //     'Content-Type': 'application/json',
-    //     Authorization:
-    //       'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MTF9.fCPlhBdz7rrwyrTNXbhpF47oTWcLIKI1RQiNTahKTpk',
-    //   },
-    // })
-
-    fetch(url)
+    fetch(url, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization:
+          'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MTF9.fCPlhBdz7rrwyrTNXbhpF47oTWcLIKI1RQiNTahKTpk',
+      },
+    })
       .then(res => res.json())
       .then(res => {
         const cartList = res.Result;
+        console.log(cartList);
 
         this.setState({ cartList });
       });
   }
 
-  handleCheckbox = () => {
+  handleCartUpdate = () => {
     const { cartList } = this.state;
 
-    cartList.reduce();
+    cartList.forEach(item => {
+      const update_url = `${API}/carts/${item.cart_id}`;
+      const data = { product_quantity: item.quantity };
+      fetch(update_url, {
+        method: 'PATCH',
+        body: JSON.stringify(data),
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization:
+            'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MTF9.fCPlhBdz7rrwyrTNXbhpF47oTWcLIKI1RQiNTahKTpk',
+        },
+      }).then(res => console.log(res));
+    });
   };
 
-  handleTotalSum = () => {
-    const { cartList } = this.state;
-  };
-
-  handleAmount = () => {
+  handlePlusBtn = cart_id => {
     const { cartList } = this.state;
 
-    const amount = cartList.map(amount => amount.quantity);
-    this.setState({
-      amount: amount - 1,
+    const addQty = cartList.map(item => {
+      if (item.cart_id === cart_id) {
+        return { ...item, quantity: item.quantity + 1 };
+      } else return item;
     });
 
-    console.log(amount);
+    this.setState({ cartList: addQty });
+  };
+
+  handleMinusBtn = cart_id => {
+    const { cartList } = this.state;
+
+    const deductQty = cartList.map(item => {
+      if (item.cart_id === cart_id) {
+        if (item.quantity > 1) {
+          return { ...item, quantity: item.quantity - 1 };
+        } else if (item.quantity <= 1) {
+          return { ...item, quantity: 1 };
+        }
+      } else return item;
+    });
+
+    this.setState({ cartList: deductQty });
   };
 
   render() {
     const { open, close } = this.props;
     const { cartList } = this.state;
-    const totalAmount = cartList.length;
+
+    const totalPrice = cartList
+      .reduce((acc, item) => acc + item.quantity * item.product_price, 0)
+      .toLocaleString();
 
     return (
       <div className={open ? 'openModal modal' : 'modal'}>
@@ -66,38 +93,33 @@ export default class Modal extends Component {
               </button>
             </header>
             <main className="main-body">
-              {cartList.map(cart => {
+              {cartList.map((cart, idx) => {
                 return (
-                  <div className="card-wrapper">
-                    <input type="checkbox" className="checkbox" />
+                  <div className="card-wrapper" key={idx}>
                     <ReadyToBuy
-                      id={cart.product_id}
+                      id={cart.cart_id}
                       name={cart.product_name}
                       price={cart.product_price}
                       qty={cart.quantity}
-                      handleAmount={this.handleAmount}
+                      image={cart.image_url}
+                      handlePlus={this.handlePlusBtn}
+                      handleMinus={this.handleMinusBtn}
                     />
                   </div>
                 );
               })}
             </main>
             <div className="total-sum">
-              <div className="select-all">
-                <input type="checkbox" />
-                <span>
-                  전체선택({totalAmount} / {totalAmount})
-                </span>
-              </div>
               <div className="selected-price">
                 <label>현재 총 구매가격:</label>
-                <span>배송비 추가해서 총 가격 넣을 것</span>
+                <span>{totalPrice} 원</span>
               </div>
             </div>
             <footer className="modal-footer">
-              <button className="close" onClick={close}>
+              <button className="close" onClick={() => this.handleCartUpdate()}>
                 계속 쇼핑하기
               </button>
-              <button className="order-to" onClick={close}>
+              <button className="order-to" onClick={this.handleToOrder}>
                 결제하기
               </button>
             </footer>
