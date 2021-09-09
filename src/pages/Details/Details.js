@@ -23,6 +23,7 @@ export default class Details extends Component {
       .then(res => res.json())
       .then(res => {
         const productInfo = res.Result;
+
         this.setState({ productInfo });
       });
   }
@@ -36,7 +37,6 @@ export default class Details extends Component {
         {Object.keys(productInfo).length && (
           <ProductInfo productInfo={productInfo} />
         )}
-
         <div className="product-description">
           <div className="desc-left">
             {Object.keys(productInfo).length && (
