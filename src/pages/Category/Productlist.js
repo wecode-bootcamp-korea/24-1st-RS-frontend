@@ -9,6 +9,7 @@ class ProductList extends Component {
         {this.props.products.map(product => {
           return (
             <Product
+              id={product.id}
               key={product.id}
               image={product.image}
               name={product.name}

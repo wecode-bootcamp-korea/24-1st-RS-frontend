@@ -20,7 +20,7 @@
 
   .main-text {
     width: 67%;
-    margin: 30px auto 30px;
+    margin: 10px auto 30px;
     text-align: center;
     line-height: 2;
 
@@ -46,7 +46,6 @@
     .filter {
       display: flex;
       justify-content: flex-start;
-      margin-bottom: 50px;
 
       .filter-btn {
         padding: 5px 15px 5px;
@@ -71,6 +70,28 @@
       .yellow-btn {
         background-color: var(--main-yellow);
         color: white;
+      }
+    }
+
+    .filter-input {
+      margin: 30px 10px 40px 0;
+      padding: 0 10px 5px 10px;
+      border: 0;
+      border-bottom: 2px solid rgb(133, 133, 133);
+      font-size: 16px;
+      text-align: center;
+      font-weight: lighter;
+    }
+
+    .filter-side-dish-btn {
+      background-color: white;
+      border: 0;
+      color: var(--main-gray);
+      font-weight: bold;
+      cursor: pointer;
+
+      &:hover {
+        color: var(--main-yellow);
       }
     }
 

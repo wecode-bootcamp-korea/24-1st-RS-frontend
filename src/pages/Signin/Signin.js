@@ -3,7 +3,6 @@ import { withRouter } from 'react-router-dom';
 import GoogleButton from './GoogleButton';
 import KakaoButton from './KakaoButton';
 import NaverButton from './NaverButton';
-import Footer from '../../components/Footer/Footer';
 import API from '../../config.js';
 import './Signin.scss';
 
@@ -96,7 +95,6 @@ class Signin extends Component {
             </div>
           </main>
         </div>
-        <Footer />
       </>
     );
   }
