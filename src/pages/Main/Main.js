@@ -6,6 +6,7 @@ import NewItemComp from './NewItemComp';
 import Recommendation from './Recommendation';
 import Holiday from './Holiday';
 import Time from './Time';
+import API from '../../config';
 import './Main.scss';
 
 export default class Main extends Component {
@@ -20,19 +21,19 @@ export default class Main extends Component {
   }
 
   componentDidMount() {
-    fetch('http://10.58.1.135:8000/products/list?order-by=?&limit=20')
+    fetch(`${API}/products/list?order-by=?&limit=20`)
       .then(response => response.json())
       .then(data => this.setState({ products: data.Result }));
 
-    fetch('http://10.58.1.135:8000/products/categories')
+    fetch(`${API}/products/categories`)
       .then(response => response.json())
       .then(data => this.setState({ category: data.Result }));
 
-    fetch('http://10.58.1.135:8000/products/list?limit=3&order-by=-grade')
+    fetch(`${API}/products/list?limit=3&order-by=-grade`)
       .then(response => response.json())
       .then(data => this.setState({ best: data.Result }));
 
-    fetch('http://10.58.1.135:8000/products/list?limit=3&order-by=-created_at')
+    fetch(`${API}/products/list?limit=3&order-by=-created_at`)
       .then(response => response.json())
       .then(data => this.setState({ new: data.Result }));
   }
