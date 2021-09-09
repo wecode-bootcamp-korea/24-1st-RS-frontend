@@ -3,7 +3,7 @@ import { ProductsCard } from './ProductsCard';
 import './Recommendations.scss';
 import FIRST_ITEM_DATA from './FIRST_ITEM_DATA';
 
-const CARD_WIDTH = 242;
+const CARD_WIDTH = 248;
 const prevBtn = FIRST_ITEM_DATA[0].img;
 const nextBtn = FIRST_ITEM_DATA[1].img;
 
