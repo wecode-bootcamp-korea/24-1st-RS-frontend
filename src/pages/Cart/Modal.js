@@ -79,7 +79,7 @@ export default class Modal extends Component {
     const { cartList } = this.state;
 
     const totalPrice = cartList
-      .reduce((acc, item) => acc + item.quantity * item.product_price, 0)
+      ?.reduce((acc, item) => acc + item.quantity * item.product_price, 0)
       .toLocaleString();
 
     return (
@@ -93,7 +93,7 @@ export default class Modal extends Component {
               </button>
             </header>
             <main className="main-body">
-              {cartList.map((cart, idx) => {
+              {cartList?.map((cart, idx) => {
                 return (
                   <div className="card-wrapper" key={idx}>
                     <ReadyToBuy
