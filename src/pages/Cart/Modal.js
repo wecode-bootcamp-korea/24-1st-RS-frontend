@@ -4,12 +4,21 @@ import ReadyToBuy from './ReadyToBuy';
 export default class Modal extends Component {
   state = {
     cartList: [],
-    updatedList: [],
     isChecked: false,
   };
 
   componentDidMount() {
     const url = '/data/CartTest.json';
+    // const url = 'http://10.58.3.176:8000/carts?product_id=${id}';
+
+    // fetch(url, {
+    //   method: 'GET',
+    //   headers: {
+    //     'Content-Type': 'application/json',
+    //     Authorization:
+    //       'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MTF9.fCPlhBdz7rrwyrTNXbhpF47oTWcLIKI1RQiNTahKTpk',
+    //   },
+    // })
 
     fetch(url)
       .then(res => res.json())
@@ -18,8 +27,28 @@ export default class Modal extends Component {
 
         this.setState({ cartList });
       });
-    console.log('cartList is >>>', this.state.cartList);
   }
+
+  handleCheckbox = () => {
+    const { cartList } = this.state;
+
+    cartList.reduce();
+  };
+
+  handleTotalSum = () => {
+    const { cartList } = this.state;
+  };
+
+  handleAmount = () => {
+    const { cartList } = this.state;
+
+    const amount = cartList.map(amount => amount.quantity);
+    this.setState({
+      amount: amount - 1,
+    });
+
+    console.log(amount);
+  };
 
   render() {
     const { open, close } = this.props;
@@ -37,14 +66,16 @@ export default class Modal extends Component {
               </button>
             </header>
             <main className="main-body">
-              {cartList.map((cart, idx) => {
+              {cartList.map(cart => {
                 return (
                   <div className="card-wrapper">
+                    <input type="checkbox" className="checkbox" />
                     <ReadyToBuy
                       id={cart.product_id}
                       name={cart.product_name}
                       price={cart.product_price}
                       qty={cart.quantity}
+                      handleAmount={this.handleAmount}
                     />
                   </div>
                 );
@@ -59,7 +90,7 @@ export default class Modal extends Component {
               </div>
               <div className="selected-price">
                 <label>현재 총 구매가격:</label>
-                <span>total sum</span>
+                <span>배송비 추가해서 총 가격 넣을 것</span>
               </div>
             </div>
             <footer className="modal-footer">

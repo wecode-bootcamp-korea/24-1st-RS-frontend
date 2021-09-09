@@ -2,24 +2,27 @@
   "Result": [
     {
       "cart_id": 30,
-      "name": "나루 생 막걸리 6%",
-      "price": 21000,
+      "product_name": "나루 생 막걸리 6%",
+      "product_price": 21000,
       "quantity": 7,
-      "brewery": "RS 양조장"
+      "brewery": "RS 양조장",
+      "product_id": 6
     },
     {
       "cart_id": 31,
-      "name": "대대포 블루",
-      "price": 28000,
+      "product_name": "대대포 블루",
+      "product_price": 28000,
       "quantity": 7,
-      "brewery": "RS 양조장"
+      "brewery": "RS 양조장",
+      "product_id": 7
     },
     {
       "cart_id": 32,
-      "name": "구름을 벗삼아",
-      "price": 17500,
+      "product_name": "구름을 벗삼아",
+      "product_price": 17500,
       "quantity": 7,
-      "brewery": "RS 양조장"
+      "brewery": "RS 양조장",
+      "product_id": 8
     }
   ]
 }
