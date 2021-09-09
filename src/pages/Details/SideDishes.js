@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router';
 import API from '../../config';
-import { withRouter } from 'react-router';
 
 class SideDishes extends Component {
   state = {
