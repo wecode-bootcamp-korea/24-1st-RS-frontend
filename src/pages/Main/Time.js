@@ -9,7 +9,7 @@ export default class Time extends React.Component {
           <img
             className="product-img"
             alt="random-drink-img"
-            src="/images/Main/randomdrink.png"
+            src={this.props.randomPics[0].image}
           />
         </div>
         <div className="time-wrapper">

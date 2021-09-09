@@ -16,7 +16,8 @@ export default class Main extends Component {
       products: [],
       category: [],
       best: [],
-      new: [],
+      newItems: [],
+      randomPic: [],
     };
   }
 
@@ -35,20 +36,26 @@ export default class Main extends Component {
 
     fetch(`${API}/products/list?limit=3&order-by=-created_at`)
       .then(response => response.json())
-      .then(data => this.setState({ new: data.Result }));
+      .then(data => this.setState({ newItems: data.Result }));
+
+    fetch(`${API}/products/list?limit=1&order-by=?`)
+      .then(response => response.json())
+      .then(data => this.setState({ randomPic: data.Result }));
   }
 
   render() {
+    const { category, products, randomPic, best, newItems } = this.state;
+
     return (
       <>
         <div className="search-bar"></div>
         <Banner />
-        <Menu category={this.state.category} />
+        <Menu category={category} />
         <Holiday />
-        <Recommendation products={this.state.products} />
-        <Time />
-        <BestItemComp best={this.state.best} />
-        <NewItemComp new={this.state.new} />
+        <Recommendation products={products} />
+        {!!randomPic.length && <Time randomPics={randomPic} />}
+        <BestItemComp best={best} />
+        <NewItemComp new={newItems} />
       </>
     );
   }
