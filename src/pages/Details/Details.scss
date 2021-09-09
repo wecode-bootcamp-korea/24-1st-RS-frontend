@@ -71,6 +71,11 @@
 .details-wrapper {
   color: var(--detail-textgray);
 
+  .nav-bar {
+    height: 85px;
+    background-color: var(--main-yellow);
+  }
+
   .quick-view {
     .product-name {
       @include text-h1;
@@ -104,11 +109,17 @@
         padding: 5px 0;
 
         .tags {
-          @include text-h5;
+          @include text-h6;
           color: var(--main-yellow);
+
+          span {
+            margin-right: 1rem;
+          }
 
           .awards {
             display: block;
+            margin-top: 7px;
+            margin-bottom: 5px;
           }
 
           .hidden {

@@ -1,7 +1,7 @@
 export const BannerSliderData = [
   {
     image:
-      'https://images.unsplash.com/photo-1530064161350-7824b8cdeee9?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80',
+      'https://images.unsplash.com/photo-1548115184-bc6544d06a58?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80',
   },
   {
     image:
@@ -9,14 +9,14 @@ export const BannerSliderData = [
   },
   {
     image:
-      'https://images.unsplash.com/photo-1496318447583-f524534e9ce1?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=3205&q=80',
+      'https://sooldamhwa-static-files.s3.ap-northeast-2.amazonaws.com/content_images/contents_images-1621589646980-%EB%B3%B5%EB%8B%A8%EC%A7%80-3.png',
   },
   {
     image:
-      'https://cdn.pixabay.com/photo/2016/11/29/15/05/drink-1870139_960_720.jpg',
+      'https://images.unsplash.com/photo-1544827503-673e2a2c4c00?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2897&q=80',
   },
   {
     image:
-      'https://images.unsplash.com/photo-1446822775955-c34f483b410b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80',
+      'https://sooldamhwa-static-files.s3.ap-northeast-2.amazonaws.com/content_images/contents_images-1626419075527-%ED%95%9C%EC%B2%AD+1%EB%B3%91-3.jpg',
   },
 ];
