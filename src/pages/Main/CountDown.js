@@ -3,11 +3,16 @@ import React from 'react';
 class CountDown extends React.Component {
   constructor() {
     super();
-    this.state = {
-      hours: 50,
-      minutes: 0,
-      seconds: 0,
-    };
+
+    const timer = JSON.parse(localStorage.getItem('time'));
+
+    this.state = timer
+      ? timer
+      : {
+          hours: 100,
+          minutes: 0,
+          seconds: 0,
+        };
   }
 
   componentDidMount() {
@@ -19,7 +24,6 @@ class CountDown extends React.Component {
       const { seconds, minutes, hours } = this.state;
 
       const updateTime = next => this.setState(next, this.updateStorage);
-
       if (seconds > 0) {
         updateTime({ seconds: seconds - 1 });
       } else if (minutes > 0) {
@@ -32,12 +36,13 @@ class CountDown extends React.Component {
         });
       } else {
         clearInterval(this.timer);
+        localStorage.removeItem('time');
       }
     }, 1000);
   };
 
   updateStorage = () => {
-    localStorage.setItem('time', JSON.stringify(this.timer));
+    localStorage.setItem('time', JSON.stringify(this.state));
   };
 
   render() {

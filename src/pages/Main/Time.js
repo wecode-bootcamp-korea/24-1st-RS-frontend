@@ -9,7 +9,7 @@ export default class Time extends React.Component {
           <img
             className="product-img"
             alt="random-drink-img"
-            src="/images/Main/randomdrink.png"
+            src={this.props.randomPics[0].image}
           />
         </div>
         <div className="time-wrapper">
@@ -18,7 +18,7 @@ export default class Time extends React.Component {
             alt="clock-img"
             src="/images/Main/clock.png"
           />
-          <p className="time-now">술 마시기 좋은 현재 시간</p>
+          <p className="time-now">특가 까지 남은 시간!</p>
           <div className="time">
             <CountDown />
           </div>
