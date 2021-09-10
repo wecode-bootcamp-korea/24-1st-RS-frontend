@@ -25,7 +25,6 @@ export default class Cart extends Component {
 
     return (
       <div className="modal-wrapper">
-        <button onClick={this.handleModalOpen}> 장바구니 보기 </button>
         <Modal open={isModalOpen} close={this.handleModalClosed} />
       </div>
     );
