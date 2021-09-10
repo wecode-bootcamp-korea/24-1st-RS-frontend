@@ -15,8 +15,7 @@ export default class Modal extends Component {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
-        Authorization:
-          'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MTF9.fCPlhBdz7rrwyrTNXbhpF47oTWcLIKI1RQiNTahKTpk',
+        Authorization: localStorage.getItem('login-token'),
       },
     })
       .then(res => res.json())
@@ -39,8 +38,7 @@ export default class Modal extends Component {
         body: JSON.stringify(data),
         headers: {
           'Content-Type': 'application/json',
-          Authorization:
-            'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MTF9.fCPlhBdz7rrwyrTNXbhpF47oTWcLIKI1RQiNTahKTpk',
+          Authorization: localStorage.getItem('login-token'),
         },
       }).then(res => console.log(res));
     });

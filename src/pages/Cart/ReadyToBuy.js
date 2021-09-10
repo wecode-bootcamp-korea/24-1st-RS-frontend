@@ -10,8 +10,7 @@ export default class ReadyToBuy extends Component {
       method: 'DELETE',
       headers: {
         'Content-Type': 'application/json',
-        Authorization:
-          'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MTF9.fCPlhBdz7rrwyrTNXbhpF47oTWcLIKI1RQiNTahKTpk',
+        Authorization: localStorage.getItem('login-token'),
       },
     }).then(res => {
       console.log(res);

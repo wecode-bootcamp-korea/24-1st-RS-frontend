@@ -27,14 +27,13 @@ export default class AddToCart extends Component {
 
     const post_url = `${API}/carts`;
     const data = { product_id: productID, quantity: quantity };
-    const token = JSON.parse(localStorage.getItem('local-token'));
 
     fetch(post_url, {
       method: 'POST',
       body: JSON.stringify(data),
       headers: {
         'Content-Type': 'application/json',
-        Authorization: token,
+        Authorization: localStorage.getItem('login-token'),
       },
     })
       .then(res => res.json())
