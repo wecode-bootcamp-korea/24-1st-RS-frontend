@@ -23,9 +23,7 @@
 
 <div id=header align="center">
   <img src="https://jeju-monthang-jw.s3.ap-northeast-2.amazonaws.com/uploads/guesthouse_photos/Screen_Shot_2021-09-10_at_6.25.00_PM.png">
-  <a href=""https://youtu.be/tThYy28aRaU"">
-    <img src="https://jeju-monthang-jw.s3.ap-northeast-2.amazonaws.com/uploads/guesthouse_photos/Screen_Shot_2021-09-10_at_6.25.00_PM.png">
-  </a>
+  <a href="https://youtu.be/tThYy28aRaU">시연 영상 보러가기</a>
 </div>
 
 <br>
