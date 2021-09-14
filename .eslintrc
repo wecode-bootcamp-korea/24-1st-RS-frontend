@@ -3,6 +3,13 @@
   "plugins": ["prettier"],
   "rules": {
     "prettier/prettier": ["error", { "endOfLine": "auto" }],
-    "no-console": "error"
+    "no-var": "warn",
+    "no-multiple-empty-lines": "warn",
+    "no-nested-ternary": "warn",
+    "prefer-spread": "warn",
+    "no-console": "warn",
+    "eqeqeq": "warn",
+    "dot-notation": "warn",
+    "no-unused-vars": "warn"
   }
 }
