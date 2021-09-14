@@ -38,9 +38,7 @@ export default class AddToCart extends Component {
       },
     })
       .then(res => res.json())
-      .then(res => {
-        console.log(res);
-      });
+      .then(res => {});
   };
 
   render() {

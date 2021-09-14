@@ -22,7 +22,6 @@ export default class Modal extends Component {
       .then(res => res.json())
       .then(res => {
         const cartList = res.Result;
-        console.log(cartList);
 
         this.setState({ cartList });
       });
@@ -42,7 +41,7 @@ export default class Modal extends Component {
           Authorization:
             'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MTF9.fCPlhBdz7rrwyrTNXbhpF47oTWcLIKI1RQiNTahKTpk',
         },
-      }).then(res => console.log(res));
+      });
     });
   };
 

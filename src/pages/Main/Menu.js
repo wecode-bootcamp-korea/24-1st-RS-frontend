@@ -4,7 +4,6 @@ import MenuDetail from './MenuDetail';
 
 export default class Menu extends Component {
   render() {
-    console.log(this.props);
     const { category } = this.props;
     return (
       <section className="menu-bar">

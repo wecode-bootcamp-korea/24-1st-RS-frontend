@@ -14,7 +14,6 @@ export default class ReadyToBuy extends Component {
           'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MTF9.fCPlhBdz7rrwyrTNXbhpF47oTWcLIKI1RQiNTahKTpk',
       },
     }).then(res => {
-      console.log(res);
       window.location.reload();
     });
   };
