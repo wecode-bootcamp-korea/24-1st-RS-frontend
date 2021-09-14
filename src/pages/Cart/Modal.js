@@ -33,6 +33,8 @@ export default class Modal extends Component {
     cartList.forEach(item => {
       const update_url = `${API}/carts/${item.cart_id}`;
       const data = { product_quantity: item.quantity };
+      const hi = 'hi';
+
       fetch(update_url, {
         method: 'PATCH',
         body: JSON.stringify(data),
